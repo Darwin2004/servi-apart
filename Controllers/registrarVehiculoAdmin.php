@@ -11,7 +11,7 @@
     $marca = $_POST['marca'];
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
-    $identificacion_res = $_POST['identificacion_res'];
+    $identificacion = $_POST['identificacion'];
     $fecha = $_POST['fecha'];
     $foto = $_POST['foto'];
 
@@ -21,7 +21,7 @@
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (strlen($placa) > 0     && strlen($marca)> 0 
         && strlen($referencia) >0              && strlen($modelo)>0
-        && strlen($identificacion_res) >0              && strlen($fecha)>0 ){
+        && strlen($identificacion) >0              && strlen($fecha)>0 ){
 
 
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
@@ -43,7 +43,7 @@
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion_res, $fecha, $foto, $foto1, $foto2, $foto3);
+            $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $fecha, $foto, $foto1, $foto2, $foto3);
         
 
         }else{

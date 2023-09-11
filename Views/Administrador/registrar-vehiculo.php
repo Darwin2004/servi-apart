@@ -119,7 +119,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Placa:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: UZI-974" name="placa">
+                                        <input type="text" class="form-control" placeholder="Ej: UZI974" name="placa">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Marca:</label>
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Identificación de Propietario:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 1516465400" name="identificacion_res">
+                                        <input type="number" class="form-control" placeholder="Ej: 1516465400" name="identificacion">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Fecha</label>
