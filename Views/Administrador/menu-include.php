@@ -31,9 +31,6 @@
                             <li>
                                 <a href="ver-usuario.php"><i class="ti-eye"></i>Ver</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="ti-book"></i>Editar</a>
-                            </li>
 
                         </ul>
                     </li>

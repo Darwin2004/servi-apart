@@ -117,7 +117,7 @@
                                     <div class="card-body">
                                         <div class="basic-elements">
                                             <?php
-                                                cargarUsuarioEditar();
+                                                cargarVehiculoEditar();
                                             ?>
                                         </div>
                                     </div>
