@@ -37,7 +37,7 @@ function cargarUsuarioEditar(){
     //enviamos la pk A UNA funcion de la clase consultas 
 
     $objConsultas =new Consultas();
-    $result = $objConsultas->mostrarUserAdmin($id_user);
+    $result = $objConsultas->mostrarUsuariosAdmin($id_user);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
