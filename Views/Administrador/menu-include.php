@@ -36,9 +36,6 @@
                             <li>
                                 <a href="ver-usuario.php"><i class="ti-eye"></i>Ver</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="ti-book"></i>Editar</a>
-                            </li>
 
                         </ul>
                     </li>
@@ -111,22 +108,37 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-info-alt"></i> Publicaciones
+                            <i class="ti-comment-alt"></i> Publicaciones
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Crear Publicacion</a>
+
+                                <a href="crear-publicacion.php"><i class="ti-eye"></i>Crear Publicacion</a>
+
+                        
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <a href=#p"><i class="ti-eye"></i>Ver Publicaciones</a>
+                                <a href=#p"><i class="ti-book"></i>Ver Publicaciones</a>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Eliminar Publicaciones</a>
+                                <a href="#"><i class="ti-close"></i>Eliminar Publicaciones</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-money"></i> Pagos
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="pagos.php"><i class="ti-eye"></i>Gestión de pagos</a>
                             </li>
                         </ul>
                     </li>

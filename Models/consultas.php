@@ -114,6 +114,54 @@
 
         }
 
+        public function crearPublicacion($titulo, $descripcion){
+            
+            //CREAMOS EL OBJETO DE CONEXION
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+            $consultar = 'SELECT * FROM publicacion WHERE titulo=:titulo descripcion=:descripcion OR id_publi=:id_publi';
+            $result = $conexion->prepare($consultar);
+
+            $result -> bindParam (":titulo", $titulo);
+
+            $result -> bindParam (":descripcion", $descripcion);
+
+
+            $result -> execute();
+
+            $f = $result->fetch();
+
+            if($f){
+                echo '<script>alert("Publicacion ya publicada")</script>';
+                echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }else{
+                
+            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
+            $insertar = "INSERT INTO publicaciones(id_publi, titulo, descripcion) 
+            VALUES(:id_public, :titulo, :descripcion)";
+
+
+            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+            $result = $conexion->prepare($insertar);
+
+
+            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+            $result -> bindParam (":id_publi", $id_publi);
+            $result -> bindParam (":titulo", $titulo);
+            $result -> bindParam (":descripcion", $descripcion);
+           
+            //EJECUTAMOS EL INSERT
+            $result -> execute();
+             
+            echo '<script>alert("Publicacion creada correctamente")</script>';
+            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }
+
+        }
+
+
         public function mostrarusuariosAdmin(){
             $f = null;
             $objConexion = new Conexion();
@@ -194,7 +242,7 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/perfil.php?id=$identificacion'</script>";
+            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
         }
 
 
@@ -214,6 +262,25 @@
                 $f[] = $resultado;
             }
             return $f;
+        }
+
+        public function modificarVehiculosAdmin($placa, $marca, $referencia, $modelo){
+            
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $actualizar = " UPDATE vehiculo SET marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
+            $result = $conexion->prepare($actualizar);
+
+            $result->bindParam("marca", $marca);
+            $result->bindParam("referencia", $referencia);
+            $result->bindParam("modelo", $modelo);
+            $result->bindParam("placa", $placa);
+    
+            $result->execute();
+
+            echo '<script>alert("Información actualizada")</script>';
+            echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
         }
 
 
@@ -265,19 +332,17 @@
             return $f;
         }
         
-        public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion_res, $fecha, $foto, $foto1, $foto2, $foto3){
+        public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $fecha, $foto, $foto1, $foto2, $foto3){
                 
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
             //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM vehiculo WHERE placa=:placa OR marca=:marca';
+            $consultar = 'SELECT * FROM vehiculo WHERE placa=:placa';
             $result = $conexion->prepare($consultar);
 
             $result -> bindParam (":placa", $placa);
-
-            $result -> bindParam (":marca", $marca);
 
             $result -> execute();
 
@@ -285,12 +350,12 @@
 
             if($f){
                 echo '<script>alert("Los datos del vehiculo ya se encuentran registrados")</script>';
-                echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                echo "<script>location.href='../Views/Administrador/registrar-vehiculo.php'</script>";
             }   else{
                 
                 //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-                $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion_res, fecha, foto, foto1, foto2, foto3) 
-                VALUES(:placa, :marca, :referencia, :modelo, :identificacion_res, :fecha, :foto, :foto1, :foto2, :foto3)";
+                $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, fecha, foto, foto1, foto2, foto3) 
+                VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :fecha, :foto, :foto1, :foto2, :foto3)";
 
 
                 //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -302,7 +367,7 @@
                 $result -> bindParam (":marca", $marca);
                 $result -> bindParam (":referencia", $referencia);
                 $result -> bindParam (":modelo", $modelo);
-                $result -> bindParam (":identificacion_res", $identificacion_res);
+                $result -> bindParam (":identificacion", $identificacion);
                 $result -> bindParam (":fecha", $fecha);  
                 $result -> bindParam (":foto", $foto);
                 $result -> bindParam (":foto1", $foto1);

@@ -71,6 +71,16 @@
 ----------------------*/
 /*----------------font-------------------*/
 
+.card{
+  position: relative;
+  max-width: 1000px;
+}
+
+.des{
+  
+  height: 200px;
+}
+
 .foto_user_servi {
   width: 30px;
   height: 30px;
@@ -93,7 +103,7 @@
   margin: 7.5px 0;
   padding: 20px;
   border: 1px solid #e7e7e7;
-  border-radius: 3px;
+  border-radius: 5%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 .card-subtitle {

@@ -72,10 +72,11 @@
 
 <body>
 
-
 <?php
     include 'menu-include.php';
 ?>
+
+    <!-- /# sidebar -->
 
 
 
@@ -86,8 +87,8 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Registrar Vehiculo</h1>
-                                <p>Por favor completa todos los campos para registrar el vehiculo</p>
+                                <h1>Crear Publicación</h1>
+                                <p>Por favor rellena los campos</p>
                             </div>
                         </div>
                     </div>
@@ -97,9 +98,9 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Crear Publicaciones</li>
                                 </ol>
                             </div>
                         </div>
@@ -107,7 +108,7 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
+             <section id="main-content" class="container">
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -115,57 +116,22 @@
                                     
                                     
                                 </div>
-                                <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
+                                <form action="#" method="POST" >
                                 <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label>Placa:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: UZI974" name="placa">
+                                    <div class="form-group col-md-12">
+                                        <label>Titulo</label>
+                                        <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="title-publi">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Marca:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Ford" name="marca">
+                                   
+                                    <div class="form-group col-md-12 ">
+                                        <label>Descripción</label>
+                                        <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
+                                        <textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Referencia:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Explorer" name="referencia">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Modelo:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 2013" name="modelo">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Identificación de Propietario:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 1516465400" name="identificacion">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Fecha</label>
-                                        <input type="date" class="form-control" placeholder="Ej: 08/10/2023" name="fecha">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto</label>
-                                        <input type="file" class="form-control"  name="foto" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 1</label>
-                                        <input type="file" class="form-control"  name="foto1" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 2</label>
-                                        <input type="file" class="form-control"  name="foto2" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 3</label>
-                                        <input type="file" class="form-control"  name="foto3" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-
-
 
                                     
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar vehiculo</button>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Crear</button>
                                 <div class="register-link m-t-15 text-center">
                                     
                                 </div>
@@ -187,11 +153,10 @@
                             </div>
                         </div>
                     </div>
-                </section>
+        </section>
             </div>
         </div>
     </div>
-               
 
 
 

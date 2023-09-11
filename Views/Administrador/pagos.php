@@ -72,12 +72,11 @@
 
 <body>
 
-
 <?php
     include 'menu-include.php';
 ?>
 
-
+    <!-- /# sidebar -->
 
     <div class="content-wrap">
         <div class="main">
@@ -86,8 +85,9 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Registrar Vehiculo</h1>
-                                <p>Por favor completa todos los campos para registrar el vehiculo</p>
+                                <h1>Gestión de pagos 
+                                </h1>
+                                <p>Por favor elija el proceso que desea realizar y llene los campos correspondientemente.</p>
                             </div>
                         </div>
                     </div>
@@ -97,102 +97,69 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Gestión de pagos</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
                 </div>
-                <!-- /# row -->
-                <section id="main-content">
-                <div class="row">
-                        <div class="col-lg-12">
+
+
+
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4">
                             <div class="card">
-                                <div class="card-title">
-                                    
-                                    
+                                <div class="shopping-card">
+                                    <img class="img-fluid" src="images/product.jpg" alt="">
                                 </div>
-                                <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label>Placa:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: UZI974" name="placa">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Marca:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Ford" name="marca">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Referencia:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Explorer" name="referencia">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Modelo:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 2013" name="modelo">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Identificación de Propietario:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 1516465400" name="identificacion">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Fecha</label>
-                                        <input type="date" class="form-control" placeholder="Ej: 08/10/2023" name="fecha">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto</label>
-                                        <input type="file" class="form-control"  name="foto" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 1</label>
-                                        <input type="file" class="form-control"  name="foto1" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 2</label>
-                                        <input type="file" class="form-control"  name="foto2" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 3</label>
-                                        <input type="file" class="form-control"  name="foto3" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-
-
-
-                                    
+                                <div class="shopping-card-text text-center">
+                                    <h4>Portal 1</h4>
+                                    <p>Some quick example text.</p>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar vehiculo</button>
-                                <div class="register-link m-t-15 text-center">
-                                    
-                                </div>
-                            </form>
-                                    </div>
+                                <div class="text-center p-t-30 p-b-20">
+                                   
+                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- /# column -->
-                      
-                        <!-- /# column -->
-                    </div>
 
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="shopping-card">
+                                    <img class="img-fluid" src="images/product.jpg" alt="">
+                                </div>
+                                <div class="shopping-card-text text-center">
+                                    <h4>Portal 2</h4>
+                                    <p>Some quick example text.</p>
+                                </div>
+                                <div class="text-center p-t-30 p-b-20">
+                                   
+                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="shopping-card">
+                                    <img class="img-fluid" src="images/product.jpg" alt="">
+                                </div>
+                                <div class="shopping-card-text text-center">
+                                    <h4>Portal 3</h4>
+                                    <p>Some quick example text.</p>
+                                </div>
+                                <div class="text-center p-t-30 p-b-20">
+                                   
+                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
         </div>
     </div>
-               
-
 
 
 
