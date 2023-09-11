@@ -71,6 +71,16 @@
 ----------------------*/
 /*----------------font-------------------*/
 
+.card{
+  position: relative;
+  max-width: 1000px;
+}
+
+.des{
+  
+  height: 200px;
+}
+
 .foto_user_servi {
   width: 30px;
   height: 30px;

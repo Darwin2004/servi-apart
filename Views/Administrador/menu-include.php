@@ -111,7 +111,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Crear Publicacion</a>
+                                <a href="crear-publicacion.php"><i class="ti-eye"></i>Crear Publicacion</a>
                             </li>
                         </ul>
                         <ul>

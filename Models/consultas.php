@@ -114,6 +114,54 @@
 
         }
 
+        public function crearPublicacion($titulo, $descripcion){
+            
+            //CREAMOS EL OBJETO DE CONEXION
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+            $consultar = 'SELECT * FROM publicacion WHERE titulo=:titulo descripcion=:descripcion OR id_publi=:id_publi';
+            $result = $conexion->prepare($consultar);
+
+            $result -> bindParam (":titulo", $titulo);
+
+            $result -> bindParam (":descripcion", $descripcion);
+
+
+            $result -> execute();
+
+            $f = $result->fetch();
+
+            if($f){
+                echo '<script>alert("Publicacion ya publicada")</script>';
+                echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }else{
+                
+            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
+            $insertar = "INSERT INTO publicaciones(id_publi, titulo, descripcion) 
+            VALUES(:id_public, :titulo, :descripcion)";
+
+
+            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+            $result = $conexion->prepare($insertar);
+
+
+            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+            $result -> bindParam (":id_publi", $id_publi);
+            $result -> bindParam (":titulo", $titulo);
+            $result -> bindParam (":descripcion", $descripcion);
+           
+            //EJECUTAMOS EL INSERT
+            $result -> execute();
+             
+            echo '<script>alert("Publicacion creada correctamente")</script>';
+            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }
+
+        }
+
+
         public function mostrarusuariosAdmin(){
             $f = null;
             $objConexion = new Conexion();
