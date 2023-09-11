@@ -439,11 +439,11 @@
             //VALIDAMOS LA CLAVE
                 if ($f['clave'] == $clave){
                     //VALIDAMOS EL ESTADO DE LA CUENTA
-
+                    
                     if($f['estado'] == "Activo"){
                         //SE REALIZA EL INICIO DE SESION
 
-                        session_start();
+                        if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                         //CREAMOS VARIABLES DE SESION
 
                         $_SESSION['id'] = $f['identificacion'];

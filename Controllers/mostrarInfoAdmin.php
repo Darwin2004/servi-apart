@@ -170,7 +170,7 @@ function cargarUsuariosReportes(){
 
 function perfil(){
     //Variable de sesion de login
-    // session_start();
+    if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     $id = $_SESSION['id'];
 
     $objConsultas = new Consultas ();
@@ -204,6 +204,8 @@ function perfil(){
 
 
     function perfilEditar(){
+
+        
         $id=$_GET['id'];
 
         $objConsultas = new Consultas ();
