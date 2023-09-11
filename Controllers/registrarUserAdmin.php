@@ -16,6 +16,8 @@
     $clave = $_POST['identificacion'];
     $rol = $_POST['Roles'];
     $estado = $_POST['Estado'];
+    $torre = $_POST['torre'];
+    $apartamento = $_POST['apartamento'];
 
      // ------------------------------------------
     // Verificamos que las claves coincidan
@@ -23,12 +25,11 @@
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (strlen($identificacion) > 0     && strlen($tipo_doc)> 0 
         && strlen($nombres) >0              && strlen($apellidos)>0
-        && strlen($email) >0              && strlen($telefono)>0
-        && strlen($clave) >0
-        && strlen($rol)>0                 && strlen($estado)>0){
+        && strlen($email) >0                && strlen($telefono)>0
+        && strlen($clave) >0                && strlen($rol)>0                 
+        && strlen($estado)>0                && strlen($torre)>0
+        && strlen($apartamento)>0){
 
-            //ENCRIPTAMOS LA CLAVE
-            $claveMd = md5($clave);
 
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
             $foto = "../Uploads/Usuarios/".$_FILES['foto']['name'];
@@ -36,11 +37,11 @@
 
             $mover = move_uploaded_file($_FILES['foto']['tmp_name'], $foto);
 
-            //CREAMOS EL OBHETO A PARTIR DE UNA CLASE
+            //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $foto);
+            $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto);
         
 
         }else{

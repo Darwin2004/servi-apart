@@ -61,7 +61,7 @@
 
         }
 
-        public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $foto){
+        public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto){
             
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
@@ -81,12 +81,12 @@
 
             if($f){
                 echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-                echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
             }else{
                 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO usuarios(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, foto) 
-            VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :claveMd,  :rol, :estado, :foto)";
+            $insertar = "INSERT INTO usuarios(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, torre, apartamento, foto) 
+            VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :clave,  :rol, :estado, :torre, :apartamento, :foto)";
 
 
             //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -100,15 +100,17 @@
             $result -> bindParam (":apellidos", $apellidos);
             $result -> bindParam (":email", $email);
             $result -> bindParam (":telefono", $telefono);  
-            $result -> bindParam (":claveMd", $claveMd);
+            $result -> bindParam (":clave", $clave);
             $result -> bindParam (":rol", $rol);
             $result -> bindParam (":estado", $estado);
+            $result -> bindParam (":torre", $torre);
+            $result -> bindParam (":apartamento", $apartamento);
             $result -> bindParam (":foto", $foto);
 
             //EJECUTAMOS EL INSERT
             $result -> execute();
              
-            echo '<script>alert("Te has registrado exitosamente")</script>';
+            echo '<script>alert("Usuario registrado con exito")</script>';
             echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
             }
 
@@ -224,12 +226,12 @@
 
 
 
-        public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono){
+        public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento){
             
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono WHERE identificacion=:identificacion ";
+            $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
             $result = $conexion->prepare($actualizar);
 
             $result->bindParam("identificacion", $identificacion);
@@ -238,6 +240,8 @@
             $result->bindParam("apellidos", $apellidos);
             $result->bindParam("email", $email);
             $result->bindParam("telefono", $telefono);
+            $result->bindParam("torre", $torre);
+            $result->bindParam("apartamento", $apartamento);
     
             $result->execute();
 
@@ -441,7 +445,7 @@
             
             $result->execute();
         
-            echo '<script>alert("Clave Actualizada actualizada")</script>';
+            echo '<script>alert("Clave Actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/perfil.php?id=$identificacion'</script>";
         }
         

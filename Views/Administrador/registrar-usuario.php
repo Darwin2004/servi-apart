@@ -147,16 +147,19 @@
                                         <label>telefono:</label>
                                         <input type="number" class="form-control" placeholder="Ej: 323 233 2333" name="telefono">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
                                         <label>Roles:</label>
-                                        <select name="Roles" id="" class="form-control">
+                                        <select name="Roles" id="rolSelect" class="form-control">
                                             <option value="CC">Seleccione una opcion</option>
                                             <option value="Administrador">Administrador</option>
                                             <option value="Residente">Residente</option>
                                             <option value="Seguridad">Seguridad</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
+
+                                    
+
+                                    <div class="form-group col-md-3">
                                         <label>Seleccione Estado:</label>
                                         <select name="Estado" id="" class="form-control">
                                             <option value="CC">Seleccione una opcion</option>
@@ -164,6 +167,16 @@
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Bloqueado">Bloqueado</option>
                                         </select>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label>Torre:</label>
+                                        <input type="text" class="form-control" id="torreInput" placeholder="Ej: A" name="torre">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label>Apartamento:</label>
+                                        <input type="text" class="form-control" id="apartamentoInput" placeholder="Ej: 302" name="apartamento">
                                     </div>
 
                                     <div class="form-group col-md-12">
@@ -386,6 +399,10 @@
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
+
+
+
+    <script src="../../assets/js/rol.js"></script>
 
 </body>
 

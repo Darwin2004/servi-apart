@@ -121,11 +121,15 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-bordered table-hover ">
                                             <thead>
                                                 <tr class="">
-                                                    <th>Fotos</th>
+                                                    <th>Foto</th>
+                                                    <th>Identificación</th>
+                                                    <th>Tipo de Documento</th>
                                                     <th>Nombres</th>
                                                     <th>Apellidos</th>
-                                                    <th>Rol</th>
+                                                    <th>Correo</th>
                                                     <th>Estado</th>
+                                                    <th>Torre</th>
+                                                    <th>Apartamento</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>
                                                 </tr>

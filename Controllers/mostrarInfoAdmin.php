@@ -18,10 +18,14 @@ function cargarUsuarios(){
             echo '
             <tr>
                 <td><img src="../'.$f['foto'].'" alt="Foto" style="width: 80px; height: 80px"></td>
+                <td>'. $f['identificacion'] .'</td>
+                <td>'. $f['tipo_doc'].' </td>
                 <td>'. $f['nombres'] .'</td>
                 <td>'. $f['apellidos'].' </td>
-                <td>'. $f['rol'] .'</td>
+                <td>'. $f['email'].' </td>
                 <td>'. $f['estado'].' </td>
+                <td>'. $f['torre'].' </td>
+                <td>'. $f['apartamento'].' </td>
                 <td><a href="modificar-usuario.php?id='.$f['identificacion'].'" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
                 <td><a href="../../Controllers/eliminarUserAdmin.php?id='.$f['identificacion'].'" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
             </tr>     
@@ -237,6 +241,7 @@ function cargarVehiculoEditar(){
             </optgroup>
                             </select>
                         </div>
+                        
                         <div class="form-group col-md-6">
                             <label>Referencia:</label>
                             <input type="text" class="form-control" value="'.$f['referencia'].'" placeholder="Ej: Miguel Angel" name="referencia">
@@ -401,7 +406,7 @@ function perfil(){
 
 
 
-    function perfilEditar(){
+function perfilEditar(){
 
         
         $id=$_GET['id'];
@@ -445,7 +450,7 @@ function perfil(){
                             <form action="../../Controllers/modificarCuentaAdmin.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label>identificacion:</label>
+                                <label>Identificacion:</label>
                                 <input type="number" class="form-control" value="'.$f['identificacion'].'"  readonly placeholder="Ej: 23554535354" name="identificacion">
                             </div>
                             <div class="form-group col-md-6">
@@ -470,8 +475,16 @@ function perfil(){
                                 <input type="email" class="form-control" value="'.$f['email'].'" placeholder="Ej: example@example.com" name="email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>telefono:</label>
+                                <label>Telefono:</label>
                                 <input type="number" class="form-control" value="'.$f['telefono'].'" placeholder="Ej: 323 233 2333" name="telefono">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Torre:</label>
+                                <input type="text" class="form-control" value="'.$f['torre'].'" placeholder="Ej: 323 233 2333" name="torre">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Apartamento:</label>
+                                <input type="text" class="form-control" value="'.$f['apartamento'].'" placeholder="Ej: 323 233 2333" name="apartamento">
                             </div>
                             
                         </div>
@@ -487,7 +500,7 @@ function perfil(){
                             <form action="../../Controllers/modificarFotoAdmin.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label>identificacion:</label>
+                                <label>Identificacion:</label>
                                 <input type="number" class="form-control" value="'.$f['identificacion'].'"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
                             </div>
                             
@@ -511,7 +524,7 @@ function perfil(){
                                 <form action="../../Controllers/modificarClaveAdmin.php"  method="POST">
 
                                    <div class="form-group col-md-6">
-                                    <label>identificacion:</label>
+                                    <label>Identificacion:</label>
                                      <input type="number" class="form-control" value="'.$f['identificacion'].'"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
                                      </div>
                                     <div class="form-group col-md-12">
@@ -552,7 +565,7 @@ function perfil(){
         }
 
 
-    }
+}
 
 
 ?>
