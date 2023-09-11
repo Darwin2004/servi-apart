@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Focus Admin: Widget</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-primero">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                        <div class="login-logo">
+                            <a href="../../index.html"><span></span></a>
+                        </div>
+                        <div class="login-form">
+                            <h4>Registro</h4>
+                            <form action="../../Controllers/registrarUserEx.php" method="POST">
+                                <div class="row">
+
+                                    <div class="form-group col-md-6">
+                                        <label>Tipo de Documento</label>
+                                        <select name="tipo_doc" id="" class="form-control">
+                                            <option value="CC">Seleccione una opcion</option>
+                                            <option value="CC">CC</option>
+                                            <option value="CE">CE</option>
+                                            <option value="PASAPORTE">PASAPORTE</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label>Identificacion</label>
+                                        <input type="number" class="form-control" placeholder="Ej: 23554535354" name="identificacion">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label>Nombres</label>
+                                        <input type="text" class="form-control" placeholder="Ej: Miguel Angel" name="nombres">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Apellidos</label>
+                                        <input type="text" class="form-control" placeholder="Ej: Gallejo Restrepo" name="apellidos">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Correo Electronico</label>
+                                        <input type="email" class="form-control" placeholder="Ej: example@example.com" name="email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Telefono:</label>
+                                        <input type="number" class="form-control" placeholder="Ej: 323 233 2333" name="telefono">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Rol</label>
+                                        <select name="rol" id="" class="form-control">
+                                            <option value="">Seleccione una opcion</option>
+                                            <option value="residente">Residente</option>
+                                            <option value="Personal de Seguridad">Personal de Seguridad</option>
+                                            <option value="Administrador">Administrador</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>N° de Torre</label>
+                                        <input type="number" class="form-control" placeholder="Ej: 4" name="torre">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Apartamento</label>
+                                        <input type="text" class="form-control" placeholder="Ej: A-15" name="apartamento">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Clave</label>
+                                        <input type="password" class="form-control" placeholder="Ej: *************" name="clave">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Confirmar clave</label>
+                                        <input type="password" class="form-control" placeholder="Ej: *************" name="clave2">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registro</button>
+                                <div class="register-link m-t-15 text-center">
+                                    <p>¿Ya tienes una cuenta?<a href="page-login.html"> Ingresa</a></p>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
