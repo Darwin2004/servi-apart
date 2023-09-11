@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+ session_start();
 
 if (!isset($_SESSION['AUTENTICADO'])) {
     // Guardar la URL actual en la variable de sesión

@@ -220,7 +220,7 @@ require_once("../../Models/consultas.php");
     <!-- scripit init-->
 
     <!-- js del salon comunal -->
-   <script src="../../assets/js/salon-comunal.js"></script> 
+   <script src="../client-site/assets/js/salon-comunal.js"></script> 
 
 </body>
 
