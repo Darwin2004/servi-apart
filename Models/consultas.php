@@ -317,7 +317,29 @@
             }
         }
 
-        public function registrarDia(){}
+        public function registrarDia($identificacion, $nombre, $apellido, $telefono, $correo_electronico, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion, $mesas, $sillas){
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar ='SELECT * FROM reserva_salon WHERE dia_reserva=:dia_reserva';
+            $result =$conexion->prepare($consultar);
+
+            $result ->bindParam(":dia_reserva", $dia_reserva);
+
+            $result->execute();
+
+            $f =$result->fetch();
+
+            if ($f){
+                echo '<script>alert("El dia ya se encuentran registrado")</script>';
+                echo "<script>location.href='../Views/Usuario/salon-comunal.php'</script>";
+              }else{
+                $insertar ="INSERT INTO reserva_salon(identificacion, nombre, apellidos, nombres,apellidos, telefonos, correo, dia_reserva, torre, apartamento, hora_inicio, hora_finalizacion, mesas, sillas)
+                values(:identificacion, :nombres, :apellidos, :correo, :dia_reserva, :torre, :apartamento, :hora_inicio, :hora_finalizacion, :mesas, :sillas)"; 
+              }
+
+
+        }
 
 
 

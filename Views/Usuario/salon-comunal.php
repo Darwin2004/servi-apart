@@ -46,7 +46,7 @@ require_once("../../Models/consultas.php");
 <body>
 
     <?php
-    include 'menu-include.php';
+    include 'menu-include copy.php';
     ?>
 
     <!-- /# sidebar -->
@@ -80,7 +80,7 @@ require_once("../../Models/consultas.php");
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Calender</h4>
+                                    <h4>Reserva Tu Dia</h4>
 
                                 </div>
                                 <div class="card-body">
@@ -90,73 +90,85 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <!-- no borrar esos div de arriba -->
                                     <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
-<form action="#" method="post" autocomplete="off">
-        <div class="row g-2">
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
-                    <label for="identificacion">Identificación</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Johan" required>
-                    <label for="nombre">Nombre</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Castañeda" required>
-                    <label for="apellido">Apellido</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="telefono" name="telefono" placeholder="3204031794" required>
-                    <label for="telefono">Teléfono</label>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" placeholder="name@example.com" required>
-                    <label for="correo_electronico">Correo Electrónico</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
-                    <label for="dia_reserva">Día de Reserva</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="torre" name="torre" placeholder="3" required>
-                    <label for="torre">Torre</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="apartamento" name="apartamento" placeholder="601" required>
-                    <label for="apartamento">Apartamento</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
-                    <label for="hora_inicio">Hora de Inicio</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="datetime-local" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
-                    <label for="hora_finalizacion">Hora de Finalización</label>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <button type="submit">Enviar</button>
-            </div>
-        </div>
-    </form>
+                        <form action="#" method="post" autocomplete="off">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
+                                            <label for="identificacion">Identificación</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Johan" required>
+                                            <label for="nombre">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Castañeda" required>
+                                            <label for="apellido">Apellido</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="3204031794" required>
+                                            <label for="telefono">Teléfono</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" placeholder="name@example.com" required>
+                                            <label for="correo_electronico">Correo Electrónico</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
+                                            <label for="dia_reserva">Día de Reserva</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="torre" name="torre" placeholder="3" required>
+                                            <label for="torre">Torre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="apartamento" name="apartamento" placeholder="601" required>
+                                            <label for="apartamento">Apartamento</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                                            <label for="hora_inicio">Hora de Inicio</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="datetime-local" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                                            <label for="hora_finalizacion">Hora de Finalización</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="mesas" name="mesas" >
+                                            <label for="mesas">Mesas</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="sillas" name="sillas" >
+                                            <label for="sillas">Sillas</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
 
 
 
