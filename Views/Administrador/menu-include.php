@@ -1,3 +1,7 @@
+<?php
+//session_start();
+?>
+
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano">
             <div class="nano-content">
@@ -14,6 +18,7 @@
                 <ul>
                     
                     <?php 
+                        require_once ("../../Controllers/mostrarInfoAdmin.php");
                         perfil();
                     ?>
     
