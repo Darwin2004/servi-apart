@@ -171,11 +171,9 @@ h6 {
   justify-content: space-around;
 }
 
-.get-started-btn:hover {
-  background: #00bf63;
-  color: #343a40;
-  border-color: #00bf63;
-  color: white;
+.nav-link.get-started-btn:hover {
+  background-color: #00bf63;
+  color: black;
 }
 
 @media (max-width: 1100px) {
@@ -418,7 +416,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/pexels-santiago-boada-7613833.jpg") top center;
+  background: url("../img/jamie-street-XcmVu1ZMv6M-unsplash.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -460,8 +458,8 @@ h6 {
 
 #hero .icon-box {
   padding: 30px 20px;
-  transition: ease-in-out 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #00bf63;
+  background-color: #00bf630c;
   height: 100%;
   text-align: center;
 }
@@ -469,7 +467,7 @@ h6 {
 #hero .icon-box i {
   font-size: 32px;
   line-height: 1;
-  color: #ff914d;
+  color: #00bf63;
 }
 
 #hero .icon-box h3 {
@@ -486,12 +484,13 @@ h6 {
   transition: ease-in-out 0.3s;
 }
 
-#hero .icon-box h3 a:hover {
-  color: #00bf63;
+#hero .icon-box:hover{
+  border-color: #ff914d;
+  background-color: #ff914d49;
 }
 
-#hero .icon-box:hover {
-  border-color: #00bf63;
+.col-xl-2.col-md-4:hover .icon-box svg {
+  fill: #ff914d; /* Color del icono al hacer hover */
 }
 
 @media (min-width: 1024px) {
@@ -525,9 +524,6 @@ section {
   overflow: hidden;
 }
 
-.section-title {
-  padding-bottom: 40px;
-}
 
 .section-title h2 {
   font-size: 14px;
@@ -679,13 +675,14 @@ section {
   width: 64px;
   height: 64px;
   background: #ff914d;
-  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   transition: 0.3s;
 }
+
+
 
 .services .icon-box .icon i {
   color: #232020;
@@ -699,13 +696,24 @@ section {
   font-size: 24px;
 }
 
+
+/* Estilo para la imagen dentro del icon-box */
+.icon-box .icon img {
+  transition: background-color 0.3s; /* Transición de color de fondo suave */
+}
+
+/* Estilo para la imagen cuando se hace hover en el icon-box */
+.icon-box:hover .icon{
+  background-color: #00bf63; /* Cambiar el color de fondo de la imagen al hacer hover */
+}
+
 .services .icon-box h4 a {
   color: #232020;
   transition: ease-in-out 0.3s;
 }
 
 .services .icon-box h4 a:hover {
-  color: #ff914d;
+  color: #00bf63;
 }
 
 .services .icon-box p {
@@ -1153,6 +1161,10 @@ section {
   padding: 60px 0;
 }
 
+.integrantes {
+  padding: 50px;
+}
+
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
@@ -1234,6 +1246,11 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+margin-top: -50px;
+margin-bottom: 30px;
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
