@@ -34,10 +34,10 @@
         <div class="main">
             <div class="container-fluid mt-5 p-4">
                 <section class=" rounded-3 d-flex row">
-                    <div class="col-md-7  p-2">
-                        <h2 class="p-4 title">¡<span class="span-title">Registra</span>, luego,
+                    <div class="col-md-5  p-2">
+                        <h2 class="p-4 title  w-100">¡<span class="span-title">Registra</span>, luego,
                             comunica! </h2>
-                        <p class=" px-4">Registra tu paquetería hoy mismo y comunica de manera eficiente con los
+                        <p class="px-4 d-block ">Registra tu paquetería hoy mismo y comunica de manera eficiente con los
                             destinatarios
                             en nuestro exclusivo conjunto de propiedades horizontales! No esperes más para simplificar
                             tus
@@ -45,8 +45,8 @@
                             servicio!
                         </p>
                     </div>
-                    <div class="col-md-5 p-4 d-flex justify-content-center align-items-center">
-                        <img class="w-100" src="../../assets/img/pacck.svg" alt="">
+                    <div class="col-md-7 p-4 d-flex justify-content-center align-items-center">
+                        <img class="w-50" src="../../assets/img/pacck.svg" alt="">
                     </div>
                 </section>
                 <section class="row mt-4 p-4">
