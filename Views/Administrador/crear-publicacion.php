@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi-Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -68,6 +68,8 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -87,7 +89,13 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Crear Publicación</h1>
+                            <div class="page-title d-flex align-items-center">
+                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important; " >
+                                    <img src="../../assets/icons/megafono.png" alt="" style="width: 50px; height: 50px">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="hola">Registro de publicaciones</h1>
+                            </div>
+                                <h1 style="margin-top: 20px">Crear Publicación</h1>
                                 <p>Por favor rellena los campos</p>
                             </div>
                         </div>
@@ -108,7 +116,7 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-             <section id="main-content" class="container">
+             <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -116,17 +124,17 @@
                                     
                                     
                                 </div>
-                                <form action="#" method="POST" >
+                                <form action="../../Controllers/crearPublicaciones.php" method="POST">
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Titulo</label>
-                                        <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="title-publi">
+                                        <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
                                     </div>
                                    
                                     <div class="form-group col-md-12 ">
                                         <label>Descripción</label>
                                         <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
-                                        <textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
+                                        <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
                                     </div>
 
                                     

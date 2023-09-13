@@ -116,19 +116,21 @@
 
         }
 
-        public function crearPublicacion($titulo, $descripcion){
+        public function crearPublicacion($titulo, $descripcion, $identificacion){
             
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
             //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM publicacion WHERE titulo=:titulo descripcion=:descripcion OR id_publi=:id_publi';
+            $consultar = 'SELECT * FROM publicaciones WHERE id_publi=:id_publi';
             $result = $conexion->prepare($consultar);
 
             $result -> bindParam (":titulo", $titulo);
 
             $result -> bindParam (":descripcion", $descripcion);
+
+            $result -> bindParam (":identificacion", $identificacion);
 
 
             $result -> execute();
@@ -136,13 +138,13 @@
             $f = $result->fetch();
 
             if($f){
-                echo '<script>alert("Publicacion ya publicada")</script>';
+                echo '<script>alert("Publicacion ya se encuentra publicada")</script>';
                 echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
             }else{
                 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO publicaciones(id_publi, titulo, descripcion) 
-            VALUES(:id_public, :titulo, :descripcion)";
+            $insertar = "INSERT INTO publicaciones(titulo, descripcion,identifiacion) 
+            VALUES( :titulo, :descripcion, :identificacion)";
 
 
             //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -150,9 +152,10 @@
 
 
             //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-            $result -> bindParam (":id_publi", $id_publi);
+          
             $result -> bindParam (":titulo", $titulo);
             $result -> bindParam (":descripcion", $descripcion);
+            $result -> bindParam (":identificacion", $identificacion);
            
             //EJECUTAMOS EL INSERT
             $result -> execute();

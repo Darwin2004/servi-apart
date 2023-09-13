@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 12, 2023 at 07:30 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 13-09-2023 a las 23:47:11
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `servi-apart`
+-- Base de datos: `servi-apart`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventario_salon`
+-- Estructura de tabla para la tabla `inventario_salon`
 --
 
 CREATE TABLE `inventario_salon` (
@@ -36,7 +36,7 @@ CREATE TABLE `inventario_salon` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `novedad_vehiculo`
+-- Estructura de tabla para la tabla `novedad_vehiculo`
 --
 
 CREATE TABLE `novedad_vehiculo` (
@@ -50,7 +50,7 @@ CREATE TABLE `novedad_vehiculo` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paqueteria`
+-- Estructura de tabla para la tabla `paqueteria`
 --
 
 CREATE TABLE `paqueteria` (
@@ -65,21 +65,21 @@ CREATE TABLE `paqueteria` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publicaciones`
+-- Estructura de tabla para la tabla `publicaciones`
 --
 
 CREATE TABLE `publicaciones` (
   `id_publi` int(11) NOT NULL,
-  `hora_publi` time NOT NULL,
-  `fecha_publi` date NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `identificacion` int(11) NOT NULL
+  `identificacion` int(11) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp(),
+  `titulo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reserva_salon`
+-- Estructura de tabla para la tabla `reserva_salon`
 --
 
 CREATE TABLE `reserva_salon` (
@@ -94,7 +94,7 @@ CREATE TABLE `reserva_salon` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -113,7 +113,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
@@ -122,7 +122,7 @@ INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo`
+-- Estructura de tabla para la tabla `vehiculo`
 --
 
 CREATE TABLE `vehiculo` (
@@ -139,17 +139,17 @@ CREATE TABLE `vehiculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `inventario_salon`
+-- Indices de la tabla `inventario_salon`
 --
 ALTER TABLE `inventario_salon`
   ADD PRIMARY KEY (`id_inv`);
 
 --
--- Indexes for table `novedad_vehiculo`
+-- Indices de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD PRIMARY KEY (`id_nov`),
@@ -157,20 +157,20 @@ ALTER TABLE `novedad_vehiculo`
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- Indexes for table `paqueteria`
+-- Indices de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `publicaciones`
+-- Indices de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id_publi`),
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- Indexes for table `reserva_salon`
+-- Indices de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   ADD PRIMARY KEY (`id_salon`),
@@ -178,54 +178,60 @@ ALTER TABLE `reserva_salon`
   ADD KEY `id_inv` (`id_inv`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`identificacion`);
 
 --
--- Indexes for table `vehiculo`
+-- Indices de la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD PRIMARY KEY (`placa`),
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `paqueteria`
+-- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT de la tabla `publicaciones`
+--
+ALTER TABLE `publicaciones`
+  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `novedad_vehiculo`
+-- Filtros para la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD CONSTRAINT `novedad_vehiculo_ibfk_1` FOREIGN KEY (`placa`) REFERENCES `vehiculo` (`placa`),
   ADD CONSTRAINT `novedad_vehiculo_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
 
 --
--- Constraints for table `publicaciones`
+-- Filtros para la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD CONSTRAINT `publicaciones_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
 
 --
--- Constraints for table `reserva_salon`
+-- Filtros para la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   ADD CONSTRAINT `reserva_salon_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`),
   ADD CONSTRAINT `reserva_salon_ibfk_2` FOREIGN KEY (`id_inv`) REFERENCES `inventario_salon` (`id_inv`);
 
 --
--- Constraints for table `vehiculo`
+-- Filtros para la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD CONSTRAINT `vehiculo_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);

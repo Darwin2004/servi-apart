@@ -8,6 +8,7 @@
 
 body {
   color: #444444;
+  overflow: hidden;
 }
 
 a {
@@ -28,6 +29,16 @@ h5,
 h6 {
   font-family: 'Poppins', sans-serif;
 }
+
+.card {
+  background: #ffffff;
+  margin: -40px 10px;
+  padding: 20px;
+  border: 1px solid #e7e7e7;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -492,6 +503,7 @@ h6 {
 .col-xl-2.col-md-4:hover .icon-box svg {
   fill: #ff914d; /* Color del icono al hacer hover */
 }
+
 
 @media (min-width: 1024px) {
   #hero {

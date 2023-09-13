@@ -118,13 +118,11 @@
 
                         
                             </li>
-                        </ul>
-                        <ul>
+                        
                             <li>
-                                <a href=#p"><i class="ti-book"></i>Ver Publicaciones</a>
+                                <a href="#"><i class="ti-book"></i>Ver Publicaciones</a>
                             </li>
-                        </ul>
-                        <ul>
+                        
                             <li>
                                 <a href="#"><i class="ti-close"></i>Eliminar Publicaciones</a>
                             </li>

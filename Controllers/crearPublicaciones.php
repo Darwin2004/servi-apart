@@ -9,6 +9,8 @@
 
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
+    $identificacion = $_SESSION['id'];
+    
     
 
      // ------------------------------------------
@@ -23,7 +25,7 @@
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas->crearPublicacion($titulo, $descripcion);
+            $result = $objConsultas->crearPublicacion($titulo, $descripcion,$identificacion);
         
 
         }else{
