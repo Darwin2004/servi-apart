@@ -63,10 +63,10 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#"> <i class="ti-pencil-alt"></i>Registrar paquete </a>
+                                <a href="registrar-paquete.php"><i class="ti-pencil-alt"></i>Registrar paquete </a>
                             </li>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Ver paquete</a>
+                                <a href="ver-paquetes.php"><i class="ti-eye"></i>Ver paquete</a>
                             </li>
 
                         </ul>

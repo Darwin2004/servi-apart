@@ -1,0 +1,22 @@
+.title{
+    font-size: 64px;
+}
+
+.span-title{
+    color: #18d26e;
+}
+
+#btn-signup{
+    background-color: #18d26e !important;
+    color: black;
+}
+
+.icon-content{
+padding: 4px;
+    background-color: #18d26e !important;
+}
+
+.packed-icon{
+    width: 20px;
+    height: 20px;
+}

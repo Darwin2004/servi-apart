@@ -567,5 +567,27 @@ function perfilEditar(){
 
 }
 
+function cargarPaquetes(){
+    $objConsultas = new Consultas ();
+    $result = $objConsultas->mostrarPaquetesAdmin();
 
+    if (!isset($result)) {
+        echo '<h2> NO HAY PAQUETES REGISTRADOS </h2>';
+
+    }
+    else {
+        foreach ($result as $f) {
+            echo '
+            <tr class="d-flex row">
+                <td class="d-flex col-md-2">'. $f['torre'] .'</td>
+                <td class="d-flex col-md-2">'. $f['remitente'].' </td>
+                <td class="d-flex col-md-2">'. $f['fecha'] .'</td>
+                <td class="d-flex col-md-2">'. $f['telefono'].' </td>
+                <td class="d-flex col-md-2">'. $f['destinatario'].' </td>
+                <td class="d-flex col-md-2">'. $f['apartamento'].' </td>
+           </tr>     
+            ';
+        }
+    }
+}
 ?>

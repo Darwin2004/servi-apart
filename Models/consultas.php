@@ -448,7 +448,49 @@
             echo '<script>alert("Clave Actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/perfil.php?id=$identificacion'</script>";
         }
+
+
+        public function registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario){
+            try {
+                $objConexion = new conexion();
+                $conexion = $objConexion->get_conexion();
+
+                $query = "INSERT INTO paqueteria(destinatario, remitente, torre, apartamento, telefono, fecha) VALUES(:destinatario, :remitente, :torre, :apartamento, :telefono, NOW())";
+                $statement = $conexion->prepare($query);
+
+                $statement->bindParam(':destinatario', $destinatario);
+                $statement->bindParam(':remitente', $remitente);
+                $statement->bindParam(':torre', $torre);
+                $statement->bindParam(':apartamento', $apartamento);
+                $statement->bindParam(':telefono', $telDestinatario);
+
+                $response = $statement->execute();
+
+                if(!$response) return false;
+                return true;
+            } catch (\Throwable $th) {
+                echo "Ha ocurrido un problema al registrar el paquete :( " . $th; 
+            }
+        }
+
+        public function mostrarPaquetesAdmin(){
+            try {
+                $objConexion = new Conexion();
+                $conexion = $objConexion->get_conexion();
         
+                $query = "SELECT * FROM paqueteria";
+                $statement = $conexion->prepare($query);
+        
+        
+                $response = $statement->execute();
+                if(!$response) return;
+                $result = $statement->fetchAll();
+                return $result;
+                
+            } catch (\Throwable $th) {
+                echo "error al listar los registros de paquetes: " . $th;
+            }
+        }
     }
 
         //FUNCIONES MODULOS PRODUCTOS
