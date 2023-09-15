@@ -4,7 +4,7 @@
     class Conexion{
         public function get_conexion(){
             $user = "root";
-            $pass = "Otaku2004.";
+            $pass = "";
             $host = "localhost";
             $db = "servi-apart";
             // Esta variables son las unicas que se deben cambiar al momento del hosting
