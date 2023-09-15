@@ -34,7 +34,7 @@
 
         }else{
             echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+            // echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
         }
 
 

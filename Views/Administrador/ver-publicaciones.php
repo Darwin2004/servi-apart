@@ -18,9 +18,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Paqueteria</title>
-
-    
+    <title>Servi-Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -72,9 +70,6 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -92,11 +87,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/box-pack.png" alt="">
-                                </div>
-                                <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
+                            <div class="page-title">
+                                <h1 style="font-size: 30px">Publicaciones Creadas</h1>
+                                <p>Elige la accion que deseas realizar "Editar" o "Eliminar" </p>
                             </div>
                         </div>
                     </div>
@@ -106,9 +99,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Administrador</a>
+                                        <a href="#">Dashboard</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Registro de paqueteria</li>
+                                    <li class="breadcrumb-item active">UI-Blank</li>
                                 </ol>
                             </div>
                         </div>
@@ -119,26 +112,24 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="box-cont" >
+                            <div class="card">
+                                <div class="card-title">
+                                
+                                </div>
                                 <div class="card-body">
-                                <div class="table-responsive p-3">
-                                        <table class="table table-hover ">
-                                            <thead >
-                                                <tr class="d-flex row border rounded-top rounded-3">
-                                                    <th class="d-flex col-md-2">
-                                                        <div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Building.png" alt=""></div> <span class="ms-2">Torre</span>
-                                                    </th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Doorway.png" alt=""></div> <span class="ms-2">Apartamento</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Calendar.png" alt=""></div> <span class="ms-2">Fecha</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Truck.png" alt=""></div> <span class="ms-2">Remitente</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/User.png" alt=""></div> <span class="ms-2">Destinatario</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Notificar</span></t>
+                                <div class="table-responsive">
+                                        <table class="table table-bordered table-hover ">
+                                            <thead>
+                                                <tr class="">
+                                                    <th>Titulo</th>
+                                                    <th>Decripcion</th>
+                                                   >
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                    cargarPaquetes();
+                                                   cargarPublicaciones()
 
                                                 ?>
                                             </tbody>
@@ -321,6 +312,33 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <!-- Toastr -->
     <script src="../Dashboard/js/lib/toastr/toastr.min.js"></script>
     <script src="../Dashboard/js/lib/toastr/toastr.init.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!--  Dashboard 1 -->

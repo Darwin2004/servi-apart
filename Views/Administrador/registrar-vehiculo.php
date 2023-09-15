@@ -1,8 +1,8 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 
 ?>
 
@@ -68,14 +68,15 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 
-<?php
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
 
 
@@ -83,16 +84,11 @@
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1>Registrar Vehiculo</h1>
-                                <p>Por favor completa todos los campos para registrar el vehiculo</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 p-r-0 title-margin-right">
+
                     </div>
                     <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="col-lg-8 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
@@ -107,91 +103,179 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
                 <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-title">
-                                    
-                                    
-                                </div>
-                                <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label>Placa:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: UZI974" name="placa">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Marca:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Ford" name="marca">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Referencia:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Explorer" name="referencia">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Modelo:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 2013" name="modelo">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Identificación de Propietario:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 1516465400" name="identificacion">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Fecha</label>
-                                        <input type="date" class="form-control" placeholder="Ej: 08/10/2023" name="fecha">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto</label>
-                                        <input type="file" class="form-control"  name="foto" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 1</label>
-                                        <input type="file" class="form-control"  name="foto1" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 2</label>
-                                        <input type="file" class="form-control"  name="foto2" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label>Foto 3</label>
-                                        <input type="file" class="form-control"  name="foto3" accept=".jpeg, .jpg, .png, .gif">
-                                    </div>
-
-
-
-
-                                    
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar vehiculo</button>
-                                <div class="register-link m-t-15 text-center">
-                                    
-                                </div>
-                            </form>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="page-header col-md-6">
+                        <div class="page-title txt_vehiculos">
+                            <h1 id="tl_vehiculo">Registrar Vehiculos</h1>
+                            <p class="p_vehiculo">Este módulo te ofrece la posibilidad de registrar de manera rápida y
+                                sencilla <br>los detalles de los vehículos que ingresen a la propiedad, lo que
+                                <br>asegura un
+                                control eficiente y seguro de toda la información relevante <br>para tu gestión.</p>
                         </div>
-                        <!-- /# column -->
-                      
-                        <!-- /# column -->
-                    </div>
 
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="../../assets/img/car.svg" class="img_vehiculo" alt="">
                             </div>
                         </div>
                     </div>
-                </section>
+
+                    <div class="col-md-6">
+                        <div class="form_vehiculo_2">
+                            <div class="card-title">
+
+
+                            </div>
+
+                            <section id="main-content" class="form_vehiculo">
+                                <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST"
+                                    enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Placa:</label>
+                                            <input type="text" class="form-control" placeholder="Ej: UZI974"
+                                                name="placa">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Marca:</label>
+                                            <select name="marca" class="form-control" placeholder="Ej: Ford">
+                                                <option value="marca">Marca</option>
+                                                <optgroup label="Marcas de Vehículos">
+                                                    <option value="chevrolet">Chevrolet</option>
+                                                    <option value="renault">Renault</option>
+                                                    <option value="mazda">Mazda</option>
+                                                    <option value="toyota">Toyota</option>
+                                                    <option value="nissan">Nissan</option>
+                                                    <option value="honda">Honda</option>
+                                                    <option value="suzuki">Suzuki</option>
+                                                    <option value="kia">Kia</option>
+                                                    <option value="hyundai">Hyundai</option>
+                                                    <option value="volkswagen">Volkswagen</option>
+                                                    <option value="ford">Ford</option>
+                                                    <option value="jeep">Jeep</option>
+                                                    <option value="subaru">Subaru</option>
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="peugeot">Peugeot</option>
+                                                    <option value="fiat">Fiat</option>
+                                                    <option value="land-rover">Land Rover</option>
+                                                    <option value="jaguar">Jaguar</option>
+                                                    <option value="porsche">Porsche</option>
+                                                    <option value="lexus">Lexus</option>
+                                                    <option value="cadillac">Cadillac</option>
+                                                    <option value="buick">Buick</option>
+                                                    <option value="lincoln">Lincoln</option>
+                                                    <option value="infiniti">Infiniti</option>
+                                                    <option value="acura">Acura</option>
+                                                    <option value="tesla">Tesla</option>
+                                                    <option value="ram">Ram</option>
+                                                    <option value="gmc">GMC</option>
+                                                    <option value="chrysler">Chrysler</option>
+                                                    <option value="dodge">Dodge</option>
+                                                    <option value="maserati">Maserati</option>
+                                                    <option value="alfa-romeo">Alfa Romeo</option>
+                                                </optgroup>
+                                                <optgroup label="Marcas de Motos">
+                                                    <option value="honda-motos">Honda Motos</option>
+                                                    <option value="yamaha-motos">Yamaha Motos</option>
+                                                    <option value="suzuki-motos">Suzuki Motos</option>
+                                                    <option value="kawasaki-motos">Kawasaki Motos</option>
+                                                    <option value="ktm">KTM</option>
+                                                    <option value="bajaj">Bajaj</option>
+                                                    <option value="royal-enfield">Royal Enfield</option>
+                                                    <option value="husqvarna">Husqvarna</option>
+                                                    <option value="aprilia">Aprilia</option>
+                                                    <option value="mv-agusta">MV Agusta</option>
+                                                    <option value="triumph">Triumph</option>
+                                                    <option value="harley-davidson">Harley-Davidson</option>
+                                                    <option value="vespa">Vespa</option>
+                                                    <option value="scooters">Scooters</option>
+                                                    <option value="indian-motos">Indian Motos</option>
+                                                    <option value="bmw-motos">BMW Motos</option>
+                                                    <option value="ducati-motos">Ducati Motos</option>
+                                                    <option value="kymco-motos">Kymco Motos</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Referencia:</label>
+                                            <input type="text" class="form-control" placeholder="Ej: Explorer"
+                                                name="referencia">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Modelo:</label>
+                                            <input type="number" class="form-control" placeholder="Ej: 2013"
+                                                name="modelo">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Identificación de Propietario:</label>
+                                            <input type="number" class="form-control" placeholder="Ej: 1516465400"
+                                                name="identificacion">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Fecha</label>
+                                            <input type="date" class="form-control" placeholder="Ej: 08/10/2023"
+                                                name="fecha">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Foto 1</label>
+                                            <input type="file" class="form-control" name="foto1"
+                                                accept=".jpeg, .jpg, .png, .gif">
+                                        </div>
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Foto 2</label>
+                                            <input type="file" class="form-control" name="foto2"
+                                                accept=".jpeg, .jpg, .png, .gif">
+                                        </div>
+
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Foto 3</label>
+                                            <input type="file" class="form-control" name="foto3"
+                                                accept=".jpeg, .jpg, .png, .gif">
+                                        </div>
+
+                                        <div class="form-group col-md-6 campos_vehiculo">
+                                            <label>Foto 4</label>
+                                            <input type="file" class="form-control" name="foto4"
+                                                accept=".jpeg, .jpg, .png, .gif">
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-flat btn_registrar">Registrar
+                                        vehiculo</button>
+                                    <div class="register-link m-t-15 text-center">
+
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!-- /# column -->
+
+            <!-- /# column -->
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
             </div>
         </div>
+        </section>
     </div>
-               
+    </div>
+    </div>
+
 
 
 

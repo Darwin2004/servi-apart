@@ -93,10 +93,10 @@
                                 <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important; " >
                                     <img src="../../assets/icons/megafono.png" alt="" style="width: 50px; height: 50px">
                                 </div>
-                                <h1 style="font-size: 1.5rem;" class="hola">Registro de publicaciones</h1>
+                                <h1 style="font-size: 2.5rem;" class="hola">Registro de publicaciones</h1>
                             </div>
-                                <h1 style="margin-top: 20px">Crear Publicación</h1>
-                                <p>Por favor rellena los campos</p>
+                                <h1 style="margin-top: 30px; ">Crear Publicación</h1>
+                                <p style="font-size: 20px">Por favor rellena los campos</p>
                             </div>
                         </div>
                     </div>
@@ -126,13 +126,15 @@
                                 </div>
                                 <form action="../../Controllers/crearPublicaciones.php" method="POST">
                                 <div class="row">
+
+
                                     <div class="form-group col-md-12">
-                                        <label>Titulo</label>
+                                        <label><strong>Titulo</strong></label>
                                         <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
                                     </div>
                                    
                                     <div class="form-group col-md-12 ">
-                                        <label>Descripción</label>
+                                        <label><strong>Descripcion</strong></label>
                                         <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
                                         <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
                                     </div>

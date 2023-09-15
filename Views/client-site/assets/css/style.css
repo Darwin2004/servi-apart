@@ -30,13 +30,14 @@ h6 {
   font-family: 'Poppins', sans-serif;
 }
 
-.card {
-  background: #ffffff;
+.card-publi{
+  background:#00bf63;
   margin: -40px 10px;
   padding: 20px;
-  border: 1px solid #e7e7e7;
+  border: 5px solid #232020;
   border-radius: 30px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  
 }
 
 
