@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       select: function (date, context) {
           // Convierte la fecha seleccionada a un formato legible
           var selectedDate = moment(date).format('YYYY-MM-DD');
-
-          // Rellena el campo dia_reserva con la fecha seleccionada
           diaReservaInput.value = selectedDate;
 
           // Agrega una declaración de consola para verificar si se ejecuta
