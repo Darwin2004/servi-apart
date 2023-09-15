@@ -108,13 +108,13 @@
                         <ul>
                             <li>
 
-                                <a href="crear-publicacion.php"><i class="ti-eye"></i>Crear Publicacion</a>
+                                <a href="crear-publicacion.php"><i class="ti-pencil-alt"></i>Crear Publicacion</a>
 
                         
                             </li>
                         
                             <li>
-                                <a href="#"><i class="ti-book"></i>Ver Publicaciones</a>
+                                <a href="ver-publicaciones.php"><i class="ti-eye"></i>Ver Publicaciones</a>
                             </li>
                         
                             <li>
