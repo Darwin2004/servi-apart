@@ -406,8 +406,34 @@
                 echo '<script>alert("El dia ya se encuentran registrado")</script>';
                 echo "<script>location.href='../Views/Usuario/salon-comunal.php'</script>";
               }else{
-                $insertar ="INSERT INTO reserva_salon(identificacion, nombre, apellidos, nombres,apellidos, telefonos, correo, dia_reserva, torre, apartamento, hora_inicio, hora_finalizacion, mesas, sillas)
+                $insertar ="INSERT INTO reserva_salon(identificacion, nombre, apellidos,telefonos, correo, dia_reserva, torre, apartamento, hora_inicio, hora_finalizacion, mesas, sillas)
                 values(:identificacion, :nombres, :apellidos, :correo, :dia_reserva, :torre, :apartamento, :hora_inicio, :hora_finalizacion, :mesas, :sillas)"; 
+
+                $result = $conexion->prepare($insertar);
+
+                $result -> bindParam(":identificacion", $identificacion);
+                $result -> bindParam(":nombre", $nombres);
+                $result -> bindParam(":apellidos", $apellidos);
+                $result -> bindParam(":telefonos", $telefono);
+                $result -> bindParam(":correo", $correo);
+                $result -> bindParam(":dia_reserva", $dia_reserva);
+                $result -> bindParam(":torre", $torre);
+                $result -> bindParam(":apartamento", $apartamento);
+                $result -> bindParam(":hora_inicio", $hora_inicio);
+                $result -> bindParam(":hora_finalizacion", $hora_finalizacion);
+                $result -> bindParam(":mesas", $mesas);
+                $result -> bindParam(":sillas", $sillas);
+                
+
+                $result-> execute();
+
+                echo '<script>alert("Reserva Realizada con exito")</script>';
+                echo "<script>location.href='../Views/Usuario/salon-comunal.php'</script>";
+
+
+
+
+
               }
 
 
