@@ -345,6 +345,34 @@ function cargarVehiculoEditar(){
 
 }
 
+
+function cargarPublicaciones(){
+    
+    $objConsultas = new Consultas ();
+    $result = $objConsultas->  mostrarPubli();
+
+    if (!isset($result)) {
+        echo '<h2> No hay publicaciones registradas </h2>';
+
+    }
+    else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+               
+                <td>'. $f['titulo'] .'</td>
+                <td>'. $f['descripcion'].' </td>
+              
+                <td><a href="crear-publicacion.php?placa='.$f['id_publi'].'" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
+                <td><a href="../../Controllers/eliminarPubli.php?placa='.$f['id_publi'].'" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+            </tr>     
+            ';
+        }
+    }
+}
+
+ 
+
 function cargarUsuariosReportes(){
     
     $objConsultas = new Consultas ();
