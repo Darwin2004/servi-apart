@@ -8,9 +8,11 @@
     // los cuales viajan a travé del metodo POST y name de los campos
 
     $placa = $_POST['placa'];
+    $identificacion = $_POST['identificacion'];
     $marca = $_POST['marca'];
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
+
     
      // ------------------------------------------
     // Verificamos que las claves coincidan
@@ -23,7 +25,7 @@
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> modificarVehiculosAdmin($placa, $marca, $referencia, $modelo);    
+            $result = $objConsultas -> modificarVehiculosAdmin($placa, $identificacion,$marca, $referencia, $modelo);    
         
 
         }else{

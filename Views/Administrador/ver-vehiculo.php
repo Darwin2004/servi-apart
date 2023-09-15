@@ -2,7 +2,7 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once ("../../Models/seguridadAdministrador.php");
+require_once("../../Models/seguridadAdministrador.php");
 require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
@@ -70,13 +70,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
-    
-<?php
+
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
 
 
@@ -88,8 +89,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Vehiculos Registrados</h1>
-                                <p>Elige la accion que deseas realizar "Editar" o "Eliminar" </p>
+                                <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
+                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
                             </div>
                         </div>
                     </div>
@@ -109,47 +110,45 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
-                <div class="row">
+                <button class="btn_novedades">Ver Novedades</button>
+                <section id="main-content" class="lista_vehiculos">
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                
+
                                 </div>
                                 <div class="card-body">
-                                <div class="table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table table-bordered table-hover ">
                                             <thead>
-                                                <tr class="">
-                                                    <th>Foto 1</th>
-                                                    <th>Foto 2</th>
-                                                    <th>Foto 3</th>
-                                                    <th>Foto 4</th>
+                                                <tr class="filas_vehiculos">
                                                     <th>Placa</th>
                                                     <th>Marca</th>
                                                     <th>Referencia</th>
                                                     <th>Modelo</th>
-                                                    <th>Identificacion Residente</th>
+                                                    <th>Identificación Residente</th>
                                                     <th>Fecha</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>
+                                                    <th style="text-align:center">Fotos</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                    cargarVehiculos();
+                                                cargarVehiculos();
 
                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!-- /# column -->
-                      
+
                         <!-- /# column -->
                     </div>
 

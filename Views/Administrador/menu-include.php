@@ -79,18 +79,12 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-vehiculo.php"> <i class="ti-pencil-alt"></i>Registrar Vehiculo </a>
+                                <a href="registrar-vehiculo.php"> <i class="ti-pencil-alt"></i>Registrar Vehiculos</a>
                             </li>
                             <li>
-                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Vehiculo</a>
+                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Vehiculos</a>
                             </li>
 
-                            <li>
-                                <a href="#"> <i class="ti-pencil-alt"></i>Registrar Novedad </a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="ti-eye"></i>Ver Novedades</a>
-                            </li>
 
                         </ul>
 
