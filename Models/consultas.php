@@ -116,73 +116,9 @@
 
         }
 
-        public function crearPublicacion($id_publi, $titulo, $descripcion){
-            
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    
 
-            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM publicaciones WHERE id_publi=:id_publi';
-            $result = $conexion->prepare($consultar);
-      
-
-            $result -> bindParam (":id_publi", $id_publi);
-
-            $result -> execute();
-
-            $f = $result->fetch();
-
-            if($f){
-                echo '<script>alert("Publicacion ya esta publicada")</script>';
-                echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
-            }else{
-                
-            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO publicaciones(titulo, descripcion) 
-            VALUES(:titulo, :descripcion)";
-
-
-            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
-            $result = $conexion->prepare($insertar);
-
-
-            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-
-           // $result -> bindParam (":id_publi", $id_publi);
-
-            $result -> bindParam (":titulo", $titulo);
-            $result -> bindParam (":descripcion", $descripcion);
-           
-            //EJECUTAMOS EL INSERT
-            $result -> execute();
-             
-            echo '<script>alert("Publicacion creada correctamente")</script>';
-            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
-            }
-
-        }
-
-        public function mostrarPubli(){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $consultar = "SELECT * FROM publicaciones";
-
-            $result = $conexion->prepare($consultar);
-
-            $result -> execute();
-
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
-
-
-        public function mostrarusuariosAdmin(){
+        public function mostrarUsuariosAdmin(){
             $f = null;
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -266,6 +202,127 @@
             echo '<script>alert("Información actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
         }
+
+
+        public function crearPublicacion($id_publi, $titulo, $descripcion){
+            
+            //CREAMOS EL OBJETO DE CONEXION
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+            $consultar = 'SELECT * FROM publicaciones WHERE id_publi=:id_publi';
+            $result = $conexion->prepare($consultar);
+      
+
+            $result -> bindParam (":id_publi", $id_publi);
+
+            $result -> execute();
+
+            $f = $result->fetch();
+
+            if($f){
+                echo '<script>alert("Publicacion ya esta publicada")</script>';
+                echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }else{
+                
+            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
+            $insertar = "INSERT INTO publicaciones(titulo, descripcion) 
+            VALUES(:titulo, :descripcion)";
+
+
+            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+            $result = $conexion->prepare($insertar);
+
+
+            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+
+           // $result -> bindParam (":id_publi", $id_publi);
+
+            $result -> bindParam (":titulo", $titulo);
+            $result -> bindParam (":descripcion", $descripcion);
+           
+            //EJECUTAMOS EL INSERT
+            $result -> execute();
+             
+            echo '<script>alert("Publicacion creada correctamente")</script>';
+            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
+            }
+
+        }
+
+        public function eliminarPubli($id_publi){
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $eliminar = "DELETE FROM publicaciones Where id_publi=:id_publi"; 
+            $result = $conexion->prepare($eliminar);
+
+            $result->bindParam(":id_publi", $id_publi);
+
+            $result->execute();
+            echo '<script>alert("Publicacion Eliminada")</script>';
+            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
+        }
+
+
+        public function mostrarPublicaciones(){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM publicaciones";
+
+            $result = $conexion->prepare($consultar);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+
+        public function cargarPublicacion(){
+            $f = null;
+
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $buscar = "SELECT * FROM usuarios WHERE id_publi=:id_publi";
+            $result = $conexion->prepare($buscar);
+
+            $result->bindParam(':id_publi', $id_publi);
+
+            $result->execute();
+
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+        public function modificarPublicacion($id_publi, $titulo, $descripcion){
+            
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $actualizar = " UPDATE usuarios SET titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
+            $result = $conexion->prepare($actualizar);
+
+            $result->bindParam("id_publi", $id_publi);
+            $result->bindParam("titulo", $titulo);
+            $result->bindParam("descripcion", $descripcion);
+           
+
+            $result->execute();
+
+            echo '<script>alert("Publicacion actualizada")</script>';
+            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+        }
+
 
 
         public function mostrarVehiculosAdmin(){

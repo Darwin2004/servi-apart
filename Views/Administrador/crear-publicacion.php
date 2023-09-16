@@ -119,7 +119,7 @@
              <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
+                            <div class="card-publi">
                                 <div class="card-title">
                                     
                                     
@@ -129,12 +129,12 @@
 
 
                                     <div class="form-group col-md-12">
-                                        <label><strong>Titulo</strong></label>
+                                        <label><strong>Titulo:</strong></label>
                                         <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
                                     </div>
                                    
                                     <div class="form-group col-md-12 ">
-                                        <label><strong>Descripcion</strong></label>
+                                        <label><strong>Descripcion:</strong></label>
                                         <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
                                         <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
                                     </div>

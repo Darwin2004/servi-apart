@@ -12,8 +12,7 @@ function cargarUsuarios(){
     if (!isset($result)) {
         echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
 
-    }
-    else {
+    } else {
         foreach ($result as $f) {
             echo '
             <tr>
@@ -107,9 +106,6 @@ function cargarUsuarioEditar(){
     </form>
 
         ';
-
-
-
 
     }
 
@@ -243,8 +239,8 @@ function cargarVehiculoEditar(){
                         </div>
                         
                         <div class="form-group col-md-6">
-                            <label>Referencia:</label>
-                            <input type="text" class="form-control" value="'.$f['referencia'].'" placeholder="Ej: Miguel Angel" name="referencia">
+                            <label>Referencia:</label>ia
+                            <input type="text" class="form-control" value="'.$f['referenc'].'" placeholder="Ej: Miguel Angel" name="referencia">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Modelo:</label>
@@ -349,7 +345,7 @@ function cargarVehiculoEditar(){
 function cargarPublicaciones(){
     
     $objConsultas = new Consultas ();
-    $result = $objConsultas->  mostrarPubli();
+    $result = $objConsultas->  mostrarPublicaciones();
 
     if (!isset($result)) {
         echo '<h2> No hay publicaciones registradas </h2>';
@@ -363,13 +359,56 @@ function cargarPublicaciones(){
                 <td>'. $f['titulo'] .'</td>
                 <td>'. $f['descripcion'].' </td>
               
-                <td><a href="crear-publicacion.php?placa='.$f['id_publi'].'" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
-                <td><a href="../../Controllers/eliminarPubli.php?placa='.$f['id_publi'].'" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td><a href="modificar-publi.php?='.$f['id_publi'].'" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
+                <td><a href="../../Controllers/eliminarPubli.php?id_publi='.$f['id_publi'].'" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
             </tr>     
             ';
         }
     }
 }
+
+function cargarPubliEditar(){
+    $id_publi = $_GET['id_publi'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas =new Consultas();
+    $result = $objConsultas->mostrarPublicaciones($id_publi);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f){
+        echo '
+    
+        <form action="../Views/Administrador/ver-publicaciones.php" method="POST">
+        <div class="row">
+
+
+            <div class="form-group col-md-12">
+                <label><strong>Titulo:</strong></label>
+                <input type="text" class="form-control"  value="'.$f['titulo'].'" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
+            </div>
+           
+            <div class="form-group col-md-12 ">
+                <label><strong>Descripcion:</strong></label>
+                <!-- <input type="textarea" class="form-control des" value="'.$f['descripcion'].'" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
+                <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
+            </div>
+
+            
+        </div>
+        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Actualizar</button>
+        <div class="register-link m-t-15 text-center">
+            
+        </div>
+    </form>
+      
+        ';
+
+    }
+
+}
+
 
  
 
