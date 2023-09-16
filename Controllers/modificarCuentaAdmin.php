@@ -22,8 +22,7 @@
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (strlen($identificacion) > 0     && strlen($tipo_doc)> 0 
         && strlen($nombres) >0              && strlen($apellidos)>0
-        && strlen($email) >0                && strlen($telefono)>0
-        && strlen($torre) >0                && strlen($apartamento)>0){
+        && strlen($email) >0                && strlen($telefono)>0){
 
             //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
@@ -34,7 +33,7 @@
 
         }else{
             echo '<script>alert("Por favor complete todos los campos")</script>';
-            // echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
         }
 
 

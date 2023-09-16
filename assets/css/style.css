@@ -1667,3 +1667,7 @@ form[name="crood"] input[type="date"][readonly] {
 .filas_vehiculos {
   text-align: center;
 }
+
+#ttl_fotos {
+  font-size: 35px;
+}

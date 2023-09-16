@@ -89,8 +89,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
-                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
+                                <h1 id="tl_v_vehiculos">Novedades</h1>
+                                <p>Como administrador, accede al historial de novedades de vehículos realizadas por el personal de seguridad de nuestro conjunto</p>
                             </div>
                         </div>
                     </div>
@@ -122,21 +122,19 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-bordered table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
+                                                    <th>ID Novedad</th>
                                                     <th>Placa</th>
-                                                    <th>Marca</th>
-                                                    <th>Referencia</th>
-                                                    <th>Modelo</th>
-                                                    <th>Identificación Residente</th>
-                                                    <th>Fecha</th>
-                                                    <th>Operaciones</th>
-                                                    <th style="text-align:center">Fotos</th>
-                                                    <th style="text-align:center">Novedades</th>
+                                                    <th>Novedad</th>
+                                                    <th>Fecha Revision</th>
+                                                    <th>Identificación guarda</th>
+                                                    <th>Nombre de guarda encargado</th>
+                                                    <th  style="text-align:center">Operaciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                cargarVehiculos();
+                                                cargarNovedades();
 
                                                 ?>
                                             </tbody>

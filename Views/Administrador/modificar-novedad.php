@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SAR</title>
+    <title>Servi - Apart</title>
 
     <!-- ================= Favicon ================== -->
     <link href="../client-site/assets/img/sar.png" rel="shortcut icon">
@@ -70,6 +70,7 @@
 </head>
 
 <body>
+    
 <?php
     include 'menu-include.php';
 ?>
@@ -83,9 +84,9 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Modificar Información de usuarios
+                                <h1>Modificar Novedades de vehiculos
                                 </h1>
-                                <p>Por favor edita los campos para actualizar la información de un usuario.</p>
+                                <p>Por favor edita los campos para actualizar la información de la novedad</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +98,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="#">Dashboard</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blak</li>
+                                    <li class="breadcrumb-item active">UI-Blank</li>
                                 </ol>
                             </div>
                         </div>
@@ -117,7 +118,7 @@
                                     <div class="card-body">
                                         <div class="basic-elements">
                                             <?php
-                                                cargarUsuarioEditar();
+                                                cargarNovedadesEditar();
                                             ?>
                                         </div>
                                     </div>
@@ -140,7 +141,6 @@
 
 
 
-    <script src="../../assets/js/rol.js"></script>
 
     <!-- Common -->
     <script src="../dashboard/js/lib/jquery.min.js"></script>

@@ -35,7 +35,8 @@ function cargarUsuarios()
 }
 
 // aterrizamos la pk enviada desde la tabla 
-function cargarUsuarioEditar(){
+function cargarUsuarioEditar()
+{
 
     $identificacion = $_GET['id'];
 
@@ -82,7 +83,7 @@ function cargarUsuarioEditar(){
             </div>
             <div class="form-group col-md-6">
                 <label>Roles:</label>
-                <select name="Roles" id="" class="form-control">
+                <select name="Roles" id="rolSelect" class="form-control">
                     <option value="' . $f['rol'] . '"> ' . $f['rol'] . '</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Residente">Residente</option>
@@ -100,11 +101,11 @@ function cargarUsuarioEditar(){
             </div>
             <div class="form-group col-md-6">
                 <label>Torre:</label>
-                <input type="text" value="' . $f['torre'] . '"  class="form-control" placeholder="Ej: A" name="torre">
+                <input type="text" id="torreInput" value="' . $f['torre'] . '"  class="form-control" placeholder="Ej: A" name="torre">
             </div>
             <div class="form-group col-md-6">
                 <label>Apartamento:</label>
-                <input type="text" value="' . $f['apartamento'] . '"  class="form-control" placeholder="Ej: 101" name="apartamento">
+                <input type="text" id="apartamentoInput" value="' . $f['apartamento'] . '"  class="form-control" placeholder="Ej: 101" name="apartamento">
             </div>
 
             
@@ -121,7 +122,8 @@ function cargarUsuarioEditar(){
 
 }
 
-function cargarVehiculos(){
+function cargarVehiculos()
+{
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarVehiculosAdmin();
@@ -138,23 +140,24 @@ function cargarVehiculos(){
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
-                <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
-                <td style="text-align:center"><a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
-                <td style="text-align:center"><a href="fotos-vehiculo.php" class="btn btn-primary"><i class="ti-eye"></i>Ver</a></td>
+                <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i></a></td>
+                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i>Ver Historial</a></td>
             </tr>     
             ';
         }
     }
 }
 
-function cargarVehiculoEditar(){
+function cargarVehiculoEditar()
+{
 
     $placa = $_GET['placa'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarVehiculosAdmin($placa);
+    $result = $objConsultas->mostrarVehiculoEditarAdmin($placa);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
@@ -301,17 +304,314 @@ function cargarVehiculoEditar(){
 }
 
 
-function cargarPubliEditar(){
+function cargarFotosVehiculo()
+{
+
+    $placa = $_GET['placa'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarFotosVehiculoAdmin($placa);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo '        
+        
+        
+        <div class="row container-fluid" style="margin-top:20px">
+            <div class="col-lg-8 p-r-0 title-margin-right">
+            <div class="page-header">
+                <div class="page-title">
+                <h1 style="font-size:50px;">Vehiculo con placa ' . $f['placa'] . '
+                </h1>
+                </div>
+            </div>
+            </div>
+        <!-- /# column -->
+        <div class="col-lg-4 p-l-0 title-margin-left">
+          <div class="page-header">
+            <div class="page-title">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Chart-Flot</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <!-- /# column -->
+      </div>
+      <!-- /# row -->
+
+
+      <div class="row" style="display:flex; align-items:center; margin-left:30px">
+      <div class="col-lg-5">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" style="border: 2px solid black">
+  <div class="carousel-indicators" >
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row">
+                    <div class="card modificar-user">
+                        <div class=" modificar-user">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
+                            </li>
+                        </ul>
+                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                
+                            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Placa:</label>
+                                <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Marca:</label>
+                                <input type="text" class="form-control" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Referencia:</label>
+                                <input type="text" class="form-control" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Modelo:</label>
+                                <input type="text" class="form-control" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Fecha Registro:</label>
+                                <input type="text" class="form-control" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha">
+                            </div>
+                            
+                        </div>
+                    </form>
+
+                            </div>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+    <div class="card modificar-user" style="margin-top:30px;">
+        <div class=" modificar-user">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" >Datos de propietario</button>
+            </li>
+        </ul>
+            <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                
+            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Nombres:</label>
+                <input type="text" class="form-control" value="' . $f['nombres'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Apellidos:</label>
+                <input type="text" class="form-control" value="' . $f['apellidos'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Correo:</label>
+                <input type="email" class="form-control" value="' . $f['email'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Telefono:</label>
+                <input type="text" class="form-control" value="' . $f['telefono'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo">
+            </div>
+            
+        </div>
+                </div>
+    </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+    <div class="footer">
+        <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+        ';
+
+
+
+
+    }
+
+}
+
+function cargarNovedades()
+{
+    $placa = $_GET['placa'];
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNovedades($placa);
+
+    if (!isset($result)) {
+        echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr><td style="text-align:center">' . $f['id_nov'] . '</td>
+                <td style="text-align:center">' . $f['placa'] . ' </td>
+                <td style="text-align:center">' . $f['novedad'] . '</td>
+                <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
+                <td style="text-align:center">' . $f['identificacion'] . ' </td>
+                <td style="text-align:center">' . $f['nombres'] . ' </td>
+                <td style="text-align:center"><a href="modificar-novedad.php?placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+
+            </tr>     
+            ';
+        }
+    }
+}
+
+function cargarNovedadesEditar()
+{
+
+    $placa = $_GET['placa'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNovedadEditarAdmin($placa);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo '
+        
+            
+
+        <section id="main-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Información de Novedad</button>
+                    </li>
+                </ul>
+                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            
+                    <form action="../../Controllers/modificarNovedadAdmin.php" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Placa:</label>
+                            <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Identificación del Personal de Seguridad:</label>
+                            <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Identificación del Personal de Seguridad:</label>
+                            <textarea type="text" class="form-control" value="' . $f['novedad'] . '" placeholder="Ej: Espejo roto" name="novedad"></textarea>
+                        </div>
+
+                        
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar datos del Vehiculo</button>
+                    <div class="register-link m-t-15 text-center">
+                        
+                    </div>
+                </form>
+
+                        </div>
+                       
+
+
+
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        ';
+
+
+
+
+    }
+
+}
+
+
+function cargarPubliEditar()
+{
     $id_publi = $_GET['id_publi'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 
-    $objConsultas =new Consultas();
+    $objConsultas = new Consultas();
     $result = $objConsultas->mostrarPublicaciones($id_publi);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
-    foreach ($result as $f){
+    foreach ($result as $f) {
         echo '
     
         <form action="../Views/Administrador/ver-publicaciones.php" method="POST">
@@ -320,12 +620,12 @@ function cargarPubliEditar(){
 
             <div class="form-group col-md-12">
                 <label><strong>Titulo:</strong></label>
-                <input type="text" class="form-control"  value="'.$f['titulo'].'" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
+                <input type="text" class="form-control"  value="' . $f['titulo'] . '" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
             </div>
            
             <div class="form-group col-md-12 ">
                 <label><strong>Descripcion:</strong></label>
-                <!-- <input type="textarea" class="form-control des" value="'.$f['descripcion'].'" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
+                <!-- <input type="textarea" class="form-control des" value="' . $f['descripcion'] . '" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
                 <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
             </div>
 
@@ -344,12 +644,13 @@ function cargarPubliEditar(){
 }
 
 
- 
 
-function cargarUsuariosReportes(){
-    
-    $objConsultas = new Consultas ();
-    $result = $objConsultas-> mostrarUsersAdmin();
+
+function cargarUsuariosReportes()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarUsersAdmin();
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarUsersAdmin();
@@ -375,7 +676,8 @@ function cargarUsuariosReportes(){
     }
 }
 
-function perfil(){
+function perfil()
+{
 
     //Variable de sesion de login
     if (session_status() !== PHP_SESSION_ACTIVE)

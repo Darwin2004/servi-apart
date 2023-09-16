@@ -111,7 +111,7 @@
             $result -> execute();
              
             echo '<script>alert("Usuario registrado con exito")</script>';
-            echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
+            // echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
             }
 
         }
@@ -145,6 +145,87 @@
             $result = $conexion->prepare($consultar);
 
             $result->bindParam("identificacion", $identificacion);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+        public function mostrarVehiculoEditarAdmin($placa){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM vehiculo WHERE placa=:placa";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("placa", $placa);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+        public function mostrarFotosVehiculoAdmin($placa){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM vehiculo v INNER JOIN usuarios u ON v.identificacion = u.identificacion WHERE v.placa = :placa";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("placa", $placa);
+ 
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+        public function mostrarNovedades($placa){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT *, u.nombres, v.placa
+            FROM novedad_vehiculo n
+            INNER JOIN usuarios u ON n.identificacion = u.identificacion
+            INNER JOIN vehiculo v ON n.placa = v.placa
+            WHERE v.placa = :placa;";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("placa", $placa);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+        public function mostrarNovedadEditarAdmin($placa){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM novedad_vehiculo WHERE placa=:placa";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("placa", $placa);
 
             $result -> execute();
 
@@ -363,6 +444,22 @@
             echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
         }
 
+        public function modificarNovedadesAdmin($placa, $identificacion, $novedad){
+            
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE placa=:placa ";
+            $result = $conexion->prepare($actualizar);
+
+            $result->bindParam("placa", $placa);
+            $result->bindParam("novedad", $novedad);
+    
+            $result->execute();
+
+            echo '<script>alert("Información actualizada")</script>';
+            echo '<script>location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
+        }
 
         public function eliminarVehiculosAdmin($placa){
             $objConexion = new Conexion();
@@ -376,6 +473,20 @@
             $result->execute();
             echo '<script>alert("Vehiculo Eliminado")</script>';
             echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
+        }
+
+        public function eliminarNovedadesAdmin($placa){
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $eliminar = "DELETE FROM novedad_vehiculo Where placa=:placa"; 
+            $result = $conexion->prepare($eliminar);
+
+            $result->bindParam(":placa", $placa);
+
+            $result->execute();
+            echo '<script>alert("Novedad Eliminada")</script>';
+            echo '<script>location.href="../Views/Administrador/ver-novedades.php"</script>';
         }
 
 
