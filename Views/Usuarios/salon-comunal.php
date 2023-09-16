@@ -112,14 +112,14 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="3204031794" required>
-                                            <label for="telefono">Teléfono</label>
+                                            <input type="number" class="form-control" id="telefonos" name="telefonos" placeholder="3204031794" required>
+                                            <label for="telefonos">Teléfono</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating">
                                             <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" placeholder="name@example.com" required>
-                                            <label for="correo_electronico">Correo Electrónico</label>
+                                            <label for="correo">Correo Electrónico</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

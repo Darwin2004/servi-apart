@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2023 a las 23:20:45
--- Versión del servidor: 8.0.34
+-- Tiempo de generación: 17-09-2023 a las 00:59:37
+-- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -96,12 +96,19 @@ INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUE
 --
 
 CREATE TABLE `reserva_salon` (
-  `id_salon` int NOT NULL,
+  `id_reserva` int NOT NULL,
   `identificacion` int NOT NULL,
-  `id_inv` int NOT NULL,
-  `fecha_reserva` date NOT NULL,
-  `hora_inicio` time NOT NULL,
-  `hora_fin` time NOT NULL
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `telefonos` int NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `dia_reserva` date NOT NULL,
+  `torre` int NOT NULL,
+  `apartamento` int NOT NULL,
+  `hora_inicio` time(6) NOT NULL,
+  `hora_finalizacion` datetime(6) NOT NULL,
+  `mesas` int NOT NULL,
+  `sillas` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -154,6 +161,13 @@ CREATE TABLE `vehiculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
+(231, 'eee111', 'toyota', 'explores', 2023, '2023-09-01', '../Uploads/vehiculos/ro.jpg', '../Uploads/vehiculos/ru.jpg', '../Uploads/vehiculos/ra.jpg', '../Uploads/vehiculos/ri.jpg');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -187,9 +201,7 @@ ALTER TABLE `publicaciones`
 -- Indices de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  ADD PRIMARY KEY (`id_salon`),
-  ADD KEY `identificacion` (`identificacion`),
-  ADD KEY `id_inv` (`id_inv`);
+  ADD PRIMARY KEY (`id_reserva`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -227,6 +239,12 @@ ALTER TABLE `publicaciones`
   MODIFY `id_publi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `reserva_salon`
+--
+ALTER TABLE `reserva_salon`
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -236,13 +254,6 @@ ALTER TABLE `publicaciones`
 ALTER TABLE `novedad_vehiculo`
   ADD CONSTRAINT `novedad_vehiculo_ibfk_1` FOREIGN KEY (`placa`) REFERENCES `vehiculo` (`placa`),
   ADD CONSTRAINT `novedad_vehiculo_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
-
---
--- Filtros para la tabla `reserva_salon`
---
-ALTER TABLE `reserva_salon`
-  ADD CONSTRAINT `reserva_salon_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`),
-  ADD CONSTRAINT `reserva_salon_ibfk_2` FOREIGN KEY (`id_inv`) REFERENCES `inventario_salon` (`id_inv`);
 
 --
 -- Filtros para la tabla `vehiculo`
