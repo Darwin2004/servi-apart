@@ -292,7 +292,7 @@ function cargarVehiculoEditar(){
 
 }
 
-function cargarUsuariosReportes()
+//function cargarUsuariosReportes()
 
 
 
