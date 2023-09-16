@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SAR</title>
+    <title>Servi - Apart</title>
 
     <!-- ================= Favicon ================== -->
     <link href="../client-site/assets/img/sar.png" rel="shortcut icon">
@@ -70,6 +70,7 @@
 </head>
 
 <body>
+    
 <?php
     include 'menu-include.php';
 ?>
