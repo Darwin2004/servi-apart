@@ -13,7 +13,7 @@
     $modelo = $_POST['modelo'];
     $identificacion = $_POST['identificacion'];
     $fecha = $_POST['fecha'];
-    $foto = $_POST['foto'];
+    $foto1 = $_POST['foto1'];
 
      // ------------------------------------------
     // Verificamos que las claves coincidan
@@ -26,24 +26,24 @@
 
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
               //MOVEMOS EL ARCHIVO A LA CARPETA UPLOADS Y LA CARPETA USUARIOS
-            $foto = "../Uploads/Vehiculos/".$_FILES['foto']['name'];
-            $mover = move_uploaded_file($_FILES['foto']['tmp_name'], $foto);
-
-            $foto1 = "../Uploads/Vehiculos/".$_FILES['foto1']['name'];
+            $foto1 = "../Uploads/vehiculos/".$_FILES['foto1']['name'];
             $mover = move_uploaded_file($_FILES['foto1']['tmp_name'], $foto1);
 
-            $foto2 = "../Uploads/Vehiculos/".$_FILES['foto2']['name'];
+            $foto2 = "../Uploads/vehiculos/".$_FILES['foto2']['name'];
             $mover = move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2);
 
-            $foto3 = "../Uploads/Vehiculos/".$_FILES['foto3']['name'];
+            $foto3 = "../Uploads/vehiculos/".$_FILES['foto3']['name'];
             $mover = move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3);
+
+            $foto4 = "../Uploads/vehiculos/".$_FILES['foto4']['name'];
+            $mover = move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4);
 
 
             //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $fecha, $foto, $foto1, $foto2, $foto3);
+            $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $fecha, $foto1, $foto2, $foto3, $foto4);
         
 
         }else{

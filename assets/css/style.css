@@ -1593,3 +1593,77 @@ form[name="crood"] input[type="date"][readonly] {
   color: #fff;
 }
 
+.btns_vehiculo {
+  background: #00BF63;
+  border-radius: 50px;
+  height: 35px;
+  width: 150px;
+  color: black;
+  font-weight: 500;
+  margin-right: 30px;
+}
+/* 
+.btns_vehiculo:hover{
+  background: #FF914D;
+  transform: scale(1.1);
+  transition: .2s;
+} */
+
+.txt_vehiculos {
+  padding: 0 50px;
+}
+
+#tl_vehiculo {
+  font-size: 64px !important;
+}
+
+.p_vehiculo {
+ font-size: 16px; 
+ margin-top: 15px;
+ margin-bottom: 30px;
+}
+
+.form_vehiculo {
+  padding: 20px 0;
+  margin-left: -80px;
+}
+
+.form_vehiculo_2 {
+  padding: 25px;
+}
+
+.img_vehiculo {
+  height: 350px;
+  margin-left: 70px;
+}
+
+.btn_registrar {
+  margin-left: 6px;
+  margin-top: 25px;
+}
+
+.campos_vehiculo {
+  margin-bottom: 10px;
+}
+
+#tl_v_vehiculos {
+  font-size: 35px;
+}
+
+.btn_novedades {
+  background: #00BF63;
+  color: #151515;
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.lista_vehiculos {
+  padding: 20px 10px;
+}
+
+.filas_vehiculos {
+  text-align: center;
+}
