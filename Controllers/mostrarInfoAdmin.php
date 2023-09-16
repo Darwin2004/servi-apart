@@ -301,8 +301,6 @@ function cargarVehiculoEditar(){
 }
 
 
-
-
 function cargarPubliEditar(){
     $id_publi = $_GET['id_publi'];
 
