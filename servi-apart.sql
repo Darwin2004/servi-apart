@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2023 a las 05:18:26
+-- Tiempo de generación: 16-09-2023 a las 23:20:45
 -- Versión del servidor: 8.0.34
 -- Versión de PHP: 8.2.4
 
@@ -43,8 +43,8 @@ CREATE TABLE `novedad_vehiculo` (
   `id_nov` int NOT NULL,
   `placa` varchar(7) NOT NULL,
   `novedad` varchar(500) DEFAULT NULL,
-  `fecha_rev` date NOT NULL,
-  `identificacion` int NOT NULL
+  `identificacion` int NOT NULL,
+  `fecha_rev` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -121,7 +121,7 @@ CREATE TABLE `usuarios` (
   `rol` enum('Residente','Administrador','Personal de Seguridad') NOT NULL,
   `estado` enum('Activo','Pendiente') DEFAULT NULL,
   `foto` varchar(200) DEFAULT NULL,
-  `torre` int DEFAULT NULL,
+  `torre` varchar(15) DEFAULT NULL,
   `apartamento` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -130,8 +130,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
-(231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, 2, '101'),
-(5444, 'CC', 'Darwin', 'Gonzalez', 'dargonzalez@misena.edu.co', '564645645', '5444', 'Residente', 'Activo', '../Uploads/Usuarios/5.jpg', 0, '09');
+(231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, '1', '101'),
+(4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
+(6456456, 'CC', 'Franklin', 'GOMEZ', 'enri@gmail.com', '456456', '6456456', 'Residente', 'Activo', '../Uploads/Usuarios/', 'C', '32');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ CREATE TABLE `vehiculo` (
   `referencia` varchar(30) NOT NULL,
   `modelo` int NOT NULL,
   `fecha` date NOT NULL,
-  `foto1` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `foto1` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `foto2` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `foto3` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `foto4` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
@@ -206,6 +207,12 @@ ALTER TABLE `vehiculo`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `novedad_vehiculo`
+--
+ALTER TABLE `novedad_vehiculo`
+  MODIFY `id_nov` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
