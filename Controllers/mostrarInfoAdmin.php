@@ -37,19 +37,19 @@ function cargarUsuarios()
 // aterrizamos la pk enviada desde la tabla 
 function cargarUsuarioEditar(){
 
-    $id_user = $_GET['id'];
+    $identificacion = $_GET['id'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsuariosAdmin($id_user);
+    $result = $objConsultas->mostrarUsuarioEditarAdmin($identificacion);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
     foreach ($result as $f) {
         echo '
         
-        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST"">
+        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST">
         <div class="row">
             <div class="form-group col-md-6">
                 <label>identificacion:</label>
@@ -97,6 +97,14 @@ function cargarUsuarioEditar(){
                     <option value="Pendiente">Pendiente</option>
                     <option value="Bloqueado">Bloqueado</option>
                 </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Torre:</label>
+                <input type="text" value="' . $f['torre'] . '"  class="form-control" placeholder="Ej: A" name="torre">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Apartamento:</label>
+                <input type="text" value="' . $f['apartamento'] . '"  class="form-control" placeholder="Ej: 101" name="apartamento">
             </div>
 
             
@@ -291,9 +299,6 @@ function cargarVehiculoEditar(){
     }
 
 }
-
-function cargarUsuariosReportes()
-
 
 
 

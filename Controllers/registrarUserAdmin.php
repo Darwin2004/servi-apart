@@ -27,8 +27,7 @@
         && strlen($nombres) >0              && strlen($apellidos)>0
         && strlen($email) >0                && strlen($telefono)>0
         && strlen($clave) >0                && strlen($rol)>0                 
-        && strlen($estado)>0                && strlen($torre)>0
-        && strlen($apartamento)>0){
+        && strlen($estado)>0               ){
 
 
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN

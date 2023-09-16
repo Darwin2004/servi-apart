@@ -13,7 +13,6 @@
     $modelo = $_POST['modelo'];
     $identificacion = $_POST['identificacion'];
     $fecha = $_POST['fecha'];
-    $foto1 = $_POST['foto1'];
 
      // ------------------------------------------
     // Verificamos que las claves coincidan

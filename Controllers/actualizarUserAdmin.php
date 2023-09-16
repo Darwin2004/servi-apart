@@ -7,7 +7,7 @@
     // Aterrizamos en variables los datos ingresados por el usuario
     // los cuales viajan a travé del metodo POST y name de los campos
 
-    $identificacion = $_POST['identificacion'];
+    $identificacion = $_GET['identificacion'];
     $tipo_doc = $_POST['tipo_doc'];
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];

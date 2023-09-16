@@ -136,6 +136,27 @@
             return $f;
         }
 
+        public function mostrarUsuarioEditarAdmin($identificacion){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("identificacion", $identificacion);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+
+
 
         public function actualizarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $rol, $estado){
             
@@ -490,48 +511,6 @@
 
 
         }
-
-
-
-        // public function actualizarFotoAdmin($id, $foto){  
-
-    
-        //     $objConexion = new conexion();
-        //     $conexion = $objConexion->get_conexion();
-        
-        //     $actualizar = " UPDATE usuarios SET foto=:foto WHERE identificacion=:id";
-        //     $result = $conexion->prepare($actualizar);
-        
-        //     $result->bindParam("id", $id);
-        //     $result->bindParam("foto", $foto);
-            
-        //     $result->execute();
-        
-        //     echo '<script>alert("Información actualizada")</script>';
-        //     echo "<script>location.href='../Views/Administrador/perfil.php?id=$id'</script>";
-        // }
-
-        // public function actualizarFotoVehiculoAdmin($placa, $foto1, $foto2, $foto3, $foto4){  
-
-    
-        //     $objConexion = new conexion();
-        //     $conexion = $objConexion->get_conexion();
-        
-        //     $actualizar = " UPDATE vehiculo SET foto1=:foto1, foto2=:foto2, foto3=:foto3, foto4=:foto4 WHERE placa=:placa";
-        //     $result = $conexion->prepare($actualizar);
-        
-
-        //     $result->bindParam("foto1", $foto1);
-        //     $result->bindParam("foto2", $foto2);
-        //     $result->bindParam("foto3", $foto3);
-        //     $result->bindParam("foto4", $foto4);
-        //     $result->bindParam("placa", $placa);
-            
-        //     $result->execute();
-        
-        //     echo '<script>alert("Información actualizada")</script>';
-        //     // echo "<script>location.href='../Views/Administrador/ver-vehiculo.php?placa=$placa'</script>";
-        // }
 
 
         public function actualizarClaveAdmin($identificacion, $claveMd){  

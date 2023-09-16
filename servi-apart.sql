@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2023 a las 05:06:28
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.2
+-- Tiempo de generación: 16-09-2023 a las 05:18:26
+-- Versión del servidor: 8.0.34
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `inventario_salon` (
-  `id_inv` int(11) NOT NULL,
-  `num_sillas` int(11) NOT NULL,
-  `num_mesas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_inv` int NOT NULL,
+  `num_sillas` int NOT NULL,
+  `num_mesas` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -40,12 +40,12 @@ CREATE TABLE `inventario_salon` (
 --
 
 CREATE TABLE `novedad_vehiculo` (
-  `id_nov` int(11) NOT NULL,
+  `id_nov` int NOT NULL,
   `placa` varchar(7) NOT NULL,
   `novedad` varchar(500) DEFAULT NULL,
   `fecha_rev` date NOT NULL,
-  `identificacion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `identificacion` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -54,13 +54,13 @@ CREATE TABLE `novedad_vehiculo` (
 --
 
 CREATE TABLE `paqueteria` (
-  `id` int(11) NOT NULL,
-  `destinatario` int(11) DEFAULT NULL,
-  `remitente` int(11) DEFAULT NULL,
-  `torre` int(11) DEFAULT NULL,
-  `apartamento` int(11) DEFAULT NULL,
-  `tel-destinatario` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int NOT NULL,
+  `destinatario` int DEFAULT NULL,
+  `remitente` int DEFAULT NULL,
+  `torre` int DEFAULT NULL,
+  `apartamento` int DEFAULT NULL,
+  `tel-destinatario` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -69,11 +69,11 @@ CREATE TABLE `paqueteria` (
 --
 
 CREATE TABLE `publicaciones` (
-  `id_publi` int(11) NOT NULL,
+  `id_publi` int NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `fecha` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `publicaciones`
@@ -86,7 +86,8 @@ INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUE
 (4, 'SSSSSS', 'DDDDDDDDDDDDDDDD', '2023-09-14 18:15:47'),
 (5, 'sasasasasasasasa', 'dddddddddddddddddddd', '2023-09-14 21:42:06'),
 (6, 'soy darwin el lindo', 'jejejejej', '2023-09-14 21:42:47'),
-(7, 'hola amigos', 'soy darwin', '2023-09-14 21:59:56');
+(7, 'hola amigos', 'soy darwin', '2023-09-14 21:59:56'),
+(8, 'dsadasd', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab', '2023-09-15 21:36:54');
 
 -- --------------------------------------------------------
 
@@ -95,13 +96,13 @@ INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUE
 --
 
 CREATE TABLE `reserva_salon` (
-  `id_salon` int(11) NOT NULL,
-  `identificacion` int(11) NOT NULL,
-  `id_inv` int(11) NOT NULL,
+  `id_salon` int NOT NULL,
+  `identificacion` int NOT NULL,
+  `id_inv` int NOT NULL,
   `fecha_reserva` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_fin` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ CREATE TABLE `reserva_salon` (
 --
 
 CREATE TABLE `usuarios` (
-  `identificacion` int(11) NOT NULL,
+  `identificacion` int NOT NULL,
   `tipo_doc` enum('CC','CE','PASAPORTE') NOT NULL,
   `nombres` varchar(30) NOT NULL,
   `apellidos` varchar(30) NOT NULL,
@@ -120,9 +121,9 @@ CREATE TABLE `usuarios` (
   `rol` enum('Residente','Administrador','Personal de Seguridad') NOT NULL,
   `estado` enum('Activo','Pendiente') DEFAULT NULL,
   `foto` varchar(200) DEFAULT NULL,
-  `torre` int(11) DEFAULT NULL,
+  `torre` int DEFAULT NULL,
   `apartamento` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -139,17 +140,17 @@ INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `e
 --
 
 CREATE TABLE `vehiculo` (
-  `identificacion` int(11) NOT NULL,
+  `identificacion` int NOT NULL,
   `placa` varchar(7) NOT NULL,
   `marca` varchar(30) NOT NULL,
   `referencia` varchar(30) NOT NULL,
-  `modelo` int(4) NOT NULL,
+  `modelo` int NOT NULL,
   `fecha` date NOT NULL,
-  `foto` varchar(200) DEFAULT NULL,
-  `foto1` varchar(200) DEFAULT NULL,
-  `foto2` varchar(200) DEFAULT NULL,
-  `foto3` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `foto1` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `foto2` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `foto3` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `foto4` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Índices para tablas volcadas
@@ -210,13 +211,13 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_publi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
