@@ -612,7 +612,7 @@
                 if ($result->execute()) {
                     return true; // Indicar éxito en la inserción.
                 } else {
-                    return false; // Indicar error en la inserción.
+                    return false; // Indicar error en la inserción. PRUEBA DE UN COMMIT
                 }
             }
         }
