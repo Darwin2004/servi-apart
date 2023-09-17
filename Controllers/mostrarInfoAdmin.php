@@ -920,7 +920,7 @@ function mostrarReservas(){
                                 <section class="col p-2 border-end border-primary">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/tarjeta.png"  alt="building" class="imgSC" style="width: 50px; height: 50px;" >
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Identificacion</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -930,7 +930,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/usuario.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -940,7 +940,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/firma.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apellidos</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -950,7 +950,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/telefono.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -960,7 +960,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/correo.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Correo</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -969,7 +969,7 @@ function mostrarReservas(){
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/programar.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -980,7 +980,7 @@ function mostrarReservas(){
                                 <section class="col p-2">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/enterprise.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia reserva</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -990,7 +990,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/apartamentos.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1000,7 +1000,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/reloj-de-arena.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1010,7 +1010,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/123.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora inicio</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1020,7 +1020,7 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/tabla.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora finalizacion</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1029,13 +1029,14 @@ function mostrarReservas(){
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <img  src="../../assets/icons/iconSalonComunal/comida.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Sillas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['sillas'].'</p>
                                         </div>
                                     </div>
+                                    
                                 </section>
                             </div>
             </article>
