@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2023 a las 00:59:37
--- Versión del servidor: 8.0.32
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Sep 17, 2023 at 03:21 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -15,69 +15,76 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `servi-apart`
+-- Database: `servi-apart`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventario_salon`
+-- Table structure for table `inventario_salon`
 --
 
 CREATE TABLE `inventario_salon` (
-  `id_inv` int NOT NULL,
-  `num_sillas` int NOT NULL,
-  `num_mesas` int NOT NULL
+  `id_inv` int(11) NOT NULL,
+  `num_sillas` int(11) NOT NULL,
+  `num_mesas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `novedad_vehiculo`
+-- Table structure for table `novedad_vehiculo`
 --
 
 CREATE TABLE `novedad_vehiculo` (
-  `id_nov` int NOT NULL,
+  `id_nov` int(11) NOT NULL,
   `placa` varchar(7) NOT NULL,
   `novedad` varchar(500) DEFAULT NULL,
-  `identificacion` int NOT NULL,
-  `fecha_rev` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `identificacion` int(11) NOT NULL,
+  `fecha_rev` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paqueteria`
+-- Table structure for table `paqueteria`
 --
 
 CREATE TABLE `paqueteria` (
-  `id` int NOT NULL,
-  `destinatario` varchar(50) DEFAULT NULL,
-  `remitente` varchar(50) DEFAULT NULL,
-  `torre` varchar(50) DEFAULT NULL,
-  `apartamento` varchar(50) DEFAULT NULL,
-  `telefono` varchar(50) DEFAULT NULL,
-  `fecha` date DEFAULT  NULL
+  `id` int(11) NOT NULL,
+  `destinatario` int(11) DEFAULT NULL,
+  `remitente` int(11) DEFAULT NULL,
+  `torre` int(11) DEFAULT NULL,
+  `apartamento` int(11) DEFAULT NULL,
+  `telefono` int(11) DEFAULT NULL,
+  `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `paqueteria`
+--
+
+INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamento`, `telefono`, `fecha`) VALUES
+(1, 0, 0, 4, 0, 3214444, '2023-09-16');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `publicaciones`
+-- Table structure for table `publicaciones`
 --
 
 CREATE TABLE `publicaciones` (
-  `id_publi` int NOT NULL,
+  `id_publi` int(11) NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `publicaciones`
+-- Dumping data for table `publicaciones`
 --
 
 INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUES
@@ -93,33 +100,40 @@ INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reserva_salon`
+-- Table structure for table `reserva_salon`
 --
 
 CREATE TABLE `reserva_salon` (
-  `id_reserva` int NOT NULL,
-  `identificacion` int NOT NULL,
+  `id_reserva` int(11) NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
-  `telefonos` int NOT NULL,
+  `telefonos` int(10) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `dia_reserva` date NOT NULL,
-  `torre` int NOT NULL,
-  `apartamento` int NOT NULL,
+  `torre` int(11) NOT NULL,
+  `apartamento` int(11) NOT NULL,
   `hora_inicio` time(6) NOT NULL,
   `hora_finalizacion` datetime(6) NOT NULL,
-  `mesas` int NOT NULL,
-  `sillas` int NOT NULL
+  `mesas` int(11) NOT NULL,
+  `sillas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `reserva_salon`
+--
+
+INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellido`, `telefonos`, `correo`, `dia_reserva`, `torre`, `apartamento`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
+(1, 111, '12222', '2121221', 121212, '1212@gmail.com', '2023-09-06', 1, 2, '19:42:00.000000', '2023-09-30 19:39:00.000000', 12, 455);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
-  `identificacion` int NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `tipo_doc` enum('CC','CE','PASAPORTE') NOT NULL,
   `nombres` varchar(30) NOT NULL,
   `apellidos` varchar(30) NOT NULL,
@@ -134,7 +148,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
@@ -145,41 +159,41 @@ INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `e
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vehiculo`
+-- Table structure for table `vehiculo`
 --
 
 CREATE TABLE `vehiculo` (
-  `identificacion` int NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `placa` varchar(7) NOT NULL,
   `marca` varchar(30) NOT NULL,
   `referencia` varchar(30) NOT NULL,
-  `modelo` int NOT NULL,
+  `modelo` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `foto1` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `foto2` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `foto3` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `foto4` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+  `foto1` varchar(500) DEFAULT NULL,
+  `foto2` varchar(200) DEFAULT NULL,
+  `foto3` varchar(200) DEFAULT NULL,
+  `foto4` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `vehiculo`
+-- Dumping data for table `vehiculo`
 --
 
 INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
 (231, 'eee111', 'toyota', 'explores', 2023, '2023-09-01', '../Uploads/vehiculos/ro.jpg', '../Uploads/vehiculos/ru.jpg', '../Uploads/vehiculos/ra.jpg', '../Uploads/vehiculos/ri.jpg');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `inventario_salon`
+-- Indexes for table `inventario_salon`
 --
 ALTER TABLE `inventario_salon`
   ADD PRIMARY KEY (`id_inv`);
 
 --
--- Indices de la tabla `novedad_vehiculo`
+-- Indexes for table `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD PRIMARY KEY (`id_nov`),
@@ -187,77 +201,77 @@ ALTER TABLE `novedad_vehiculo`
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- Indices de la tabla `paqueteria`
+-- Indexes for table `paqueteria`
 --
 ALTER TABLE `paqueteria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `publicaciones`
+-- Indexes for table `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id_publi`);
 
 --
--- Indices de la tabla `reserva_salon`
+-- Indexes for table `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   ADD PRIMARY KEY (`id_reserva`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`identificacion`);
 
 --
--- Indices de la tabla `vehiculo`
+-- Indexes for table `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD PRIMARY KEY (`placa`),
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `novedad_vehiculo`
+-- AUTO_INCREMENT for table `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `paqueteria`
+-- AUTO_INCREMENT for table `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `publicaciones`
+-- AUTO_INCREMENT for table `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id_publi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `reserva_salon`
+-- AUTO_INCREMENT for table `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `novedad_vehiculo`
+-- Constraints for table `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD CONSTRAINT `novedad_vehiculo_ibfk_1` FOREIGN KEY (`placa`) REFERENCES `vehiculo` (`placa`),
   ADD CONSTRAINT `novedad_vehiculo_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
 
 --
--- Filtros para la tabla `vehiculo`
+-- Constraints for table `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD CONSTRAINT `vehiculo_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
