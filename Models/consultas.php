@@ -617,20 +617,23 @@
             }
         }
         
-        // public function eliminarDiaReservaSC($id_reserva){
-        //     $objConexion = new Conexion();
-        //     $conexion = $objConexion->get_conexion();
-
-        //     $eliminar = "DELETE FROM reserva_salon Where id_reserva=:id_reserva"; 
-        //     $result = $conexion->prepare($eliminar);
-
-        //     $result->bindParam(":id_reserva", $id_reserva);
-
-        //     $result->execute();
-        //     echo '<script>alert("Reserva Eliminada Con Exito")</script>';
-        //     echo "<script>location.href='../Views/Administrador/verReservaSC.php'</script>";
-        // }
-
+        public function eliminarDiaReservaSC($id_reserva){
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+        
+            $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva"; 
+            $result = $conexion->prepare($eliminar);
+        
+            $result->bindParam(":id_reserva", $id_reserva);
+        
+            if ($result->execute()) {
+                echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
+                 echo "<script>location.href='../Views/Administrador/ver-ReservaSC.php'</script>";
+            } else {
+                echo '<script>alert("Error al eliminar la reserva")</script>';
+            }
+        }
+        
 
         public function actualizarClaveAdmin($identificacion, $claveMd){  
 

@@ -3,12 +3,13 @@ require_once("../Models/conexion.php");
 require_once("../Models/consultas.php");
 
 if (
-    isset($_POST['identificacion']) && isset($_POST['nombre']) && isset($_POST['apellidos']) &&
+    ($_POST['identificacion']) && isset($_POST['nombre']) && isset($_POST['apellidos']) &&
     isset($_POST['telefonos']) && isset($_POST['correo']) && isset($_POST['dia_reserva']) &&
     isset($_POST['torre']) && isset($_POST['apartamento']) && isset($_POST['hora_inicio']) &&
     isset($_POST['hora_finalizacion']) && isset($_POST['mesas']) && isset($_POST['sillas'])
 ) {
     // Aquí puedes acceder a las claves $_POST con seguridad.
+    
     $identificacion = trim($_POST['identificacion']);
     $nombre = trim($_POST['nombre']);
     $apellidos = trim($_POST['apellidos']);

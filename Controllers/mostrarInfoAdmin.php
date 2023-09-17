@@ -894,7 +894,7 @@ function cargarPaquetes()
                 <td class="d-flex col-md-2 justify-content-center">' . $f['fecha'] . '</td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['remitente'] . ' </td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['destinatario'] . ' </td> 
-                <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57'. $f['telefono'].'"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
+                <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57' . $f['telefono'] . '"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
                 <a /> </td>
            </tr>     
             ';
@@ -902,7 +902,8 @@ function cargarPaquetes()
     }
 }
 
-function mostrarReservas(){
+function mostrarReservas()
+{
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarReservasAdmin();
 
@@ -914,7 +915,7 @@ function mostrarReservas(){
             echo '
             <article class="box-cont p-4 px-4 mb-3" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; ">
                 <header class="w-100 p-2 border-2 border-bottom border-dark">
-                    <h3>'.$f['id_reserva'].'</h3>
+                    <h3>' . $f['id_reserva'] . '</h3>
                 </header>
                 <div class="h-auto row d-flex p-2">
                                 <section class="col p-2 border-end border-primary">
@@ -924,7 +925,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Identificacion</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['identificacion'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['identificacion'] . '</p>
                                         </div>
                                     </div>
 
@@ -934,7 +935,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['nombre'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombre'] . '</p>
                                         </div>
                                     </div>
 
@@ -944,7 +945,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apellidos</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['apellidos'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['apellidos'] . '</p>
                                         </div>
                                     </div>
 
@@ -954,7 +955,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['telefonos'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['telefonos'] . '</p>
                                         </div>
                                     </div>
 
@@ -964,7 +965,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Correo</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['correo'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['correo'] . '</p>
                                         </div>
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
@@ -973,7 +974,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia Reserva</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['dia_reserva'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['dia_reserva'] . '</p>
                                         </div>
                                     </div>
                                 </section>
@@ -984,7 +985,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['torre'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['torre'] . '</p>
                                         </div>
                                     </div>
 
@@ -994,7 +995,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['apartamento'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['apartamento'] . '</p>
                                         </div>
                                     </div>
 
@@ -1004,7 +1005,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Inicio</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_inicio'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['hora_inicio'] . '</p>
                                         </div>
                                     </div>
 
@@ -1014,7 +1015,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Finalización</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_finalizacion'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['hora_finalizacion'] . '</p>
                                         </div>
                                     </div>
 
@@ -1024,7 +1025,7 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['mesas'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['mesas'] . '</p>
                                         </div>
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
@@ -1033,10 +1034,23 @@ function mostrarReservas(){
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Sillas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['sillas'].'</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['sillas'] . '</p>
                                         </div>
                                     </div>
-                                    
+                                    <div class="h-auto row d-flex p-2">
+                                    <section class="col p-2 border-end border-primary">
+                                        <!-- Botón "Eliminar" en la esquina superior izquierda -->
+                                        <div style="position: absolute; top: 10px; left: 10px;">
+                                         <a href="../../Controllers/eliminarDiaReservadoSC.php?id=' . $f['id_reserva'] . '" class="btn btn-danger">Eliminar</a>
+
+                                        </div>
+
+
+                                    <section class="col p-2">
+                                        <!-- Botón "Modificar" en la esquina superior derecha -->
+                                        <div style="position: absolute; top: 10px; right: 10px;">
+                                            <button class="btn btn-primary">Modificar</button>
+                                        </div>
                                 </section>
                             </div>
             </article>
