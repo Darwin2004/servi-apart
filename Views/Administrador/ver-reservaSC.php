@@ -71,7 +71,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
-    <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../Dashboard/css/style.css" rel="stylesheet">    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
 
@@ -119,37 +119,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="box-cont" >
-                                <div class="card-body">
-                                <div class="table-responsive p-3">
-                                        <table class="table table-hover ">
-                                            <thead >
-                                                <tr class="d-flex row border rounded-top rounded-3">
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Building.png" alt=""></div> <span class="ms-2">ID_reserva</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Doorway.png" alt=""></div> <span class="ms-2">Identificación</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Calendar.png" alt=""></div> <span class="ms-2">Nombre</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Truck.png" alt=""></div> <span class="ms-2">Apellidos</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/User.png" alt=""></div> <span class="ms-2">Telefonos</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Correo</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Dia Reservado</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Torre</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Apartamento</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Hora Inicio</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Hora Finalización</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Mesas</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Sillas</span></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-
-                                                    mostrarReservas();
-
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <div  class="p-5">
+                              
+                                <article>
+                                    <?php
+                                        mostrarReservas()
+                                    ?>
+                                    
+                                </article>
                                 
                             </div>
                         </div>
@@ -331,7 +308,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -912,22 +912,133 @@ function mostrarReservas(){
     } else {
         foreach ($result as $f) {
             echo '
-            <tr class="d-flex row"> 
-                <td class="d-flex col-md-2 justify-content-center">' . $f['id_reserva'] . '</td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['identificacion'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['nombre'] . '</td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['apellidos'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['telefonos'] . ' </td> 
-                <td class="d-flex col-md-2 justify-content-center">' . $f['correo'] . '</td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['dia_reserva'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['torre'] . '</td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['apartamento'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['hora_inicio'] . ' </td> 
-                <td class="d-flex col-md-2 justify-content-center">' . $f['hora_finalizacion'] . '</td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['mesas'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['sillas'] . '</td>
+            <article class="box-cont p-4 px-4 mb-3" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; ">
+                <header class="w-100 p-2 border-2 border-bottom border-dark">
+                    <h3>'.$f['id_reserva'].'</h3>
+                </header>
+                <div class="h-auto row d-flex p-2">
+                                <section class="col p-2 border-end border-primary">
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Identificacion</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['identificacion'].'</p>
+                                        </div>
+                                    </div>
 
-           </tr>     
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['nombre'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apellidos</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['apellidos'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['telefonos'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Correo</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['correo'].'</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['dia_reserva'].'</p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="col p-2">
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia reserva</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['torre'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['apartamento'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_inicio'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora inicio</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_finalizacion'].'</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora finalizacion</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['mesas'].'</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/Building.png" alt="building">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Sillas</p>
+                                        </div>
+                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">'.$f['sillas'].'</p>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+            </article>
             ';
         }
     }
