@@ -90,7 +90,7 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <!-- no borrar esos div de arriba -->
                                     <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
-                        <form action="#" method="post" autocomplete="off">
+                        <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
                                 <div class="row g-2">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -106,8 +106,8 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Castañeda" required>
-                                            <label for="apellido">Apellido</label>
+                                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Castañeda" required>
+                                            <label for="apellidos">Apellido</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -118,7 +118,7 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" placeholder="name@example.com" required>
+                                            <input type="email" class="form-control" id="correo" name="correo" placeholder="name@example.com" required>
                                             <label for="correo">Correo Electrónico</label>
                                         </div>
                                     </div>
