@@ -74,7 +74,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-
+    <style>
+        .whatsapp {
+            transition: transform .3s ease-in
+        }
+        .whatsapp:hover{
+    transform: scale(1.2);
+}
+    </style>
 </head>
 
 <body>

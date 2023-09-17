@@ -888,13 +888,14 @@ function cargarPaquetes()
     } else {
         foreach ($result as $f) {
             echo '
-            <tr class="d-flex row">
-                <td class="d-flex col-md-2">' . $f['torre'] . '</td>
-                <td class="d-flex col-md-2">' . $f['remitente'] . ' </td>
-                <td class="d-flex col-md-2">' . $f['fecha'] . '</td>
-                <td class="d-flex col-md-2">' . $f['telefono'] . ' </td>
-                <td class="d-flex col-md-2">' . $f['destinatario'] . ' </td>
-                <td class="d-flex col-md-2">' . $f['apartamento'] . ' </td>
+            <tr class="d-flex row"> 
+                <td class="d-flex col-md-2 justify-content-center">' . $f['torre'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['apartamento'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['fecha'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['remitente'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['destinatario'] . ' </td> 
+                <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57'. $f['telefono'].'"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
+                <a /> </td>
            </tr>     
             ';
         }
