@@ -969,8 +969,8 @@ function mostrarReservas(){
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/programar.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
+                                            <img  src="../../assets/icons/iconSalonComunal/diaReserva.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia Reserva</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['dia_reserva'].'</p>
@@ -980,8 +980,8 @@ function mostrarReservas(){
                                 <section class="col p-2">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/enterprise.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia reserva</p>
+                                            <img  src="../../assets/icons/iconSalonComunal/torre.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['torre'].'</p>
@@ -990,8 +990,8 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/apartamentos.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
+                                            <img  src="../../assets/icons/iconSalonComunal/apartamento.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['apartamento'].'</p>
@@ -1000,8 +1000,8 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/reloj-de-arena.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
+                                            <img  src="../../assets/icons/iconSalonComunal/horaInicio.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Inicio</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_inicio'].'</p>
@@ -1011,7 +1011,7 @@ function mostrarReservas(){
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
                                             <img  src="../../assets/icons/iconSalonComunal/123.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora inicio</p>
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Finalización</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['hora_finalizacion'].'</p>
@@ -1020,8 +1020,8 @@ function mostrarReservas(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/tabla.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora finalizacion</p>
+                                            <img  src="../../assets/icons/iconSalonComunal/1.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
                                             <p class="fs-6" style="position:relative; top: 9px">'.$f['mesas'].'</p>
@@ -1029,7 +1029,7 @@ function mostrarReservas(){
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/comida.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/silla.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Sillas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
