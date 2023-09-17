@@ -617,6 +617,19 @@
             }
         }
         
+        // public function eliminarDiaReservaSC($id_reserva){
+        //     $objConexion = new Conexion();
+        //     $conexion = $objConexion->get_conexion();
+
+        //     $eliminar = "DELETE FROM reserva_salon Where id_reserva=:id_reserva"; 
+        //     $result = $conexion->prepare($eliminar);
+
+        //     $result->bindParam(":id_reserva", $id_reserva);
+
+        //     $result->execute();
+        //     echo '<script>alert("Reserva Eliminada Con Exito")</script>';
+        //     echo "<script>location.href='../Views/Administrador/verReservaSC.php'</script>";
+        // }
 
 
         public function actualizarClaveAdmin($identificacion, $claveMd){  
@@ -677,6 +690,24 @@
                 
             } catch (\Throwable $th) {
                 echo "error al listar los registros de paquetes: " . $th;
+            }
+        }
+        public function mostrarReservasAdmin(){
+            try {
+                $objConexion = new Conexion();
+                $conexion = $objConexion->get_conexion();
+        
+                $query = "SELECT * FROM reserva_salon";
+                $statement = $conexion->prepare($query);
+        
+        
+                $response = $statement->execute();
+                if(!$response) return;
+                $result = $statement->fetchAll();
+                return $result;
+                
+            } catch (\Throwable $th) {
+                echo "error al listar los registros de las reservas: " . $th;
             }
         }
     }

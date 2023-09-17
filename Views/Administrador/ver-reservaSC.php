@@ -18,7 +18,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Paqueteria</title>
+    <title>Salon Comunal</title>
 
     
 
@@ -74,14 +74,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-    <style>
-        .whatsapp {
-            transition: transform .3s ease-in
-        }
-        .whatsapp:hover{
-    transform: scale(1.2);
-}
-    </style>
+
 </head>
 
 <body>
@@ -103,7 +96,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important;">
                                     <img src="../../assets/icons/box-pack.png" alt="">
                                 </div>
-                                <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Visualizacion de Reservas</h1>
                             </div>
                         </div>
                     </div>
@@ -115,7 +108,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                     <li class="breadcrumb-item">
                                         <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Registro de paqueteria</li>
+                                    <li class="breadcrumb-item active">Ver Reservas</li>
                                 </ol>
                             </div>
                         </div>
@@ -132,20 +125,25 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-hover ">
                                             <thead >
                                                 <tr class="d-flex row border rounded-top rounded-3">
-                                                    <th class="d-flex col-md-2">
-                                                        <div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Building.png" alt=""></div> <span class="ms-2">Torre</span>
-                                                    </th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Doorway.png" alt=""></div> <span class="ms-2">Apartamento</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Calendar.png" alt=""></div> <span class="ms-2">Fecha</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Truck.png" alt=""></div> <span class="ms-2">Remitente</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/User.png" alt=""></div> <span class="ms-2">Destinatario</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Notificar</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Building.png" alt=""></div> <span class="ms-2">ID_reserva</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Doorway.png" alt=""></div> <span class="ms-2">Identificación</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Calendar.png" alt=""></div> <span class="ms-2">Nombre</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Truck.png" alt=""></div> <span class="ms-2">Apellidos</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/User.png" alt=""></div> <span class="ms-2">Telefonos</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Correo</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Dia Reservado</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Torre</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Apartamento</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Hora Inicio</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Hora Finalización</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Mesas</span></th>
+                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Sillas</span></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                    cargarPaquetes();
+                                                    mostrarReservas();
 
                                                 ?>
                                             </tbody>

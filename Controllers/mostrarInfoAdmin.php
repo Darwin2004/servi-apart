@@ -901,4 +901,35 @@ function cargarPaquetes()
         }
     }
 }
+
+function mostrarReservas(){
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservasAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY RESERVAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr class="d-flex row"> 
+                <td class="d-flex col-md-2 justify-content-center">' . $f['id_reserva'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['identificacion'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['nombre'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['apellidos'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['telefonos'] . ' </td> 
+                <td class="d-flex col-md-2 justify-content-center">' . $f['correo'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['dia_reserva'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['torre'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['apartamento'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['hora_inicio'] . ' </td> 
+                <td class="d-flex col-md-2 justify-content-center">' . $f['hora_finalizacion'] . '</td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['mesas'] . ' </td>
+                <td class="d-flex col-md-2 justify-content-center">' . $f['sillas'] . '</td>
+
+           </tr>     
+            ';
+        }
+    }
+}
 ?>
