@@ -55,11 +55,11 @@ CREATE TABLE `novedad_vehiculo` (
 
 CREATE TABLE `paqueteria` (
   `id` int NOT NULL,
-  `destinatario` int DEFAULT NULL,
-  `remitente` int DEFAULT NULL,
-  `torre` int DEFAULT NULL,
-  `apartamento` int DEFAULT NULL,
-  `telefono` int DEFAULT NULL,
+  `destinatario` varchar(50) DEFAULT NULL,
+  `remitente` varchar(50) DEFAULT NULL,
+  `torre` varchar(50) DEFAULT NULL,
+  `apartamento` varchar(50) DEFAULT NULL,
+  `telefono` varchar(50) DEFAULT NULL,
   `fecha` date DEFAULT  NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
