@@ -4,8 +4,8 @@
 
 // ESTA FUNCION ES LA QUE SE LLAMA EN LA VISTA 
 
-function cargarUsuarios()
-{
+function cargarUsuarios(){
+
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarUsuariosAdmin();
@@ -35,8 +35,7 @@ function cargarUsuarios()
 }
 
 // aterrizamos la pk enviada desde la tabla 
-function cargarUsuarioEditar()
-{
+function cargarUsuarioEditar(){
 
     $identificacion = $_GET['id'];
 
@@ -122,190 +121,10 @@ function cargarUsuarioEditar()
 
 }
 
-function cargarVehiculos()
-{
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarVehiculosAdmin();
-
-    if (!isset($result)) {
-        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
-
-    } else {
-        foreach ($result as $f) {
-            echo '
-            <tr><td style="text-align:center">' . $f['placa'] . '</td>
-                <td style="text-align:center">' . $f['marca'] . ' </td>
-                <td style="text-align:center">' . $f['referencia'] . '</td>
-                <td style="text-align:center">' . $f['modelo'] . ' </td>
-                <td style="text-align:center">' . $f['identificacion'] . ' </td>
-                <td style="text-align:center">' . $f['fecha'] . ' </td>
-                <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
-                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i></a></td>
-                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i>Ver Historial</a></td>
-            </tr>     
-            ';
-        }
-    }
-}
-
-function cargarVehiculoEditar()
-{
-
-    $placa = $_GET['placa'];
-
-    //enviamos la pk A UNA funcion de la clase consultas 
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarVehiculoEditarAdmin($placa);
-
-    //pintamos la informacion  consultada en el artefacto (FORM)
-
-    foreach ($result as $f) {
-        echo '
-        
-            
-
-        <section id="main-content">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del vehiculo</button>
-                    </li>
-                </ul>
-                    <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            
-                    <form action="../../Controllers/modificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
-                    
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>Placa:</label>
-                            <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label>Identificación de propietario:</label>
-                            <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Marca:</label>
-                            <select name="marca" id="" class="form-control">
-                                <option value="' . $f['marca'] . '">' . $f['marca'] . '</option>
-                                <optgroup label="Marcas de Vehículos">
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="renault">Renault</option>
-                        <option value="mazda">Mazda</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="honda">Honda</option>
-                        <option value="suzuki">Suzuki</option>
-                        <option value="kia">Kia</option>
-                        <option value="hyundai">Hyundai</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="ford">Ford</option>
-                        <option value="jeep">Jeep</option>
-                        <option value="subaru">Subaru</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="peugeot">Peugeot</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="land-rover">Land Rover</option>
-                        <option value="jaguar">Jaguar</option>
-                        <option value="porsche">Porsche</option>
-                        <option value="lexus">Lexus</option>
-                        <option value="cadillac">Cadillac</option>
-                        <option value="buick">Buick</option>
-                        <option value="lincoln">Lincoln</option>
-                        <option value="infiniti">Infiniti</option>
-                        <option value="acura">Acura</option>
-                        <option value="tesla">Tesla</option>
-                        <option value="ram">Ram</option>
-                        <option value="gmc">GMC</option>
-                        <option value="chrysler">Chrysler</option>
-                        <option value="dodge">Dodge</option>
-                        <option value="maserati">Maserati</option>
-                        <option value="alfa-romeo">Alfa Romeo</option>
-                    </optgroup>
-                    <optgroup label="Marcas de Motos">
-                        <option value="honda-motos">Honda Motos</option>
-                        <option value="yamaha-motos">Yamaha Motos</option>
-                        <option value="suzuki-motos">Suzuki Motos</option>
-                        <option value="kawasaki-motos">Kawasaki Motos</option>
-                        <option value="ktm">KTM</option>
-                        <option value="bajaj">Bajaj</option>
-                        <option value="royal-enfield">Royal Enfield</option>
-                        <option value="husqvarna">Husqvarna</option>
-                        <option value="aprilia">Aprilia</option>
-                        <option value="mv-agusta">MV Agusta</option>
-                        <option value="triumph">Triumph</option>
-                        <option value="harley-davidson">Harley-Davidson</option>
-                        <option value="vespa">Vespa</option>
-                        <option value="scooters">Scooters</option>
-                        <option value="indian-motos">Indian Motos</option>
-                        <option value="bmw-motos">BMW Motos</option>
-                        <option value="ducati-motos">Ducati Motos</option>
-                        <option value="kymco-motos">Kymco Motos</option>
-                        </optgroup>
-                            </select>
-                        </div>
-                        
-
-                        <div class="form-group col-md-4">
-                            <label>Referencia:</label>
-                            <input type="text" class="form-control" value="' . $f['referencia'] . '" placeholder="Ej: Miguel Angel" name="referencia">
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Modelo:</label>
-                            <input type="number" class="form-control" value="' . $f['modelo'] . '"  laceholder="Ej: Gallejo Restrepo" name="modelo">
-                        </div>
-                        
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar datos del Vehiculo</button>
-                    <div class="register-link m-t-15 text-center">
-                        
-                    </div>
-                </form>
-
-                        </div>
-                       
 
 
 
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-
-
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-        ';
-
-
-
-
-    }
-
-}
-
-
-function cargarFotosVehiculo()
-{
+function cargarFotosVehiculo(){
 
     $placa = $_GET['placa'];
 
@@ -600,49 +419,293 @@ function cargarNovedadesEditar()
 
 }
 
+function cargarVehiculos(){
 
-function cargarPubliEditar()
-{
-    $id_publi = $_GET['id_publi'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarVehiculosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr><td style="text-align:center">' . $f['placa'] . '</td>
+                <td style="text-align:center">' . $f['marca'] . ' </td>
+                <td style="text-align:center">' . $f['referencia'] . '</td>
+                <td style="text-align:center">' . $f['modelo'] . ' </td>
+                <td style="text-align:center">' . $f['identificacion'] . ' </td>
+                <td style="text-align:center">' . $f['fecha'] . ' </td>
+                <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i></a></td>
+                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-primary"><i class="ti-eye"></i>Ver Historial</a></td>
+            </tr>     
+            ';
+        }
+    }
+}
+
+function cargarVehiculoEditar(){
+
+    $placa = $_GET['placa'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarPublicaciones($id_publi);
+    $result = $objConsultas->mostrarVehiculoEditarAdmin($placa);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
     foreach ($result as $f) {
         echo '
-    
-        <form action="../Views/Administrador/ver-publicaciones.php" method="POST">
+        
+            
+
+        <section id="main-content">
         <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del vehiculo</button>
+                    </li>
+                </ul>
+                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            
+                    <form action="../../Controllers/modificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Placa:</label>
+                            <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Identificación de propietario:</label>
+                            <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Marca:</label>
+                            <select name="marca" id="" class="form-control">
+                                <option value="' . $f['marca'] . '">' . $f['marca'] . '</option>
+                                <optgroup label="Marcas de Vehículos">
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="renault">Renault</option>
+                        <option value="mazda">Mazda</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="honda">Honda</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="kia">Kia</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="ford">Ford</option>
+                        <option value="jeep">Jeep</option>
+                        <option value="subaru">Subaru</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="peugeot">Peugeot</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="land-rover">Land Rover</option>
+                        <option value="jaguar">Jaguar</option>
+                        <option value="porsche">Porsche</option>
+                        <option value="lexus">Lexus</option>
+                        <option value="cadillac">Cadillac</option>
+                        <option value="buick">Buick</option>
+                        <option value="lincoln">Lincoln</option>
+                        <option value="infiniti">Infiniti</option>
+                        <option value="acura">Acura</option>
+                        <option value="tesla">Tesla</option>
+                        <option value="ram">Ram</option>
+                        <option value="gmc">GMC</option>
+                        <option value="chrysler">Chrysler</option>
+                        <option value="dodge">Dodge</option>
+                        <option value="maserati">Maserati</option>
+                        <option value="alfa-romeo">Alfa Romeo</option>
+                    </optgroup>
+                    <optgroup label="Marcas de Motos">
+                        <option value="honda-motos">Honda Motos</option>
+                        <option value="yamaha-motos">Yamaha Motos</option>
+                        <option value="suzuki-motos">Suzuki Motos</option>
+                        <option value="kawasaki-motos">Kawasaki Motos</option>
+                        <option value="ktm">KTM</option>
+                        <option value="bajaj">Bajaj</option>
+                        <option value="royal-enfield">Royal Enfield</option>
+                        <option value="husqvarna">Husqvarna</option>
+                        <option value="aprilia">Aprilia</option>
+                        <option value="mv-agusta">MV Agusta</option>
+                        <option value="triumph">Triumph</option>
+                        <option value="harley-davidson">Harley-Davidson</option>
+                        <option value="vespa">Vespa</option>
+                        <option value="scooters">Scooters</option>
+                        <option value="indian-motos">Indian Motos</option>
+                        <option value="bmw-motos">BMW Motos</option>
+                        <option value="ducati-motos">Ducati Motos</option>
+                        <option value="kymco-motos">Kymco Motos</option>
+                        </optgroup>
+                            </select>
+                        </div>
+                        
+
+                        <div class="form-group col-md-4">
+                            <label>Referencia:</label>
+                            <input type="text" class="form-control" value="' . $f['referencia'] . '" placeholder="Ej: Miguel Angel" name="referencia">
+
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Modelo:</label>
+                            <input type="number" class="form-control" value="' . $f['modelo'] . '"  laceholder="Ej: Gallejo Restrepo" name="modelo">
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar datos del Vehiculo</button>
+                    <div class="register-link m-t-15 text-center">
+                        
+                    </div>
+                </form>
+
+                        </div>
+                       
 
 
-            <div class="form-group col-md-12">
-                <label><strong>Titulo:</strong></label>
-                <input type="text" class="form-control"  value="' . $f['titulo'] . '" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
+
+                        
+                        </div>
+                    </div>
+                </div>
             </div>
-           
-            <div class="form-group col-md-12 ">
-                <label><strong>Descripcion:</strong></label>
-                <!-- <input type="textarea" class="form-control des" value="' . $f['descripcion'] . '" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
-                <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
-            </div>
+        </div>
+            
 
-            
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Actualizar</button>
-        <div class="register-link m-t-15 text-center">
-            
-        </div>
-    </form>
-      
+    </section>
+
+
         ';
+
+
+
 
     }
 
 }
+
+
+function cargarPublicaciones(){
+
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPublicaciones();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+               
+              
+                <td style="color: black">' . $f['titulo'] . ' </td>
+                <td style="color: black">' . $f['descripcion'] . '</td>
+             
+                <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
+                <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+            </tr>     
+            ';
+        }
+    }
+}
+
+function cargarPubliEditar()
+{
+
+    $id_publi = $_GET['id_publi'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPubliEditar($id_publi);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo '
+
+                        <section id="main-content">
+                        <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card-publi">
+                                        <div class="card-title">
+                                            
+                                            
+                                        </div>
+
+
+                        <form action="../../Controllers/modificarpubli.php" method="POST">
+                        <div class="row">
+
+
+                            <div class="form-group col-md-12">
+                                <label><strong>Titulo:</strong></label>
+                                <input type="text" class="form-control" value="' . $f['titulo'] . '" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
+                            </div>
+                        
+                            <div class="form-group col-md-12 ">
+                                <label><strong>Descripcion:</strong></label>
+                                <input type="textarea" class="form-control des" cols="30" rows="3" value="' . $f['descripcion'] . '"  placeholder="Ej: Profundiza la situacion" name="descripcion">
+                            
+                            </div>
+
+                            
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Actualizar</button>
+                        <div class="register-link m-t-15 text-center">
+                            
+                        </div>
+                    </form>
+
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- /# column -->
+
+                <!-- /# column -->
+                </div>
+
+
+                <div class="row">
+                <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
+                </div>
+                </div>
+                </section>
+                        
+                            
+
+                    
+
+                        ';
+
+
+
+
+                    }
+
+                }
+
+
 
 
 

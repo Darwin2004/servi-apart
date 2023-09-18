@@ -117,9 +117,7 @@
                                 <a href="ver-publicaciones.php"><i class="ti-eye"></i>Ver Publicaciones</a>
                             </li>
                         
-                            <li>
-                                <a href="#"><i class="ti-close"></i>Eliminar Publicaciones</a>
-                            </li>
+                           
                         </ul>
                     </li>
 

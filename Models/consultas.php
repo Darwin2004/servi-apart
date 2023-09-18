@@ -155,24 +155,7 @@
             return $f;
         }
 
-        public function mostrarVehiculoEditarAdmin($placa){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $consultar = "SELECT * FROM vehiculo WHERE placa=:placa";
-            $result = $conexion->prepare($consultar);
-
-            $result->bindParam("placa", $placa);
-
-            $result -> execute();
-
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
+      
 
         public function mostrarFotosVehiculoAdmin($placa){
             $f = null;
@@ -284,6 +267,7 @@
             echo '<script>alert("Información actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
         }
+        
 
 
         public function crearPublicacion($id_publi, $titulo, $descripcion){
@@ -365,45 +349,45 @@
             }
             return $f;
         }
+        public function modificarPubli($id_publi, $titulo, $descripcion){   
+            
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
 
+            $actualizar = " UPDATE publicaciones SET  titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
+            $result = $conexion->prepare($actualizar);
 
-        public function cargarPublicacion(){
+           
+            $result->bindParam("titulo", $titulo);
+            $result->bindParam("descripcion", $descripcion);
+            $result->bindParam("id_publi", $id_publi);
+           
+    
+            $result->execute();
+
+            echo '<script>alert("Información actualizada")</script>';
+            //echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";//
+        }
+
+        public function mostrarPubliEditar($id_publi){
             $f = null;
-
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $buscar = "SELECT * FROM usuarios WHERE id_publi=:id_publi";
-            $result = $conexion->prepare($buscar);
+            $consultar = "SELECT * FROM publicaciones WHERE id_publi=:id_publi";
+            $result = $conexion->prepare($consultar);
 
-            $result->bindParam(':id_publi', $id_publi);
+            $result->bindParam("id_publi", $id_publi);
 
-            $result->execute();
+            $result -> execute();
 
+            
             while ($resultado = $result->fetch()) {
                 $f[] = $resultado;
             }
             return $f;
         }
 
-        public function modificarPublicacion($id_publi, $titulo, $descripcion){
-            
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = " UPDATE usuarios SET titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
-            $result = $conexion->prepare($actualizar);
-
-            $result->bindParam("id_publi", $id_publi);
-            $result->bindParam("titulo", $titulo);
-            $result->bindParam("descripcion", $descripcion);
-           
-
-            $result->execute();
-
-            echo '<script>alert("Publicacion actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
-        }
 
 
 
@@ -442,6 +426,25 @@
 
             echo '<script>alert("Información actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
+        }
+
+        public function mostrarVehiculoEditarAdmin($placa){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM vehiculo WHERE placa=:placa";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("placa", $placa);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
         }
 
         public function modificarNovedadesAdmin($placa, $identificacion, $novedad){

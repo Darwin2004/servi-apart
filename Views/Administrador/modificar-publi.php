@@ -67,6 +67,7 @@
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
+    <link href="../client-site/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -83,9 +84,9 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Modificar Publicaciones
+                                <h1 style="font-size: 35px">Modificar Publicaciones
                                 </h1>
-                                <p>Por favor edita los campos para actualizar la información de las publicaciones</p>
+                                <p style="font-size: 25px">Por favor edita los campos para actualizar la información de las publicaciones</p>
                             </div>
                         </div>
                     </div>
@@ -95,9 +96,9 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#">Publicaciones</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Modificar Publicacion</li>
                                 </ol>
                             </div>
                         </div>
