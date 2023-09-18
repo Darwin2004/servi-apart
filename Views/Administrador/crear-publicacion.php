@@ -107,7 +107,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Publicaciones</a>
+                                        <a href="#">Administrador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Crear Publicaciones</li>
                                 </ol>

@@ -96,7 +96,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Publicaciones</a>
+                                        <a href="#">Administador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Modificar Publicacion</li>
                                 </ol>

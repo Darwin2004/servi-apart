@@ -100,7 +100,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Publicaciones</a>
+                                        <a href="#">Administador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>
@@ -110,29 +110,36 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
+
+                </div>
+
+                        <div class="p-2  center justify-content-end">
+
+                        <button id="GenerarPDF" class="btn p-2 btn-success "><a class="text-light" href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte PDF</a></button>
+
+                        </div>
+
                 <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="card-publi">
                                 <div class="card-title">
                                 
-                                </div>
+                              
                                 <div class="card-body">
                                 <div class="table-responsive">
                                         <table class="table table-bordered table-hover ">
                                             <thead>
                                                 <tr class="">
                                                     <th style="font-size: 20px"><strong>Titulo:</strong></th>
-                                                    <th 
-                                                    
-                                                    style="font-size: 20px"><strong>Descripcion:</strong></th>
+                                                    <th  style="font-size: 20px; text-align: left"><strong >Descripcion:</strong></th>
                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                   cargarPublicaciones()
+                                                   cargarPublicaciones();
 
                                                 ?>
                                             </tbody>
@@ -146,6 +153,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                       
                         <!-- /# column -->
                     </div>
+
+                    
 
 
                     <div class="row">

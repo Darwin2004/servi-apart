@@ -197,7 +197,7 @@ function cargarFotosVehiculo(){
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Siguiente</span>
   </button>
-</div>
+ </div>
     </div>
 
     <div class="col-lg-6">
@@ -282,15 +282,15 @@ function cargarFotosVehiculo(){
             </div>
         </div>
     </div>
-</div>
+        </div>
 
-<div class="row">
-<div class="col-lg-12">
-    <div class="footer">
-        <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-    </div>
-</div>
-</div>
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="footer">
+                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+            </div>
+        </div>
+        </div>
 
 
 
@@ -625,8 +625,7 @@ function cargarPublicaciones(){
     }
 }
 
-function cargarPubliEditar()
-{
+function cargarPubliEditar(){
 
     $id_publi = $_GET['id_publi'];
 
@@ -710,7 +709,10 @@ function cargarPubliEditar()
 
 
 
-function cargarUsuariosReportes()
+
+
+
+                function cargarUsuariosReportes()
 {
 
     $objConsultas = new Consultas();
@@ -739,6 +741,28 @@ function cargarUsuariosReportes()
         }
     }
 }
+
+function cargarPublicacionesPDF(){
+    $objConsultas = new Consultas();
+    $result = $objConsultas-> mostrarPublicaciones();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY PAQUETES REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_publi'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['titulo'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['descripcion'].'</td>
+               
+            </tr>     
+            ';
+        }
+    }
+}
+
 
 function perfil()
 {
