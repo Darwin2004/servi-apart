@@ -357,11 +357,10 @@
             $actualizar = " UPDATE publicaciones SET  titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
             $result = $conexion->prepare($actualizar);
 
-           
+            $result->bindParam("id_publi", $id_publi);
             $result->bindParam("titulo", $titulo);
             $result->bindParam("descripcion", $descripcion);
-            $result->bindParam("id_publi", $id_publi);
-           
+            
     
             $result->execute();
 

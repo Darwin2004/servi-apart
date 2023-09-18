@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servia_Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -87,8 +87,8 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Registrar Usuario</h1>
-                                <p>Por favor completa los campos para registrar un nuevo usuario</p>
+                                <h1 style="font-size: 30px">Registrar Usuario</h1>
+                                <p  style="font-size: 20px">Por favor completa los campos para registrar un nuevo usuario</p>
                             </div>
                         </div>
                     </div>
@@ -98,9 +98,9 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Registrar Usuario</li>
                                 </ol>
                             </div>
                         </div>
