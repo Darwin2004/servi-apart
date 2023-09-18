@@ -11,7 +11,7 @@
 
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $id_publi = [''];
+    $id_publi = $_GET['id_publi'];
 
 
     // Verificamos que las claves coincidan
@@ -26,7 +26,7 @@
             $objConsultas = new Consultas();
 
             $result = $objConsultas->modificarPubli($id_publi, $titulo, $descripcion);    
-        
+            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
         
 
         }else{

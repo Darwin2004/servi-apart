@@ -650,7 +650,7 @@ function cargarPubliEditar()
                                         </div>
 
 
-                        <form action="../../Controllers/modificarpubli.php" method="POST">
+                        <form action="../../Controllers/modificarpubli.php?id_publi='.$id_publi.'" method="POST">
                         <div class="row">
 
 
