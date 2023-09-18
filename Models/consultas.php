@@ -637,6 +637,61 @@
             }
         }
         
+        public function mostrarReservaEditarAdmin($id_reserva){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam(":id_reserva", $id_reserva);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+
+
+        public function modificarReservaAdmin($identificacion, $nombre, $apellidos, $telefonos, $correo, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion,$mesas, $sillas){
+            
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion, nombre=:nombre, apellidos=:apellidos, telefonos=:telefonos, correo=:correo, dia_reserva=:dia_reserva,torre=:torre, apartamento, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE id_reserva=:id_reserva";
+            $result = $conexion->prepare($actualizar);
+
+            $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":nombre", $nombre);
+            $result->bindParam(":apellidos", $apellidos);
+            $result->bindParam(":telefonos", $telefonos);
+            $result->bindParam(":correo", $correo);
+            $result->bindParam(":dia_reserva", $dia_reserva);
+            $result->bindParam(":torre", $torre);
+            $result->bindParam(":apartamento", $apartamento);
+            $result->bindParam(":hora_inicio", $hora_inicio);
+            $result->bindParam(":hora_finalizacion", $hora_finalizacion);
+            $result->bindParam(":mesas", $mesas);
+            $result->bindParam(":sillas", $sillas);
+    
+            $result->execute();
+
+            echo '<script>alert("Información actualizada")</script>';
+            echo "<script>location.href='../Views/Administrador/ver-reservaSC.php'</script>";
+        }
+
+
+
+
+
+
+
+
+
 
         public function actualizarClaveAdmin($identificacion, $claveMd){  
 

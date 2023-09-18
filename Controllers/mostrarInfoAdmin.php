@@ -1112,13 +1112,116 @@ function mostrarReservas()
                                     <section class="col p-2">
                                         <!-- Botón "Modificar" en la esquina superior derecha -->
                                         <div style="position: absolute; top: 10px; right: 10px;">
-                                            <button class="btn btn-primary">Modificar</button>
+                                        <a href="../../Controllers/modificarReservaAdminSC.php?id=' . $f['id_reserva'] . '" class="btn btn-primary">Modificar</a>
+                                            
                                         </div>
                                 </section>
                             </div>
             </article>
             ';
         }
+    }
+    function cargarReservaEditar(){
+        $id_reserva =$_GET['id_reserva'];
+
+        $objConsultas = new Consultas();
+        $result = $objConsultas->mostrarReservaEditarAdmin($id_reserva);
+    
+    
+        foreach ($result as $f) {
+            echo '
+            <div class="card text-center">
+                <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+             <li class="nav-item">
+             <a class="nav-link active" href="#">Active</a>
+             </li>
+                </ul>
+                </div>
+             <div class="card-body">
+                <form action="../../Controllers/modificarReservaAdminSC.php" method="POST">
+                <div class="row g-2">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" value="'.$f['identificacion'] .'" id="identificacion" name="identificacion" placeholder="0123456789" readonly >
+                        <label for="identificacion">Identificación</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" value="'.$f['nombre'] .'" id="nombre" name="nombre" placeholder="Johan" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" value="'.$f['apellidos'] .'" id="apellidos" name="apellidos" placeholder="Castañeda" required>
+                        <label for="apellidos">Apellido</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required>
+                        <label for="telefonos">Teléfono</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" value="'.$f['correo'] .'" id="correo" name="correo" placeholder="name@example.com" required>
+                        <label for="correo">Correo Electrónico</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" value="'.$f['dia_reserva'] .'" id="dia_reserva" name="dia_reserva" readonly required>
+                        <label for="dia_reserva">Día de Reserva</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control"  value="'.$f['torre'] .'" id="torre" name="torre" placeholder="3" required>
+                        <label for="torre">Torre</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" value="'.$f['apartamento'] .'" id="apartamento" name="apartamento" placeholder="601" required>
+                        <label for="apartamento">Apartamento</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="time" class="form-control" value="'.$f['hora_inicio'] .'" id="hora_inicio" name="hora_inicio" required>
+                        <label for="hora_inicio">Hora de Inicio</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="datetime-local" class="form-control" value="'.$f['hora_finalizacion'] .'" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                        <label for="hora_finalizacion">Hora de Finalización</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control"  value="'.$f['mesas'] .'" id="mesas" name="mesas" >
+                        <label for="mesas">Mesas</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" value="'.$f['sillas'] .'" id="sillas" name="sillas" >
+                        <label for="sillas">Sillas</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit">Actualizar Informacion</button>
+                </div>
+            </div>
+        </form>
+         </div>
+                </div>
+                ';
+            }
     }
 }
 ?>

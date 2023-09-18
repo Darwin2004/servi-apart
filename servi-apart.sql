@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2023 a las 04:45:17
+-- Tiempo de generación: 18-09-2023 a las 03:35:38
 -- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
@@ -124,8 +124,7 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellidos`, `telefonos`, `correo`, `dia_reserva`, `torre`, `apartamento`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
-(1, 111, '12222', '2121221', 121212, '1212@gmail.com', '2023-09-06', 1, 2, '19:42:00.000000', '2023-09-30 19:39:00.000000', 12, 455),
-(2, 1109411577, 'Johan', 'Marin', 319641, 'Marin@gmail.com', '2023-09-08', 1, 12, '23:25:00.000000', '2023-09-18 20:25:00.000000', 12, 23);
+(3, 1109411577, 'Johan', 'Marin', 319641, 'Marin@gmail.com', '2023-09-11', 652, 1854, '17:41:00.000000', '2023-09-15 17:38:00.000000', 55, 75);
 
 -- --------------------------------------------------------
 
@@ -181,7 +180,7 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
-(231, 'eee111', 'toyota', 'explores', 2023, '2023-09-01', '../Uploads/vehiculos/ro.jpg', '../Uploads/vehiculos/ru.jpg', '../Uploads/vehiculos/ra.jpg', '../Uploads/vehiculos/ri.jpg');
+(231, 'eee111', 'nissan', 'explores', 35435, '2023-09-06', '../Uploads/vehiculos/f.jpg', '../Uploads/vehiculos/', '../Uploads/vehiculos/', '../Uploads/vehiculos/');
 
 --
 -- Índices para tablas volcadas
@@ -258,7 +257,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
