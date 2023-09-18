@@ -8,15 +8,16 @@
     // los cuales viajan a travé del metodo POST y name de los campos
 
 
-    $id_publi = $_POST['id_publi'];
+
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
+    $id_publi = [''];
 
 
     // Verificamos que las claves coincidan
 
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($id_publi) > 0     && strlen($titulo)> 0 
+        if (strlen($titulo)> 0  
         && strlen($descripcion) >0){
 
             //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
@@ -24,7 +25,7 @@
 
             $objConsultas = new Consultas();
 
-            $result = $objConsultas ->  modificarPublicacion($id_publi, $titulo, $descripcion);    
+            $result = $objConsultas->modificarPubli($id_publi, $titulo, $descripcion);    
         
         
 
