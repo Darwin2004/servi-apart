@@ -118,7 +118,7 @@
                                     <div class="card-body">
                                         <div class="basic-elements">
                                             <?php
-                                                cargarVehiculoEditar();
+                                                cargarReservaEditar();
                                             ?>
                                         </div>
                                     </div>

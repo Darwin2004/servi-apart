@@ -123,7 +123,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                               
                                 <article>
                                     <?php
-                                        mostrarReservas()
+                                        mostrarReservas();
                                     ?>
                                     
                                 </article>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2023 a las 03:35:38
+-- Tiempo de generación: 18-09-2023 a las 06:47:04
 -- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
@@ -113,8 +113,8 @@ CREATE TABLE `reserva_salon` (
   `dia_reserva` date NOT NULL,
   `torre` int NOT NULL,
   `apartamento` int NOT NULL,
-  `hora_inicio` time(6) NOT NULL,
-  `hora_finalizacion` datetime(6) NOT NULL,
+  `hora_inicio` time NOT NULL,
+  `hora_finalizacion` time NOT NULL,
   `mesas` int NOT NULL,
   `sillas` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -124,7 +124,7 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellidos`, `telefonos`, `correo`, `dia_reserva`, `torre`, `apartamento`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
-(3, 1109411577, 'Johan', 'Marin', 319641, 'Marin@gmail.com', '2023-09-11', 652, 1854, '17:41:00.000000', '2023-09-15 17:38:00.000000', 55, 75);
+(4, 1106, 'joh', 'mar', 3196, 'm@gmail.com', '2023-09-12', 22, 33, '23:38:00', '23:27:00', 200, 300);
 
 -- --------------------------------------------------------
 
@@ -257,7 +257,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

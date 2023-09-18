@@ -33,11 +33,10 @@ $sillas =$_POST['sillas'];
 
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (
-            ($_POST['identificacion']) && isset($_POST['nombre']) && isset($_POST['apellidos']) &&
-            isset($_POST['telefonos']) && isset($_POST['correo']) && isset($_POST['dia_reserva']) &&
-            isset($_POST['torre']) && isset($_POST['apartamento']) && isset($_POST['hora_inicio']) &&
-            isset($_POST['hora_finalizacion']) && isset($_POST['mesas']) && isset($_POST['sillas'])
-        ){
+            strlen('identificacion')> 0 && strlen('nombre')> 0 && strlen('apellidos') > 0 &&
+            strlen('telefonos')> 0 && strlen('correo') > 0 && strlen('dia_reserva') > 0 &&
+            strlen('torre')> 0 && strlen('apartamento') > 0 && strlen('hora_inicio')> 0 &&
+            strlen('hora_finalizacion')> 0 && strlen('mesas') > 0 && strlen('sillas')){
 
             //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
@@ -48,7 +47,7 @@ $sillas =$_POST['sillas'];
 
         }else{
             echo '<script>alert("Por favor complete todos los campos")</script>';
-             echo "<script>location.href='../Views/Administrador/ver-reservaSC.php?id=' . $id_reserva .' </script>";
+            // echo "<script>location.href='../Views/Administrador/ver-reservaSC.php'</script>";
         }
 
 

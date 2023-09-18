@@ -659,9 +659,10 @@
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion, nombre=:nombre, apellidos=:apellidos, telefonos=:telefonos, correo=:correo, dia_reserva=:dia_reserva,torre=:torre, apartamento, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE id_reserva=:id_reserva";
+            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion, nombre=:nombre, apellidos=:apellidos, telefonos=:telefonos, correo=:correo, dia_reserva=:dia_reserva,torre=:torre, apartamento=:apartamento, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
             $result = $conexion->prepare($actualizar);
 
+            
             $result->bindParam(":identificacion", $identificacion);
             $result->bindParam(":nombre", $nombre);
             $result->bindParam(":apellidos", $apellidos);
@@ -679,6 +680,7 @@
 
             echo '<script>alert("Información actualizada")</script>';
             echo "<script>location.href='../Views/Administrador/ver-reservaSC.php'</script>";
+            
         }
 
 

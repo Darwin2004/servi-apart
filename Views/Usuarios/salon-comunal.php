@@ -148,7 +148,7 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="datetime-local" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                                            <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
                                             <label for="hora_finalizacion">Hora de Finalización</label>
                                         </div>
                                     </div>
