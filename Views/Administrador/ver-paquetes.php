@@ -20,7 +20,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
     <title>Paqueteria</title>
 
-    
+
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -72,21 +72,24 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="../../assets/css/pack-styles.css" rel="stylesheet">
+    <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
     <style>
         .whatsapp {
             transition: transform .3s ease-in
         }
-        .whatsapp:hover{
-    transform: scale(1.2);
-}
+
+        .whatsapp:hover {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 
 <body>
 
-<?php
+    <?php
     include 'menu-include.php';
 ?>
 
@@ -100,7 +103,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important;">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
                                     <img src="../../assets/icons/box-pack.png" alt="">
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
@@ -124,22 +128,63 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-                <div class="row">
+                    <div class="row">
                         <div class="col-lg-12">
-                            <div class="box-cont" >
+                            <div class="box-cont">
+                                <div class="box-head">
+                                    <div class="p-2  border d-flex justify-content-end">
+                    
+                                        <button id="GenerarPDF" class="btn p-2 btn-success "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar Reporte PDF</a></button>
+                                     
+                                    </div>
+                                </div>
                                 <div class="card-body">
-                                <div class="table-responsive p-3">
+                                    <div class="table-responsive p-3">
                                         <table class="table table-hover ">
-                                            <thead >
+                                            <thead>
                                                 <tr class="d-flex row border rounded-top rounded-3">
                                                     <th class="d-flex col-md-2">
-                                                        <div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Building.png" alt=""></div> <span class="ms-2">Torre</span>
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/Building.png" alt=""></div>
+                                                        <span class="ms-2">Torre</span>
                                                     </th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Doorway.png" alt=""></div> <span class="ms-2">Apartamento</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Calendar.png" alt=""></div> <span class="ms-2">Fecha</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Truck.png" alt=""></div> <span class="ms-2">Remitente</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/User.png" alt=""></div> <span class="ms-2">Destinatario</span></th>
-                                                    <th class="d-flex col-md-2"><div style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height; 45px;"><img style="width: 25px; height; 25px;"  src="../../assets/icons/Notification.png" alt=""></div> <span class="ms-2">Notificar</span></th>
+                                                    <th class="d-flex col-md-2">
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/Doorway.png" alt=""></div> <span
+                                                            class="ms-2">Apartamento</span>
+                                                    </th>
+                                                    <th class="d-flex col-md-2">
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/Calendar.png" alt=""></div>
+                                                        <span class="ms-2">Fecha</span>
+                                                    </th>
+                                                    <th class="d-flex col-md-2">
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/Truck.png" alt=""></div> <span
+                                                            class="ms-2">Remitente</span>
+                                                    </th>
+                                                    <th class="d-flex col-md-2">
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/User.png" alt=""></div> <span
+                                                            class="ms-2">Destinatario</span>
+                                                    </th>
+                                                    <th class="d-flex col-md-2">
+                                                        <div
+                                                            style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                                                            <img style="width: 25px; height: 25px;"
+                                                                src="../../assets/icons/Notification.png" alt=""></div>
+                                                        <span class="ms-2">Notificar</span>
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -152,11 +197,11 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         </table>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!-- /# column -->
-                      
+
                         <!-- /# column -->
                     </div>
 
@@ -333,6 +378,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
+
+    <!-- pdf generator -->
 
 </body>
 

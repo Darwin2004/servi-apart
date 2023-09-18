@@ -965,6 +965,30 @@ function cargarPaquetes()
     }
 }
 
+function cargarPaquetesPDF()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPaquetesAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY PAQUETES REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['remitente'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['destinatario'].'</td>
+            </tr>     
+            ';
+        }
+    }
+}
+
 function mostrarReservas()
 {
     $objConsultas = new Consultas();
