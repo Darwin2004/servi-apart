@@ -1,7 +1,7 @@
 <?php
 
 header("content-Type: application/xls");
-header("content-Disposition: attachment; filename=reporte_pUblicaciones.xls");
+header("content-Disposition: attachment; filename=reporte_vehiculos.xls");
 
 ?>
 
