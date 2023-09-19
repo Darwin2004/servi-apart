@@ -121,7 +121,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <div class="col-lg-12">
                             <div  class="p-5">
                             <div class="box-head">
-                                    <div class="p-2  border d-flex justify-content-end">
+                                    <div class="p-2  d-flex justify-content-end">
                     
                                         <button id="GenerarPDF" class="btn p-2 btn-danger mx-2 "><a class="text-light" href="../../services/generatepdfSalonComunal.php" target="_blank">Generar PDF</a></button>
                                         <button id="GenerarExcel" class="btn p-2 btn-success mx-3 "><a class="text-light" href="../../services/generateexcelSalonComunal.php" target="_blank">Generar Excel</a></button>

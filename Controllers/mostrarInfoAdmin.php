@@ -650,8 +650,9 @@ function cargarVehiculosPDF()
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['marca'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['referencia'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['modelo'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
+
             </tr>     
             ';
         }
