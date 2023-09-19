@@ -73,6 +73,8 @@
 
 .card{
   position: relative;
+  border-radius: 15px;
+ 
 }
 
 .des{

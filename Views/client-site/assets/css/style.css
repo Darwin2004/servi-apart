@@ -1604,3 +1604,7 @@ margin-bottom: 30px;
   font-size: 13px;
   color: #fff;
 }
+
+.card{
+  border-radius: 45px;
+}
