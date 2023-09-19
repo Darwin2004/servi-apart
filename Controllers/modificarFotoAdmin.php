@@ -11,5 +11,4 @@ $resultado = move_uploaded_file($_FILES['foto']['tmp_name'], $foto);
 $objConsultas = new Consultas();
 $result = $objConsultas->actualizarFotoAdmin($id, $foto);
 
-
 ?>
