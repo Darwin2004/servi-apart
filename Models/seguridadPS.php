@@ -11,7 +11,7 @@ if (!isset($_SESSION['AUTENTICADO'])) {
     exit;
 }
 
-if ($_SESSION['rol'] != "Residente") {
+if ($_SESSION['rol'] != "Seguridad") {
     echo '<script>alert("NO POSEE PERMISOS PARA ACCEDER A ESTA INTERFAZ");</script>';
     echo "<script>history.back();</script>";
     exit;

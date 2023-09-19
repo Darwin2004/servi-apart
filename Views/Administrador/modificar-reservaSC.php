@@ -110,13 +110,13 @@
                     
                     <div class="row">
                         <div class="col-lg-12">
-                                <div class="card">
+                                <div class="cardSC" >
                                     <div class="card-title">
                         
                                         
                                     </div>
-                                    <div class="card-body">
-                                        <div class="basic-elements">
+                                    <div class="card-body" >
+                                        <div class="basic-elements" >
                                             <?php
                                                 cargarReservaEditar();
                                             ?>

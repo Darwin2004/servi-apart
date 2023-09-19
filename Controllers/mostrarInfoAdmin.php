@@ -34,6 +34,35 @@ function cargarUsuarios(){
     }
 }
 
+function cargarUsuariosexcel(){
+
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarUsuariosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <td>' . $f['identificacion'] . '</td>
+                <td>' . $f['tipo_doc'] . ' </td>
+                <td>' . $f['nombres'] . '</td>
+                <td>' . $f['apellidos'] . ' </td>
+                <td>' . $f['email'] . ' </td>
+                <td>' . $f['telefono'] . ' </td>
+                <td>' . $f['rol'] . ' </td>
+                <td>' . $f['estado'] . ' </td>
+                <td>' . $f['apartamento'] . ' </td>
+            </tr>     
+            ';
+        }
+    }
+}
+
+
 // aterrizamos la pk enviada desde la tabla 
 function cargarUsuarioEditar(){
 
@@ -121,6 +150,36 @@ function cargarUsuarioEditar(){
 
 }
 
+
+function cargarUsuariosPDF()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarUsuariosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['tipo_doc'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['email'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefono'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['rol'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['estado'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+
+            </tr>     
+            ';
+        }
+    }
+}
 
 
 
@@ -672,7 +731,7 @@ function cargarPublicaciones(){
     } else {
         foreach ($result as $f) {
             echo '
-            <tr>
+            <tr style="">
                
               
                 <td style="color: black">' . $f['titulo'] . ' </td>
@@ -776,11 +835,6 @@ function cargarPubliEditar(){
 function cargarUsuariosReportes()
 {
 
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
 
 
     if (!isset($result)) {
@@ -1094,7 +1148,7 @@ function mostrarReservas()
                                 <section class="col p-2 border-end border-primary">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/tarjeta.png"  alt="building" class="imgSC" style="width: 50px; height: 50px;" >
+                                            <img  src="../../assets/icons/iconSalonComunal/tarjeta.png"  alt="building" class="imgSC" style="width: 30px; height: 30px;" >
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Identificacion</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1104,7 +1158,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/usuario.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/usuario.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1114,7 +1168,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/firma.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/firma.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apellidos</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1124,7 +1178,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/telefono.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/telefono.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1134,7 +1188,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/correo.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/correo.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Correo</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1143,7 +1197,7 @@ function mostrarReservas()
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/diaReserva.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/diaReserva.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia Reserva</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1154,7 +1208,7 @@ function mostrarReservas()
                                 <section class="col p-2">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/torre.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/torre.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1164,7 +1218,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/apartamento.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/apartamento.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1174,7 +1228,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/horaInicio.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/horaInicio.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Inicio</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1184,7 +1238,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/123.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/123.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Finalización</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1194,7 +1248,7 @@ function mostrarReservas()
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/1.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/1.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Mesas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1203,7 +1257,7 @@ function mostrarReservas()
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/silla.png" alt="building" class="imgSC" style="width: 50px; height: 50px;">
+                                            <img  src="../../assets/icons/iconSalonComunal/silla.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Sillas</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -1242,7 +1296,8 @@ function mostrarReservas()
     
         foreach ($result as $f) {
             echo '
-            <div class="card text-center">
+            
+            <div class="card text-center" >
                 
             
              
@@ -1250,90 +1305,92 @@ function mostrarReservas()
            
                
                
-             <div class="card-body">
-                <form action="../../Controllers/modificarReservaAdminSC.php" method="POST">
+             <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
+             -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
+             box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
+                <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
                 <div class="row g-2">
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="identificacion">Identificación</label>
-                        <input type="number" class="form-control" value="'.$f['identificacion'] .'" id="identificacion" name="identificacion" placeholder="0123456789" readonly >
+                    <label for="identificacion" style="font-weight: bold; color: #333;">Identificación</label>
+                        <input type="number" class="form-control" value="'.$f['identificacion'] .'" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" value="'.$f['nombre'] .'" id="nombre" name="nombre" placeholder="Johan" required>
+                    <label for="nombre" style="font-weight: bold; color: #333;">Nombre</label>
+                        <input type="text" class="form-control" value="'.$f['nombre'] .'" id="nombre" name="nombre" placeholder="Johan" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="apellidos">Apellido</label>
-                        <input type="text" class="form-control" value="'.$f['apellidos'] .'" id="apellidos" name="apellidos" placeholder="Castañeda" required>
+                    <label for="apellidos" style="font-weight: bold; color: #333;">Apellido</label>
+                        <input type="text" class="form-control" value="'.$f['apellidos'] .'" id="apellidos" name="apellidos" placeholder="Castañeda" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="telefonos">Teléfono</label>
-                        <input type="text" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required>
+                    <label for="telefonos" style="font-weight: bold; color: #333;">Teléfono</label>
+                        <input type="text" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-floating">
-                    <label for="correo">Correo Electrónico</label>
-                        <input type="email" class="form-control" value="'.$f['correo'] .'" id="correo" name="correo" placeholder="name@example.com" required>
+                    <label for="correo" style="font-weight: bold; color: #333;">Correo Electrónico</label>
+                        <input type="email" class="form-control" value="'.$f['correo'] .'" id="correo" name="correo" placeholder="name@example.com" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="dia_reserva">Día de Reserva</label>
-                        <input type="date" class="form-control" value="'.$f['dia_reserva'] .'" id="dia_reserva" name="dia_reserva" readonly required>
+                    <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
+                        <input type="date" class="form-control" value="'.$f['dia_reserva'] .'" id="dia_reserva" name="dia_reserva" readonly required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="torre">Torre</label>
-                        <input type="number" class="form-control"  value="'.$f['torre'] .'" id="torre" name="torre" placeholder="3" required>
+                    <label for="torre" style="font-weight: bold; color: #333;">Torre</label>
+                        <input type="number" class="form-control"  value="'.$f['torre'] .'" id="torre" name="torre" placeholder="3" required  readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="apartamento">Apartamento</label>
-                        <input type="number" class="form-control" value="'.$f['apartamento'] .'" id="apartamento" name="apartamento" placeholder="601" required>
+                    <label for="apartamento" style="font-weight: bold; color: #333;">Apartamento</label>
+                        <input type="number" class="form-control" value="'.$f['apartamento'] .'" id="apartamento" name="apartamento" placeholder="601" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="hora_inicio">Hora de Inicio</label>
-                        <input type="time" class="form-control" value="'.$f['hora_inicio'] .'" id="hora_inicio" name="hora_inicio" required>
+                    <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
+                        <input type="time" class="form-control" value="'.$f['hora_inicio'] .'" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="hora_finalizacion">Hora de Finalización</label>
-                        <input type="time" class="form-control" value="'.$f['hora_finalizacion'] .'" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                    <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
+                        <input type="time" class="form-control" value="'.$f['hora_finalizacion'] .'" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="mesas">Mesas</label>
-                        <input type="number" class="form-control"  value="'.$f['mesas'] .'" id="mesas" name="mesas" >
+                    <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
+                        <input type="number" class="form-control"  value="'.$f['mesas'] .'" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                    <label for="sillas">Sillas</label>
-                        <input type="number" class="form-control" value="'.$f['sillas'] .'" id="sillas" name="sillas" >
+                    <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
+                        <input type="number" class="form-control" value="'.$f['sillas'] .'" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
@@ -1344,6 +1401,7 @@ function mostrarReservas()
         </form>
          </div>
                 </div>
+                
                 ';
             }
     }
