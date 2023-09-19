@@ -6,7 +6,7 @@ $dompdf = new Dompdf();
 ob_start();
 include "../format-pdf/paqueteriapdf.php";
 $html = ob_get_clean();
-$dompdf->loadHtml($html);
+$dompdf->loadHtml($html); 
 $dompdf->render();
 header("Content-type: application/pdf");
 header("Content-Disposition: inline; filename=documento.pdf");
