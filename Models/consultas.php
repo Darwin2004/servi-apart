@@ -200,15 +200,15 @@
             return $f;
         }
 
-        public function mostrarNovedadEditarAdmin($placa){
+        public function mostrarNovedadEditarAdmin($id_nov){
             $f = null;
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM novedad_vehiculo WHERE placa=:placa";
+            $consultar = "SELECT * FROM novedad_vehiculo WHERE id_nov=:id_nov";
             $result = $conexion->prepare($consultar);
 
-            $result->bindParam("placa", $placa);
+            $result->bindParam("id_nov", $id_nov);
 
             $result -> execute();
 
@@ -446,15 +446,15 @@
             return $f;
         }
 
-        public function modificarNovedadesAdmin($placa, $identificacion, $novedad){
+        public function modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad){
             
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE placa=:placa ";
+            $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
             $result = $conexion->prepare($actualizar);
 
-            $result->bindParam("placa", $placa);
+            $result->bindParam("id_nov", $id_nov);
             $result->bindParam("novedad", $novedad);
     
             $result->execute();
@@ -477,18 +477,19 @@
             echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
         }
 
-        public function eliminarNovedadesAdmin($placa){
+        public function eliminarNovedadesAdmin($id_nov, $placa){
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $eliminar = "DELETE FROM novedad_vehiculo Where placa=:placa"; 
+            $eliminar = "DELETE FROM novedad_vehiculo Where id_nov=:id_nov"; 
             $result = $conexion->prepare($eliminar);
 
-            $result->bindParam(":placa", $placa);
+            $result->bindParam(":id_nov", $id_nov);
+            
 
             $result->execute();
             echo '<script>alert("Novedad Eliminada")</script>';
-            echo '<script>location.href="../Views/Administrador/ver-novedades.php"</script>';
+            echo '<script>location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
         }
 
 
