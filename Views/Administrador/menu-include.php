@@ -7,7 +7,7 @@
             <div class="nano-content">
                 <div class="logo">
                     <a href="home.php">
-                        <img src="../client-site/assets/img/logo1.png" width="100" alt="" />
+                        <img src="../client-site/assets/img/logo1.png" width="100" height="100" alt="" />
                         <!-- <span>Focus</span> -->
                     </a>
                 </div>
