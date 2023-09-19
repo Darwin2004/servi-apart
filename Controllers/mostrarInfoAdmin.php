@@ -880,10 +880,11 @@ function perfilEditar()
             <section id="main-content">
             <div class="row">
                 <div class="col-lg-4">
-                            <div class="card perfil-user">
-                                <img src="../' . $f['foto'] . '" alt="Foto Usuario">
-                                <h2>' . $f['nombres'] . ' ' . $f['apellidos'] . ' </h2>
-                                <h3>' . $f['rol'] . '</h3>
+                            <div class="card perfil-user d-flex justify-content-center align-items-center py-3">
+                                <img style="border-radius: 50%; width: 280px; height: 280px; border: 4px solid #00bf63; object-fit: cover;"  src="../' . $f['foto'] . '" alt="Foto Usuario">
+                                <h3 style="padding-top: 20px;">' . $f['nombres'] . ' ' . $f['apellidos'] . '</h3>
+                                <small class="text-light-subtle" style="font-size: 1.2rem; padding: 5px;">' . $f['rol'] . ' </small>
+                                
                             </div>
                 </div>
                 <div class="col-lg-8">
@@ -906,7 +907,7 @@ function perfilEditar()
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 
                             <form action="../../Controllers/modificarCuentaAdmin.php" method="POST" enctype="multipart/form-data">
-                        <div class="row">
+                        <div class="row px-4">
                             <div class="form-group col-md-6">
                                 <label>Identificacion:</label>
                                 <input type="number" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
@@ -946,7 +947,7 @@ function perfilEditar()
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar Cuenta</button>
+                        <button type="submit" class="btn btn-success  w-25 ms-4   btn-flat m-b-30 m-t-30" style="margin: 0 auto">Modificar Cuenta</button>
                         <div class="register-link m-t-15 text-center">
                             
                         </div>
@@ -968,7 +969,7 @@ function perfilEditar()
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar Foto</button>
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Modificar Foto</button>
                         <div class="register-link m-t-15 text-center">
                             
                         </div>
@@ -993,7 +994,7 @@ function perfilEditar()
                                         <label>Confirmar Nueva Clave:</label>
                                         <input type="password" class="form-control" placeholder="Ej: ********" name="clave2" required>
                                     </div>
-                                     <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar Clave</button>
+                                     <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30 ms-4">Modificar Clave</button>
 
                                 </form>
                             </div>

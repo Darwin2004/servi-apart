@@ -29,6 +29,10 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
    <!-- Styles -->
    <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
@@ -56,8 +60,8 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hola,
-                                    <span>Bienvenido</span>
+                                <h1 class="animate__animated animate__fadeInLeft" style="font-size: 4rem; color: #232020;" >Hola,
+                                    <span style="color: #ff914d; font-size: 4rem;">Bienvenido</span>
                                 </h1>
                             </div>
                         </div>
@@ -75,8 +79,8 @@
                 <!-- /# row -->
                 <section id="main-content">
                     <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
+                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
                                     </div>
@@ -87,8 +91,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
+                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
                                     </div>
@@ -99,8 +103,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
+                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
                                     </div>
@@ -111,8 +115,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
+                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
                                     <div class="stat-content dib">
@@ -124,8 +128,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
+                        <div class="col-lg-12 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 10px; padding: 30px;" class="card">
                                 <div class="card-title">
                                     <h4>Promedio de usuarios nuevos</h4>
 

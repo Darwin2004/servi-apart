@@ -60,7 +60,7 @@
     <link href="../Dashboard/css/lib/chartist/chartist.min.css" rel="stylesheet">
     <!-- Calender -->
     <link href="../Dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
-
+    
     <!-- Common -->
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
@@ -68,6 +68,7 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -82,13 +83,16 @@
 
     <div class="content-wrap">
         <div class="main">
-            <div class="container-fluid">
-                <div class="row">
+            <div class="container-fluid mt-3">
+            <div class="row" style="margin: 0 120px">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title">
-                                <h1 style="font-size: 30px">Registrar Usuario</h1>
-                                <p  style="font-size: 20px">Por favor completa los campos para registrar un nuevo usuario</p>
+                            <div class="page-title d-flex align-items-center">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img style="width: 40px; height: 40px;" src="../../assets/icons/usuario.png" alt="">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Registro de usuario</h1>
                             </div>
                         </div>
                     </div>
@@ -98,9 +102,9 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Administrador</a>
+                                        <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Registrar Usuario</li>
+                                    <li class="breadcrumb-item active">Registro de usuario</li>
                                 </ol>
                             </div>
                         </div>
@@ -108,10 +112,10 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
+                <section id="main-content" >
                 <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
+                        <div class="col-lg-10 container p-4">
+                            <div class="card p-4">
                                 <div class="card-title">
                                     
                                     
@@ -185,7 +189,7 @@
                                     </div>
                                     
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registro</button>
+                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Registro</button>
                                 <div class="register-link m-t-15 text-center">
                                     
                                 </div>
