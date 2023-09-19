@@ -153,7 +153,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <?php
     $placa = $_GET['placa'];
 
-    echo '<button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-danger " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en Excel</a></button>';
                     ?>
 
 

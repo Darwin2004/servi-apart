@@ -147,7 +147,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:20px; margin-right:15px;"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 
