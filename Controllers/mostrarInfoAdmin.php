@@ -1275,7 +1275,7 @@ function mostrarReservas()
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="telefonos">Teléfono</label>
-                        <input type="number" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required>
+                        <input type="text" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required>
                         
                     </div>
                 </div>
@@ -1345,5 +1345,67 @@ function mostrarReservas()
                 ';
             }
     }
+    function cargarReservasPDF()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservasAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY RESERVAS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_reserva'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefonos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['correo'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['dia_reserva'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_inicio'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_finalizacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['mesas'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['sillas'].'</td>
+
+            </tr>     
+            ';
+        }
+    }
+}
+function cargarReservasEX()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservasAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY PAQUETES REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_reserva'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefonos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['correo'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['dia_reserva'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_inicio'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_finalizacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['mesas'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['sillas'].'</td>
+
+            </tr>       
+            ';
+        }
+    }
+}
 
 ?>

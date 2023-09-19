@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2023 a las 03:16:43
--- Versión del servidor: 8.0.34
+-- Tiempo de generación: 19-09-2023 a las 05:48:00
+-- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -46,13 +46,6 @@ CREATE TABLE `novedad_vehiculo` (
   `identificacion` int NOT NULL,
   `fecha_rev` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Volcado de datos para la tabla `novedad_vehiculo`
---
-
-INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`) VALUES
-(15, 'eee111', 'Puertaaaaa', 231, '2023-09-18 18:23:16');
 
 -- --------------------------------------------------------
 
@@ -115,7 +108,7 @@ CREATE TABLE `reserva_salon` (
   `identificacion` int NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
-  `telefonos` int NOT NULL,
+  `telefonos` varchar(10) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `dia_reserva` date NOT NULL,
   `torre` int NOT NULL,
@@ -131,7 +124,8 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellidos`, `telefonos`, `correo`, `dia_reserva`, `torre`, `apartamento`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
-(4, 1106, 'joh', 'mar', 3196, 'm@gmail.com', '2023-09-12', 22, 33, '23:38:00', '23:27:00', 200, 300);
+(4, 1106, 'joh', 'mar', '3196', 'm@gmail.com', '2023-09-12', 22, 33, '23:38:00', '23:27:00', 200, 300),
+(7, 1109411577, 'Johan', 'Marin', '3196419848', 'Marin@gmail.com', '2023-09-04', 1, 101, '12:58:00', '03:00:00', 110, 100);
 
 -- --------------------------------------------------------
 
@@ -187,7 +181,7 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
-(231, 'eee111', 'renault', 'explores', 35435, '2023-09-06', '../Uploads/vehiculos/f.jpg', '../Uploads/vehiculos/', '../Uploads/vehiculos/', '../Uploads/vehiculos/');
+(231, 'eee111', 'nissan', 'explores', 35435, '2023-09-06', '../Uploads/vehiculos/f.jpg', '../Uploads/vehiculos/', '../Uploads/vehiculos/', '../Uploads/vehiculos/');
 
 --
 -- Índices para tablas volcadas
@@ -246,7 +240,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_nov` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
@@ -264,7 +258,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

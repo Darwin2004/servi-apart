@@ -112,7 +112,7 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="telefonos" name="telefonos" placeholder="3204031794" required>
+                                            <input type="text" class="form-control" id="telefonos" name="telefonos" placeholder="3204031794" required>
                                             <label for="telefonos">Teléfono</label>
                                         </div>
                                     </div>
@@ -154,13 +154,13 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="mesas" name="mesas" >
+                                            <input type="number" class="form-control" id="mesas" name="mesas" required>
                                             <label for="mesas">Mesas</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="sillas" name="sillas" >
+                                            <input type="number" class="form-control" id="sillas" name="sillas" required >
                                             <label for="sillas">Sillas</label>
                                         </div>
                                     </div>
