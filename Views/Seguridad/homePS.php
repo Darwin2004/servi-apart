@@ -1,11 +1,9 @@
 <?php
     require_once ("../../Models/conexion.php");
     require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
+    require_once ("../../Models/seguridadPS.php");
     require_once ("../../Controllers/mostrarInfoAdmin.php");
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -16,7 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi - Apart / Pagos</title>
+    <title>Focus Admin Dashboard</title>
+    <link href="../../assets/css/style.css" rel="stylesheet">
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -30,151 +29,133 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
-    <!-- Toastr -->
-    <link href="../Dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
-    <!-- Sweet Alert -->
-    <link href="../Dashboard/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
-    <!-- Range Slider -->
-    <link href="../Dashboard/css/lib/rangSlider/ion.rangeSlider.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/rangSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
-    <!-- Bar Rating -->
-    <link href="../Dashboard/css/lib/barRating/barRating.css" rel="stylesheet">
-    <!-- Nestable -->
-    <link href="../Dashboard/css/lib/nestable/nestable.css" rel="stylesheet">
-    <!-- JsGrid -->
-    <link href="../Dashboard/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
-    <link href="../Dashboard/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />
-    <!-- Datatable -->
-    <link href="../Dashboard/css/lib/datatable/dataTables.bootstrap.min.css" rel="stylesheet" />
-    <link href="../Dashboard/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />
-    <!-- Calender 2 -->
-    <link href="../Dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <!-- Weather Icon -->
-    <link href="../Dashboard/css/lib/weather-icons.css" rel="stylesheet" />
-    <!-- Owl Carousel -->
-    <link href="../Dashboard/css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="../Dashboard/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <!-- Select2 -->
-    <link href="../Dashboard/css/lib/select2/select2.min.css" rel="stylesheet">
-    <!-- Chartist -->
-    <link href="../Dashboard/css/lib/chartist/chartist.min.css" rel="stylesheet">
-    <!-- Calender -->
-    <link href="../Dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
-
-    <!-- Common -->
-    <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
-    <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <!-- Styles -->
+   <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+   <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
+   <link href="../dashboard/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 <?php
-    include 'menu-include.php';
+    include 'menu-include-PS.php';
 ?>
+    <!-- /# sidebar -->
 
 
 
-<div class="content-wrap">
+    <div class="content-wrap">
         <div class="main">
-            <div class="col-lg-12 w-100 p-l-0 title-margin-left ">
-                <div class="page-header">
-                    <div class="page-title">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#" style="color: #FFC451">Administrador</a>
-                            </li>
-                            <li class="breadcrumb-item active">Pagos</li>
-                        </ol>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Hola,
+                                    <span>Bienvenido</span>
+                                </h1>
+                            </div>
+                        </div>
                     </div>
+                    <!-- /# column -->
+                    <!-- <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /# column -->
                 </div>
-            </div>
-            <div class="container-fluid p-4">
-
-                <section class=" rounded-3 d-flex row">
-                    <div class="col-md-6   p-2">
-                        <h2 class="p-4 title  w-100">¡<span class="span-title">Paga</span>, luego,
-                            disfruta! </h2>
-                        <p class="px-4 d-block ">En Servi-Apart, entendemos la importancia de simplificar 
-                          tu vida cotidiana. Por eso, hemos creado un apartado 
-                          conveniente y seguro que te permite realizar pagos de facturas 
-                          y la renta de tu apartamento en un solo lugar. 
-                          Ya no tendrás que preocuparte por múltiples ventanas de navegación 
-                          o visitar diferentes sitios web.
-                        </p>
-                    </div>
-                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
-                        <img class="w-75 xxl-w-50" src="../../assets/img/pagos.svg" alt="">
-                    </div>
-                    
+                <!-- /# row -->
+                <section id="main-content">
                     <div class="row">
-                      <div class="col-md-4">
-                     
-                        <div class="card text-center">
-                            <div class="card-header">
-                            Alquiler
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">N° de Vehiculos</div>
+                                        <div class="stat-digit">326</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                              
-                              <p class="card-text">En este apartado podrás realizar el pago de tu alquiler de forma rápida y segura.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">N° Usuarios</div>
+                                        <div class="stat-digit">34</div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-
-                      </div>
-                      <div class="col-md-4">
-                
-
-                        <div class="card text-center">
-                            <div class="card-header">
-                              Servicios
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Reservas de salon activas</div>
+                                        <div class="stat-digit">12</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                              <p class="card-text">Aquí podras efectuar el pago de tus servicios publicos.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">N° de Peticiones</div>
+                                        <div class="stat-digit">18</div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-
-
-                      </div>
-                      <div class="col-md-4">
-                
-
-                        <div class="card text-center">
-                            <div class="card-header">
-                              Pagos Complementarios
-                            </div>
-                            <div class="card-body">
-                              <p class="card-text">En este espacio podrás efectuar el pago de todos los servicios complementarios.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
-                            </div>
-                          </div>
-
-                      </div>
+                        </div>
                     </div>
-                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Promedio de usuarios nuevos</h4>
 
-                    
-                    
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
-        </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ct-bar-chart m-t-30"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
@@ -331,35 +312,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--  Dashboard 1 -->
-    <script src="../Dashboard/js/dashboard1.js"></script>
-    <script src="../Dashboard/js/dashboard2.js"></script>
-
-</body>
-
-</html>

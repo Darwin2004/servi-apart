@@ -835,11 +835,6 @@ function cargarPubliEditar(){
 function cargarUsuariosReportes()
 {
 
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
 
 
     if (!isset($result)) {
@@ -900,7 +895,7 @@ function perfil()
         <li class="label">' . $f['rol'] . '</li>
         <li>
             <a class="sidebar-sub-toggle">
-                <img src="../' . $f['foto'] . '" class="foto_user_servi">     ' . $f['nombres'] . '
+                <img style="border-radius: 50%; width: 40px; height: 40px;" src="../' . $f['foto'] . '" class="foto_user_servi ">     ' . $f['nombres'] . '
                 <span class="sidebar-collapse-icon ti-angle-down"></span>
 
                 <ul>

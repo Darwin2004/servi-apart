@@ -1,13 +1,9 @@
-<?php
-//session_start();
-?>
-
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano">
             <div class="nano-content">
                 <div class="logo">
                     <a href="home.php">
-                        <img src="../client-site/assets/img/logo1.png" width="100" height="100" alt="" />
+                        <img src="../client-site/assets/img/logo1.png" width="100" alt="" />
                         <!-- <span>Focus</span> -->
                     </a>
                 </div>
@@ -19,6 +15,7 @@
                     
                     <?php 
                         require_once ("../../Controllers/mostrarInfoAdmin.php");
+                        
                         perfil();
                     ?>
     
@@ -26,19 +23,9 @@
                     <li class="label">Modulos</li>
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-user"></i> Usuarios
+                            <i class="ti-user"></i> Residente
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="registrar-usuario.php"> <i class="ti-pencil-alt"></i>Registrar </a>
-                            </li>
-                            <li>
-                                <a href="ver-usuario.php"><i class="ti-eye"></i>Ver</a>
-                            </li>
-
-                        </ul>
-                    </li>
+                
 
                     <li>
                         <a class="sidebar-sub-toggle">
@@ -63,9 +50,6 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-paquete.php"><i class="ti-pencil-alt"></i>Registrar paquete </a>
-                            </li>
-                            <li>
                                 <a href="ver-paquetes.php"><i class="ti-eye"></i>Ver paquete</a>
                             </li>
 
@@ -74,13 +58,11 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-car"></i> Vehiculos
+                            <i class="ti-car"></i> Seguridad
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
-                            <li>
-                                <a href="registrar-vehiculo.php"> <i class="ti-pencil-alt"></i>Registrar Vehiculos</a>
-                            </li>
+
                             <li>
                                 <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Vehiculos</a>
                             </li>
@@ -106,13 +88,7 @@
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
-                            <li>
-
-                                <a href="crear-publicacion.php"><i class="ti-pencil-alt"></i>Crear Publicacion</a>
-
-                        
-                            </li>
-                        
+                    
                             <li>
                                 <a href="ver-publicaciones.php"><i class="ti-eye"></i>Ver Publicaciones</a>
                             </li>
