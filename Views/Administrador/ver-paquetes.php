@@ -134,8 +134,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <div class="box-head">
                                     <div class="p-2  border d-flex justify-content-end">
                     
-                                        <button id="GenerarPDF" class="btn p-2 btn-success "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar Reporte PDF</a></button>
-                                     
+                                        <button id="GenerarPDF" class="btn p-2 btn-danger mx-2 "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar PDF</a></button>
+                                        <button id="GenerarExcel" class="btn p-2 btn-success mx-3 "><a class="text-light" href="../../services/generateexcelpaqueteria.php" target="_blank">Generar Excel</a></button>
+
                                     </div>
                                 </div>
                                 <div class="card-body">

@@ -115,6 +115,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                         <div class="p-2  center justify-content-end">
 
+                        <button id="GenerarExcel" class="btn p-2 btn-danger mx-3 "><a class="text-light" href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
                         <button id="GenerarPDF" class="btn p-2 btn-success "><a class="text-light" href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte PDF</a></button>
 
                         </div>
