@@ -70,6 +70,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
@@ -113,24 +114,24 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
+                            <div class="card-publi" style="margin-top:0;  color:black; background-color: #00bf63     !important">
                                 <div class="card-title">
 
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" >
                                     <div class="table-responsive">
-                                        <table class="table table-bordered table-hover ">
+                                        <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                    <th>Placa</th>
-                                                    <th>Marca</th>
-                                                    <th>Referencia</th>
-                                                    <th>Modelo</th>
-                                                    <th>Identificación Residente</th>
-                                                    <th>Fecha</th>
-                                                    <th>Operaciones</th>
-                                                    <th style="text-align:center">Fotos</th>
-                                                    <th style="text-align:center">Novedades</th>
+                                                    <th style="font-size:20px">Placa</th>
+                                                    <th style="font-size:20px">Marca</th>
+                                                    <th style="font-size:20px">Referencia</th>
+                                                    <th style="font-size:20px">Modelo</th>
+                                                    <th style="font-size:20px">Identificación Residente</th>
+                                                    <th style="font-size:20px">Fecha</th>
+                                                    <th style="font-size:20px">Operaciones</th>
+                                                    <th style="text-align:center; font-size:20px">Fotos</th>
+                                                    <th style="text-align:center; font-size:20px">Novedades</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -147,8 +148,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:20px; margin-right:15px;"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:65px; margin-right:15px;"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:65px"><a class="text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 
