@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2023 a las 05:48:00
+-- Tiempo de generación: 19-09-2023 a las 07:42:12
 -- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
@@ -68,7 +68,8 @@ CREATE TABLE `paqueteria` (
 --
 
 INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamento`, `telefono`, `fecha`) VALUES
-(1, '0', '0', '4', '0', '3214444', '2023-09-16');
+(1, '0', '0', '4', '0', '3214444', '2023-09-16'),
+(2, 'johan', 'apple', '4272', '2327', '3196419848', '2023-09-18');
 
 -- --------------------------------------------------------
 
@@ -124,8 +125,12 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellidos`, `telefonos`, `correo`, `dia_reserva`, `torre`, `apartamento`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
-(4, 1106, 'joh', 'mar', '3196', 'm@gmail.com', '2023-09-12', 22, 33, '23:38:00', '23:27:00', 200, 300),
-(7, 1109411577, 'Johan', 'Marin', '3196419848', 'Marin@gmail.com', '2023-09-04', 1, 101, '12:58:00', '03:00:00', 110, 100);
+(7, 1109411577, 'Johan', 'Marin', '3196419848', 'Marin@gmail.com', '2023-09-04', 1, 101, '12:58:00', '03:00:00', 110, 100),
+(8, 1109411577, 'Franklin', 'Cortez', '3196419848', 'Cortez@gmail.com', '2023-09-19', 4, 502, '15:58:00', '03:00:00', 50, 55),
+(9, 324534, 'carlos', 'lassso', '13513', 'lassso@gmail.com', '2023-09-20', 123, 23456, '00:04:00', '03:00:00', 123456, 123456),
+(10, 38196448, 'Camilo', 'Pinilla', '312026', 'pinilla@gmail.com', '2023-09-27', 123, 3456, '00:19:00', '03:00:00', 123, 546),
+(11, 45345, 'Juan', 'Garzon', '1641613', 'garzon@gmail.com', '2023-09-26', 89, 78, '00:30:00', '03:00:00', 12, 456),
+(12, 15363851, 'Tania', 'Marin', '1638', 'tania@gmail.com', '2023-09-06', 323243, 4343, '16:43:00', '03:00:00', 4534, 43453);
 
 -- --------------------------------------------------------
 
@@ -246,7 +251,7 @@ ALTER TABLE `novedad_vehiculo`
 -- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `publicaciones`
@@ -258,7 +263,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
