@@ -34,6 +34,35 @@ function cargarUsuarios(){
     }
 }
 
+function cargarUsuariosexcel(){
+
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarUsuariosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <td>' . $f['identificacion'] . '</td>
+                <td>' . $f['tipo_doc'] . ' </td>
+                <td>' . $f['nombres'] . '</td>
+                <td>' . $f['apellidos'] . ' </td>
+                <td>' . $f['email'] . ' </td>
+                <td>' . $f['telefono'] . ' </td>
+                <td>' . $f['rol'] . ' </td>
+                <td>' . $f['estado'] . ' </td>
+                <td>' . $f['apartamento'] . ' </td>
+            </tr>     
+            ';
+        }
+    }
+}
+
+
 // aterrizamos la pk enviada desde la tabla 
 function cargarUsuarioEditar(){
 
@@ -121,6 +150,36 @@ function cargarUsuarioEditar(){
 
 }
 
+
+function cargarUsuariosPDF()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarUsuariosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['tipo_doc'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['email'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefono'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['rol'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['estado'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+
+            </tr>     
+            ';
+        }
+    }
+}
 
 
 
@@ -776,11 +835,6 @@ function cargarPubliEditar(){
 function cargarUsuariosReportes()
 {
 
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
 
 
     if (!isset($result)) {
@@ -841,7 +895,7 @@ function perfil()
         <li class="label">' . $f['rol'] . '</li>
         <li>
             <a class="sidebar-sub-toggle">
-                <img src="../' . $f['foto'] . '" class="foto_user_servi">     ' . $f['nombres'] . '
+                <img style="border-radius: 50%; width: 40px; height: 40px;" src="../' . $f['foto'] . '" class="foto_user_servi ">     ' . $f['nombres'] . '
                 <span class="sidebar-collapse-icon ti-angle-down"></span>
 
                 <ul>

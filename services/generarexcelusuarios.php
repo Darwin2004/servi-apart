@@ -1,7 +1,7 @@
 <?php
 
-header("Content-Type: application/vnd.ms-excel; charset=utf-8");
-header("Content-Disposition: attachment; filename=Reporte_SalonComunal.xls");
+header("content-Type: application/xls");
+header("content-Disposition: attachment; filename=Reporte_Usuarios.xls");
 
 ?>
 
@@ -12,13 +12,19 @@ header("Content-Disposition: attachment; filename=Reporte_SalonComunal.xls");
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div> <span class="ms-2">Identificacion</span>
+                </div>
+                <span class="ms-2">Identificacion</span>
+            </th>
+            <th class="d-flex col-md-2">
+                <div
+                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                </div> <span class="ms-2">Tipo Documento</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                 </div>
-                <span class="ms-2">Nombre</span>
+                <span class="ms-2">Nombres</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
@@ -28,55 +34,31 @@ header("Content-Disposition: attachment; filename=Reporte_SalonComunal.xls");
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div> <span class="ms-2">Telefonos</span>
+                </div> <span class="ms-2">Correo</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                 </div>
-                <span class="ms-2">Correo</span>
+                <span class="ms-2">Telefono</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                 </div>
-                <span class="ms-2">Dia Reserva</span>
+                <span class="ms-2">Rol</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                 </div>
-                <span class="ms-2">Torre</span>
+                <span class="ms-2">Estado</span>
             </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                 </div>
                 <span class="ms-2">Apartamento</span>
-            </th>
-            <th class="d-flex col-md-2">
-                <div
-                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div>
-                <span class="ms-2">Hora Inicio</span>
-            </th>
-            <th class="d-flex col-md-2">
-                <div
-                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div>
-                <span class="ms-2">Hora Finalizacion</span>
-            </th>
-            <th class="d-flex col-md-2">
-                <div
-                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div>
-                <span class="ms-2">Mesas</span>
-            </th>
-            <th class="d-flex col-md-2">
-                <div
-                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
-                </div>
-                <span class="ms-2">Sillas</span>
             </th>
         </tr>
     </thead>
@@ -88,7 +70,7 @@ header("Content-Disposition: attachment; filename=Reporte_SalonComunal.xls");
             require_once "../Models/conexion.php";
             require_once "../Models/consultas.php";
             require_once "../Controllers/mostrarInfoAdmin.php";
-            cargarReservasEX()
+            cargarUsuariosexcel();
 
         ?>
     </tbody>

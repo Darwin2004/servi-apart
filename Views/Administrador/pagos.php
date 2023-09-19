@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi - Apart / Pagos</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -68,6 +68,8 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -76,93 +78,103 @@
     include 'menu-include.php';
 ?>
 
-    <!-- /# sidebar -->
 
-    <div class="content-wrap">
+
+<div class="content-wrap">
         <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1>Gestión de pagos 
-                                </h1>
-                                <p>Por favor elija el proceso que desea realizar y llene los campos correspondientemente.</p>
-                            </div>
-                        </div>
+            <div class="col-lg-12 w-100 p-l-0 title-margin-left ">
+                <div class="page-header">
+                    <div class="page-title">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" style="color: #FFC451">Administrador</a>
+                            </li>
+                            <li class="breadcrumb-item active">Pagos</li>
+                        </ol>
                     </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">
-                                        <a href="#">Administrador</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Gestión de pagos</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
                 </div>
+            </div>
+            <div class="container-fluid p-4">
+
+                <section class=" rounded-3 d-flex row">
+                    <div class="col-md-6   p-2">
+                        <h2 class="p-4 title  w-100">¡<span class="span-title">Paga</span>, luego,
+                            disfruta! </h2>
+                        <p class="px-4 d-block ">En Servi-Apart, entendemos la importancia de simplificar 
+                          tu vida cotidiana. Por eso, hemos creado un apartado 
+                          conveniente y seguro que te permite realizar pagos de facturas 
+                          y la renta de tu apartamento en un solo lugar. 
+                          Ya no tendrás que preocuparte por múltiples ventanas de navegación 
+                          o visitar diferentes sitios web.
+                        </p>
+                    </div>
+                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
+                        <img class="w-75 xxl-w-50" src="../../assets/img/pagos.svg" alt="">
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-md-4">
+                     
+                        <div class="card text-center">
+                            <div class="card-header">
+                            Alquiler
+                            </div>
+                            <div class="card-body">
+                              
+                              <p class="card-text">En este apartado podrás realizar el pago de tu alquiler de forma rápida y segura.</p>
+                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
+                            </div>
+                          </div>
+
+                      </div>
+                      <div class="col-md-4">
+                
+
+                        <div class="card text-center">
+                            <div class="card-header">
+                              Servicios
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text">Aquí podras efectuar el pago de tus servicios publicos.</p>
+                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
+                            </div>
+                          </div>
 
 
+                      </div>
+                      <div class="col-md-4">
+                
 
-    <div class="container">
+                        <div class="card text-center">
+                            <div class="card-header">
+                              Pagos Complementarios
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text">En este espacio podrás efectuar el pago de todos los servicios complementarios.</p>
+                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
+                            </div>
+                          </div>
+
+                      </div>
+                    </div>
+                    <br>
+
+                    
+                    
         <div class="row">
-        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="shopping-card">
-                                    <img class="img-fluid" src="images/product.jpg" alt="">
-                                </div>
-                                <div class="shopping-card-text text-center">
-                                    <h4>Portal 1</h4>
-                                    <p>Some quick example text.</p>
-                                </div>
-                                <div class="text-center p-t-30 p-b-20">
-                                   
-                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="shopping-card">
-                                    <img class="img-fluid" src="images/product.jpg" alt="">
-                                </div>
-                                <div class="shopping-card-text text-center">
-                                    <h4>Portal 2</h4>
-                                    <p>Some quick example text.</p>
-                                </div>
-                                <div class="text-center p-t-30 p-b-20">
-                                   
-                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="shopping-card">
-                                    <img class="img-fluid" src="images/product.jpg" alt="">
-                                </div>
-                                <div class="shopping-card-text text-center">
-                                    <h4>Portal 3</h4>
-                                    <p>Some quick example text.</p>
-                                </div>
-                                <div class="text-center p-t-30 p-b-20">
-                                   
-                                    <button class="btn btn-primary bg-primary ">Shop Now</button>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
+            </div>
+        </div>
+                </section>
+            </div>
         </div>
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

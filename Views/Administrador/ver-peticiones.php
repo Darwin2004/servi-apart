@@ -1,10 +1,8 @@
 <?php
-
-require_once("../../Models/conexion.php");
-require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadAdministrador.php");
-require_once("../../Controllers/mostrarInfoAdmin.php");
-
+    require_once ("../../Models/conexion.php");
+    require_once ("../../Models/consultas.php");
+    require_once ("../../Models/seguridadAdministrador.php");
+    require_once ("../../Controllers/mostrarInfoAdmin.php");
 
 ?>
 
@@ -18,7 +16,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi - Apart / Peticiones</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -70,108 +68,71 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="../client-site/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <?php
+<?php
     include 'menu-include.php';
-    ?>
+?>
 
 
 
-
-    <div class="content-wrap">
+<div class="content-wrap">
         <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
-                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
-                            </div>
-                        </div>
+            <div class="col-lg-12 w-100 p-l-0 title-margin-left ">
+                <div class="page-header">
+                    <div class="page-title">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" style="color: #FFC451">Administrador</a>
+                            </li>
+                            <li class="breadcrumb-item active">Peticiones</li>
+                        </ol>
                     </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Administrador</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Ver Vehiculos</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
                 </div>
-                <!-- /# row -->
-                <section id="main-content" class="lista_vehiculos">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card-publi" style="margin-top:0;  color:black; background-color: #00bf63     !important">
-                                <div class="card-title">
+            </div>
+            <div class="container-fluid p-4">
 
-                                </div>
-                                <div class="card-body" >
-                                    <div class="table-responsive">
-                                        <table class="table table-hover ">
-                                            <thead>
-                                                <tr class="filas_vehiculos">
-                                                    <th style="font-size:20px">Placa</th>
-                                                    <th style="font-size:20px">Marca</th>
-                                                    <th style="font-size:20px">Referencia</th>
-                                                    <th style="font-size:20px">Modelo</th>
-                                                    <th style="font-size:20px">Identificación Residente</th>
-                                                    <th style="font-size:20px">Fecha</th>
-                                                    <th style="font-size:20px">Operaciones</th>
-                                                    <th style="text-align:center; font-size:20px">Fotos</th>
-                                                    <th style="text-align:center; font-size:20px">Novedades</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
+                <section class=" rounded-3 d-flex row">
 
-                                                cargarVehiculos();
-
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    
-                                </div>
-                                
-
-                            </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:65px; margin-right:15px;"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:65px"><a class="text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
-                        </div>
-                        <!-- /# column -->
-
-                        <!-- /# column -->
+                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
+                        <img class="w-75 xxl-w-50" src="../../assets/img/peticiones.svg" alt="">
                     </div>
 
+                    <div class="col-md-6   p-2">
+                        <h2 class="p-4 title  w-100">¡<span class="span-title">Pregunta</span>, nosotros respondemos! </h2>
+                        <p class="px-4 d-block ">En Servi - Apart, nos 
+                            esforzamos por responder a todas las solicitudes de manera 
+                            oportuna y proporcionar soluciones efectivas. Nuestro equipo 
+                            de administradores está aquí para atender tus necesidades y
+                             brindarte la asistencia que requieres.
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
+                            Valoramos tus comentarios y sugerencias, ya que nos ayudan a mejorar constantemente nuestros servicios y proporcionar la mejor experiencia a nuestros usuarios.
+                        </p>
                     </div>
+                    
+             
+                    <br>
+
+                    
+                    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                </div>
+            </div>
+        </div>
                 </section>
             </div>
         </div>
     </div>
 
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

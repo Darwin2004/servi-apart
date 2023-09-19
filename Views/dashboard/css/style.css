@@ -2736,7 +2736,7 @@ tbody tr th {
 }
 tbody tr td {
   font-family: 'Roboto', sans-serif;
-  color: #868e96;
+  color: #000000;
 }
 tbody tr td:last-child {
   text-align: right;
