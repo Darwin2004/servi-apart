@@ -165,7 +165,7 @@ require_once("../../Models/consultas.php");
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="submit">Enviar</button>
+                                        <button type="submit" class="btn btn-success">Enviar</button>
                                     </div>
                                 </div>
                             </form>

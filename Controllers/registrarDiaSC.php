@@ -1,44 +1,74 @@
 <?php
 require_once("../Models/conexion.php");
 require_once("../Models/consultas.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <title>Document</title>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+   *; html,body{
+    font-family: 'Montserrat',sans-serif;
+   }
+</style>
+</head>
 
-if (
-    ($_POST['identificacion']) && isset($_POST['nombre']) && isset($_POST['apellidos']) &&
-    isset($_POST['telefonos']) && isset($_POST['correo']) && isset($_POST['dia_reserva']) &&
-    isset($_POST['torre']) && isset($_POST['apartamento']) && isset($_POST['hora_inicio']) &&
-    isset($_POST['hora_finalizacion']) && isset($_POST['mesas']) && isset($_POST['sillas'])
-) {
-    // Aquí puedes acceder a las claves $_POST con seguridad.
-    
-    $identificacion = trim($_POST['identificacion']);
-    $nombre = trim($_POST['nombre']);
-    $apellidos = trim($_POST['apellidos']);
-    $telefonos = trim($_POST['telefonos']);
-    $correo = trim($_POST['correo']);
-    $dia_reserva = trim($_POST['dia_reserva']);
-    $torre = trim($_POST['torre']);
-    $apartamento = trim($_POST['apartamento']);
-    $hora_inicio = trim($_POST['hora_inicio']);
-    $hora_finalizacion = trim($_POST['hora_finalizacion']);
-    $mesas = trim($_POST['mesas']);
-    $sillas = trim($_POST['sillas']);
+<body>
+<?php
+require_once"../Models/conexion.php";
+require_once"../Models/consultas.php";
 
-    // Resto del código para procesar los datos, por ejemplo, la llamada a registrarDia().
+$id_reserva = $_POST['id_reserva']?? null;
+$identificacion = $_POST['identificacion']?? null;
+$nombre= $_POST['nombre']?? null;
+$apellidos= $_POST['apellidos']?? null;
+$telefonos= $_POST['telefonos']?? null;
+$correo= $_POST['correo']?? null;
+$dia_reserva= $_POST['dia_reserva']?? null;
+$torre= $_POST['torre']?? null;
+$apartamento= $_POST['apartamento']?? null;
+$hora_inicio= $_POST['hora_inicio']?? null;
+$hora_finalizacion= $_POST['hora_finalizacion']?? null;
+$mesas= $_POST['mesas']?? null;
+$sillas= $_POST['sillas']?? null;
+
+if($id_reserva !== '' && $identificacion !== '' && $nombre !== '' && $apellidos !== '' && $telefonos !== '' && $correo !== '' && $dia_reserva !== '' && $torre !== '' && $apartamento !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' &&$id_reserva !== '' ){
     $objConsultas = new Consultas();
-    $result = $objConsultas->registrarDia($identificacion, $nombre, $apellidos, $telefonos, $correo, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion, $mesas, $sillas);
-
-    // Verificar el resultado de la operación y mostrar mensajes de éxito o error.
-    if ($result) {
-        echo '<script>alert("Registro exitoso")</script>';
-    } else {
-        echo '<script>alert("Hubo un error en el registro. Por favor, inténtalo de nuevo más tarde.")</script>';
-    }
-
-    // Redirigir al usuario a la página correspondiente.
-    echo "<script>location.href='../Views/Usuarios/salon-comunal.php'</script>";
-} else {
-    echo '<script>alert("Por favor complete todos los campos")</script>';
-    echo "<script>location.href='../Views/Usuarios/salon-comunal.php'</script>";
-    // Aquí puedes manejar el caso en que falten campos en el formulario.
+    $response = $objConsultas->registrarDia($identificacion, $nombre, $apellidos, $telefonos, $correo, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion, $mesas, $sillas);
+        ?>
+        <script>
+            Swal.fire({
+                icon:'success',
+                title:'Registro Exitoso',
+                showConfirmButtom: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href='../Views/Usuarios/salon-comunal.php';
+            })
+        </script>
+        <?php
+}else{
+    ?>
+    <script>
+        Swal.fire({
+            icon:'error',
+            title:'Oops...',
+            text:'Error al registrar paquete. Intentalo de nuevo',
+            ConfirmButtom:'Ok'
+        
+        }).then((result)=>{
+            if(result.isConfirmed){
+                location.href='../Views/Usuarios/salon-comunal.php';
+            }
+        })
+    </script>
+    <?php
 }
 ?>
+</body>
+</html>
