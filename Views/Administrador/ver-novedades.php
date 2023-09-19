@@ -100,9 +100,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#"style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Ver novedades</li>
                                 </ol>
                             </div>
                         </div>
@@ -135,6 +135,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                 <?php
 
                                                 cargarNovedades();
+                                                
 
                                                 ?>
                                             </tbody>
@@ -148,6 +149,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                         <!-- /# column -->
                     </div>
+
+                    <?php
+    $placa = $_GET['placa'];
+
+    echo '<button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
+                    ?>
+
 
 
                     <div class="row">

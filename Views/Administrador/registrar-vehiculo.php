@@ -93,9 +93,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Registrar Vehiculo</li>
                                 </ol>
                             </div>
                         </div>

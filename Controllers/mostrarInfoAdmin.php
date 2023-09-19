@@ -154,9 +154,9 @@ function cargarFotosVehiculo(){
             <div class="page-title">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#">Dashboard</a>
+                  <a href="#" style="color: #18d26e">Administrador</a>
                 </li>
-                <li class="breadcrumb-item active">Chart-Flot</li>
+                <li class="breadcrumb-item active">Ver fotos de vehiculo</li>
               </ol>
             </div>
           </div>
@@ -316,7 +316,10 @@ function cargarNovedades()
         echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
 
     } else {
+        
         foreach ($result as $f) {
+            
+
             echo '
             <tr><td style="text-align:center">' . $f['id_nov'] . '</td>
                 <td style="text-align:center">' . $f['placa'] . ' </td>
@@ -324,23 +327,27 @@ function cargarNovedades()
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><a href="modificar-novedad.php?placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
 
-            </tr>     
+            </tr>   
+            
+
             ';
         }
+
+        
     }
 }
 
 function cargarNovedadesEditar()
 {
 
-    $placa = $_GET['placa'];
+    $id_nov = $_GET['id_nov'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarNovedadEditarAdmin($placa);
+    $result = $objConsultas->mostrarNovedadEditarAdmin($id_nov);
 
     //pintamos la informacion  consultada en el artefacto (FORM)
 
@@ -360,7 +367,7 @@ function cargarNovedadesEditar()
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             
-                    <form action="../../Controllers/modificarNovedadAdmin.php" method="POST" enctype="multipart/form-data">
+                    <form action="../../Controllers/modificarNovedadAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST">
                     
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -373,8 +380,8 @@ function cargarNovedadesEditar()
                             <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
                         </div>
                         <div class="form-group col-md-12">
-                            <label>Identificación del Personal de Seguridad:</label>
-                            <textarea type="text" class="form-control" value="' . $f['novedad'] . '" placeholder="Ej: Espejo roto" name="novedad"></textarea>
+                            <label>Novedad:</label>
+                            <input type="text" class="form-control" value="' . $f['novedad'] . '" placeholder="Ej: Espejo roto" name="novedad">
                         </div>
 
                         
@@ -419,7 +426,36 @@ function cargarNovedadesEditar()
 
 }
 
+function cargarNovedadesPDF()
+{
+    $placa = $_GET['placa'];
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNovedades($placa);
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY NOVEDADES REGISTRADAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['id_nov'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['placa'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['novedad'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha_rev'].'</td>
+
+            </tr>     
+            ';
+        }
+    }
+}
+
+
 function cargarVehiculos(){
+    
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarVehiculosAdmin();
@@ -598,6 +634,30 @@ function cargarVehiculoEditar(){
 
 }
 
+function cargarVehiculosPDF()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarVehiculosAdmin();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['placa'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['marca'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['referencia'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['modelo'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+            </tr>     
+            ';
+        }
+    }
+}
+
 
 function cargarPublicaciones(){
 
@@ -712,7 +772,7 @@ function cargarPubliEditar(){
 
 
 
-                function cargarUsuariosReportes()
+function cargarUsuariosReportes()
 {
 
     $objConsultas = new Consultas();
@@ -747,7 +807,7 @@ function cargarPublicacionesPDF(){
     $result = $objConsultas-> mostrarPublicaciones();
 
     if (!isset($result)) {
-        echo '<h2> NO HAY PAQUETES REGISTRADOS </h2>';
+        echo '<h2> NO HAY PUBLICACIONES REGISTRADAS </h2>';
 
     } else {
         foreach ($result as $f) {

@@ -100,9 +100,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    <li class="breadcrumb-item active">Ver Vehiculos</li>
                                 </ol>
                             </div>
                         </div>
@@ -142,9 +142,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                             </tbody>
                                         </table>
                                     </div>
+                                    
                                 </div>
+                                
 
                             </div>
+                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
                         </div>
                         <!-- /# column -->
 
