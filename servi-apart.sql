@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2023 a las 05:48:00
--- Versión del servidor: 8.0.32
+-- Tiempo de generación: 19-09-2023 a las 20:36:50
+-- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `inventario_salon` (
-  `id_inv` int NOT NULL,
-  `num_sillas` int NOT NULL,
-  `num_mesas` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id_inv` int(11) NOT NULL,
+  `num_sillas` int(11) NOT NULL,
+  `num_mesas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -40,12 +40,12 @@ CREATE TABLE `inventario_salon` (
 --
 
 CREATE TABLE `novedad_vehiculo` (
-  `id_nov` int NOT NULL,
+  `id_nov` int(11) NOT NULL,
   `placa` varchar(7) NOT NULL,
   `novedad` varchar(500) DEFAULT NULL,
-  `identificacion` int NOT NULL,
-  `fecha_rev` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `identificacion` int(11) NOT NULL,
+  `fecha_rev` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -54,14 +54,14 @@ CREATE TABLE `novedad_vehiculo` (
 --
 
 CREATE TABLE `paqueteria` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `destinatario` varchar(50) DEFAULT NULL,
   `remitente` varchar(50) DEFAULT NULL,
   `torre` varchar(20) DEFAULT NULL,
   `apartamento` varchar(20) DEFAULT NULL,
   `telefono` varchar(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `paqueteria`
@@ -77,11 +77,11 @@ INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamen
 --
 
 CREATE TABLE `publicaciones` (
-  `id_publi` int NOT NULL,
+  `id_publi` int(11) NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `publicaciones`
@@ -104,20 +104,20 @@ INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUE
 --
 
 CREATE TABLE `reserva_salon` (
-  `id_reserva` int NOT NULL,
-  `identificacion` int NOT NULL,
+  `id_reserva` int(11) NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `telefonos` varchar(10) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `dia_reserva` date NOT NULL,
-  `torre` int NOT NULL,
-  `apartamento` int NOT NULL,
+  `torre` int(11) NOT NULL,
+  `apartamento` int(11) NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_finalizacion` time NOT NULL,
-  `mesas` int NOT NULL,
-  `sillas` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `mesas` int(11) NOT NULL,
+  `sillas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `reserva_salon`
@@ -134,19 +134,19 @@ INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `nombre`, `apellido
 --
 
 CREATE TABLE `usuarios` (
-  `identificacion` int NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `tipo_doc` enum('CC','CE','PASAPORTE') NOT NULL,
   `nombres` varchar(30) NOT NULL,
   `apellidos` varchar(30) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefono` varchar(15) NOT NULL,
   `clave` varchar(200) NOT NULL,
-  `rol` enum('Residente','Administrador','Personal de Seguridad') NOT NULL,
+  `rol` enum('Residente','Administrador','Seguridad') NOT NULL,
   `estado` enum('Activo','Pendiente') DEFAULT NULL,
   `foto` varchar(200) DEFAULT NULL,
   `torre` varchar(15) DEFAULT NULL,
   `apartamento` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -155,7 +155,9 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
 (231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, '1', '101'),
 (4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
-(6456456, 'CC', 'Franklin', 'GOMEZ', 'enri@gmail.com', '456456', '6456456', 'Residente', 'Activo', '../Uploads/Usuarios/', 'C', '32');
+(123123, 'CC', 'Camili', 'Pinilla', 'Seguridad@gmail.com', '123123', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', NULL, '3', 'f4'),
+(6456456, 'CC', 'Franklin', 'GOMEZ', 'enri@gmail.com', '456456', '6456456', 'Residente', 'Activo', '../Uploads/Usuarios/', 'C', '32'),
+(12312312, 'CC', 'asdasd', 'qeqwe', 'residente@gmail.com', '123123123', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '3', 'f1');
 
 -- --------------------------------------------------------
 
@@ -164,17 +166,17 @@ INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `e
 --
 
 CREATE TABLE `vehiculo` (
-  `identificacion` int NOT NULL,
+  `identificacion` int(11) NOT NULL,
   `placa` varchar(7) NOT NULL,
   `marca` varchar(30) NOT NULL,
   `referencia` varchar(30) NOT NULL,
-  `modelo` int NOT NULL,
+  `modelo` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `foto1` varchar(500) DEFAULT NULL,
   `foto2` varchar(200) DEFAULT NULL,
   `foto3` varchar(200) DEFAULT NULL,
   `foto4` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `vehiculo`
@@ -240,25 +242,25 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id_publi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

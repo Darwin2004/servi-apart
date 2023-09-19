@@ -828,12 +828,12 @@
 
                                 case 'Residente':
                                         echo '<script>alert("Bienvenido señor residente")</script>';
-                                        echo "<script>location.href='../Views/Residente/home.php'</script>";
+                                        echo "<script>location.href='../Views/Residente/homeResidente.php'</script>";
                                         break;
                                 
                                 case 'Seguridad':
                                             echo '<script>alert("Bienvenido señor personal de seguridad")</script>';
-                                            echo "<script>location.href='../Views/Seguridad/home.php'</script>";
+                                            echo "<script>location.href='../Views/Seguridad/homePS.php'</script>";
                                             break;
                             }
 

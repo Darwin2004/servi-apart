@@ -776,11 +776,6 @@ function cargarPubliEditar(){
 function cargarUsuariosReportes()
 {
 
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarUsersAdmin();
 
 
     if (!isset($result)) {
