@@ -61,6 +61,30 @@
 
         }
 
+        public function actualizarFotoAdmin($id, $foto){
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $actualizar = "UPDATE usuarios SET foto =:foto
+                WHERE identificacion=:id";
+
+            $result = $conexion->prepare($actualizar);
+
+
+            $result->bindParam("id",$id);
+            $result->bindParam("foto",$foto);
+
+            $result->execute();
+
+            echo '<script>
+                    alert("Infomación de usuario actualizada ;)")
+                </script>';
+
+            echo "<script>
+                    location.href='../Views/Administrador/perfil.php?id=$id'
+                </script>";
+        }
+
         public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto){
             
             //CREAMOS EL OBJETO DE CONEXION

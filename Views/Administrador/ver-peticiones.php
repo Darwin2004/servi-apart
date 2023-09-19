@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi - Apart / Pagos</title>
+    <title>Servi - Apart / Peticiones</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -89,7 +89,7 @@
                             <li class="breadcrumb-item">
                                 <a href="#" style="color: #FFC451">Administrador</a>
                             </li>
-                            <li class="breadcrumb-item active">Pagos</li>
+                            <li class="breadcrumb-item active">Peticiones</li>
                         </ol>
                     </div>
                 </div>
@@ -97,66 +97,24 @@
             <div class="container-fluid p-4">
 
                 <section class=" rounded-3 d-flex row">
+
+                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
+                        <img class="w-75 xxl-w-50" src="../../assets/img/peticiones.svg" alt="">
+                    </div>
+
                     <div class="col-md-6   p-2">
-                        <h2 class="p-4 title  w-100">¡<span class="span-title">Paga</span>, luego,
-                            disfruta! </h2>
-                        <p class="px-4 d-block ">En Servi-Apart, entendemos la importancia de simplificar 
-                          tu vida cotidiana. Por eso, hemos creado un apartado 
-                          conveniente y seguro que te permite realizar pagos de facturas 
-                          y la renta de tu apartamento en un solo lugar. 
-                          Ya no tendrás que preocuparte por múltiples ventanas de navegación 
-                          o visitar diferentes sitios web.
+                        <h2 class="p-4 title  w-100">¡<span class="span-title">Pregunta</span>, nosotros respondemos! </h2>
+                        <p class="px-4 d-block ">En Servi - Apart, nos 
+                            esforzamos por responder a todas las solicitudes de manera 
+                            oportuna y proporcionar soluciones efectivas. Nuestro equipo 
+                            de administradores está aquí para atender tus necesidades y
+                             brindarte la asistencia que requieres.
+
+                            Valoramos tus comentarios y sugerencias, ya que nos ayudan a mejorar constantemente nuestros servicios y proporcionar la mejor experiencia a nuestros usuarios.
                         </p>
                     </div>
-                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
-                        <img class="w-75 xxl-w-50" src="../../assets/img/pagos.svg" alt="">
-                    </div>
                     
-                    <div class="row">
-                      <div class="col-md-4">
-                     
-                        <div class="card text-center">
-                            <div class="card-header">
-                            Alquiler
-                            </div>
-                            <div class="card-body">
-                              
-                              <p class="card-text">En este apartado podrás realizar el pago de tu alquiler de forma rápida y segura.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
-                            </div>
-                          </div>
-
-                      </div>
-                      <div class="col-md-4">
-                
-
-                        <div class="card text-center">
-                            <div class="card-header">
-                              Servicios
-                            </div>
-                            <div class="card-body">
-                              <p class="card-text">Aquí podras efectuar el pago de tus servicios publicos.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
-                            </div>
-                          </div>
-
-
-                      </div>
-                      <div class="col-md-4">
-                
-
-                        <div class="card text-center">
-                            <div class="card-header">
-                              Pagos Complementarios
-                            </div>
-                            <div class="card-body">
-                              <p class="card-text">En este espacio podrás efectuar el pago de todos los servicios complementarios.</p>
-                              <a href="https://www.paypal.com/co/home" target="_blank" id="btn-signup" class="w-100 p-2 rounded">Pagar</a>
-                            </div>
-                          </div>
-
-                      </div>
-                    </div>
+             
                     <br>
 
                     
