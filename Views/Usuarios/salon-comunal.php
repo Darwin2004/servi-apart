@@ -32,21 +32,21 @@ require_once("../../Models/consultas.php");
 
     <!-- Styles -->
     <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="../../dashboard/css/style.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">    <!-- Common -->
+    <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../Dashboard/css/style.css" rel="stylesheet">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
 </head>
 
 <body>
 
     <?php
-    include 'menu-include copy.php';
+    include 'menu-include-usuario.php';
     ?>
 
     <!-- /# sidebar -->
