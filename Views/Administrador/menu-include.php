@@ -1,5 +1,14 @@
 <?php
 //session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+$id = $_SESSION['id'];
+
+require_once "../../Models/conexion.php";
+require_once "../../Models/consultas.php";
+require_once "../../Controllers/mostrarInfoAdmin.php";
+
+$objConsulta = new Consultas();
+$result = $objConsulta->verPerfil($id);
 ?>
 
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
@@ -289,7 +298,8 @@
                         </div>
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">Johan
+                                <span class="user-avatar">
+                                    <?php print_r($result[0]['nombres'] . ' ' .$result[0]['apellidos']); ?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">

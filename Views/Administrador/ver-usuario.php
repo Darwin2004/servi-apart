@@ -11,7 +11,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: scroll">
 
 <head>
     <meta charset="utf-8">
