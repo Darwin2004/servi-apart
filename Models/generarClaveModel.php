@@ -1,82 +1,84 @@
 <?php
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    require '../PHPMailer/Exception.php';
-    require '../PHPMailer/PHPMailer.php';
-    require '../PHPMailer/SMTP.php';
+require '../PHPMailer/Exception.php';
+require '../PHPMailer/PHPMailer.php';
+require '../PHPMailer/SMTP.php';
 
 
-    class generarClave{
-        
-        public function enviarNuevaClave($identificacion, $email){
-            $f = null;
-            $objConexion = new Conexion;
-            $conexion = $objConexion->get_conexion();
+class generarClave
+{
 
-            $consultar = "SELECT * FROM users WHERE identificacion=:identificacion AND email=:email";
+    public function enviarNuevaClave($identificacion, $email)
+    {
+        $f = null;
+        $objConexion = new Conexion;
+        $conexion = $objConexion->get_conexion();
 
-            $result = $conexion->prepare($consultar);
+        $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion AND email=:email";
 
-            $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":email", $email);
-            
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":email", $email);
+
+        $result->execute();
+
+        $f = $result->fetch();
+
+        if ($f) {
+            //GENERAMOS LA NUEVA CLAVE A PARTIR DE UN CODIGO ALEATORIO
+            $caracteres = "0123456789abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ";
+            $longitud = 10;
+            $newPass = substr(str_shuffle($caracteres), 0, $longitud);
+
+            $claveMd = md5($newPass);
+
+            $actualizarClave = "UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
+
+            $result = $conexion->prepare($actualizarClave);
+
+            $result->bindparam(":identificacion", $identificacion);
+            $result->bindparam(":claveMd", $claveMd);
+
             $result->execute();
 
-            $f = $result->fetch();
 
-            if($f){
-                //GENERAMOS LA NUEVA CLAVE A PARTIR DE UN CODIGO ALEATORIO
-                $caracteres = "0123456789abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ";
-                $longitud = 10;
-                $newPass = substr(str_shuffle($caracteres),0,$longitud);
-                
-                $claveMd = md5($newPass);
 
-                $actualizarClave = "UPDATE users SET clave=:claveMd WHERE identificacion=:identificacion";
 
-                $result = $conexion->prepare($actualizarClave);
 
-                $result->bindparam(":identificacion", $identificacion);
-                $result->bindparam(":claveMd", $claveMd);
 
-                $result->execute();
 
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
 
-             $mail = new PHPMailer(true);
+
+
+
+
+
+
+
+            $mail = new PHPMailer(true);
 
             try {
                 //Server settings
-                $mail->SMTPDebug = 0;                      //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'serviapart.nfo@gmail.com';                     //SMTP username
-                $mail->Password   = 'npjzjxcytwvlmgzs';                               //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                $mail->SMTPDebug = 0; //Enable verbose debug output
+                $mail->isSMTP(); //Send using SMTP
+                $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
+                $mail->SMTPAuth = true; //Enable SMTP authentication
+                $mail->Username = 'serviapart.nfo@gmail.com'; //SMTP username
+                $mail->Password = 'npjzjxcytwvlmgzs'; //SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
+                $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
                 // Emisor
                 $mail->setFrom('serviapart.nfo@gmail.com', 'Soporte Servi-Apart');
 
                 // Receptor
-                $emailFor=$f['email'];  
-                $mail->addAddress($emailFor);     //Add a recipient
+                $emailFor = $f['email'];
+                $mail->addAddress($emailFor); //Add a recipient
                 // $mail->addAddress('ellen@example.com');               //Name is optional
                 // $mail->addReplyTo('info@example.com', 'Information');
                 // $mail->addCC('cc@example.com');
@@ -87,56 +89,28 @@
                 // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
                 //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->isHTML(true); //Set email format to HTML
                 $mail->CharSet = 'UTF-8'; // Añadir esta línea para configurar la codificación
                 $mail->Subject = 'Reasignación de contraseña';
-                $mail->Body    = '
+                $mail->Body = '
                 
-                <body style="background-color: #232020; font-family: Arial, sans-serif; margin: 0; padding: 0;">
-    <table width="100%" cellspacing="0" cellpadding="0">
-        <tr>
-            <td style="background-color: #232020;">
-                <table align="center" width="600" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td>
-                            <img src="https://github.com/andres10cortes07/servi-apart/blob/main/logo1.png?raw=true" alt="Logo de la Empresa" style="display: block; margin: 0 auto; width:210px; height:120px ">
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table align="center" width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
-                    <tr>
-                        <td style="padding: 10px; font-size: 16px; color: #333; text-align: center;">
-                            <h1 style="color: #00BF63; font-size: 28px; margin-bottom: 20px;">Restablecimiento de Contraseña</h1>
-                            <p style="font-size: 18px; margin-bottom: 20px;">Estimado '.$f['nombres'].',</p>
-                            <p style="font-size: 18px; margin-bottom: 20px;">Esperamos que te encuentres bien. Queremos informarte que tu solicitud para restablecer la contraseña de tu cuenta ha sido procesada con éxito. A continuación, te proporcionamos tu nueva contraseña</p>
-                            <div style="background-color: #00BF63; color: #ffffff; padding: 15px; border-radius: 5px; margin: 0 auto; width: 50%; font-size: 18px;">
-                                <p style="font-weight: bold; text-align: center;">Nueva contraseña: '.$newPass.'</p>
-                            </div>
-                            <p style="font-size: 18px; margin-top: 20px;">Te recomendamos encarecidamente cambiar esta contraseña por una nueva y más segura tan pronto como inicies sesión en tu cuenta. Para hacerlo, sigue estos sencillos pasos:</p>
-                            <ol style="font-size: 18px; margin-top: 20px; text-align: left;">
-                                <li>Inicia sesión en tu cuenta utilizando tu dirección de correo electrónico y la nueva contraseña.</li>
-                                <li>Accede a la configuración de tu perfil o a la sección de seguridad de la cuenta.</li>
-                                <li>Selecciona la opción para cambiar la contraseña.</li>
-                                <li>Sigue las indicaciones en pantalla para establecer una nueva contraseña segura que solo tú conozcas.</li>
-                            </ol>
-                            <p style="font-size: 18px; margin-top: 20px;">Ten en cuenta que esta contraseña deberás cambiarla lo antes posible para garantizar la seguridad de tu cuenta. Si no solicitaste el restablecimiento de contraseña o tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nuestro equipo de soporte a través de <a href="mailto:serviapart.nfo@gmail.com" style="color: #00BF63; text-decoration: none;">serviapart.nfo@gmail.com</a>.</p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #00BF63; text-align: center; padding: 20px;">
-                <p style="font-style: italic; color: #ffffff; margin: 0; font-size: 18px;">Servi - Apart</p>
-                <p style="font-style: italic; color: #ffffff; margin: 0; font-size: 18px;">&copy Copyright 2023</p>
-            </td>
-        </tr>
-    </table>
-</body>
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="padding:0;Margin:0"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="x-apple-disable-message-reformatting"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="telephone=no" name="format-detection"><title>Clave Temporal / Servi - Apart</title><!--[if (mso 16)]><style type="text/css"> a {text-decoration: none;} </style><![endif]--><!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--><!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG></o:AllowPNG> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--><!--[if !mso]><!-- --><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet"><!--<![endif]--><style type="text/css">#outlook a { padding:0;}.ExternalClass { width:100%;}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div { line-height:100%;}.es-button { mso-style-priority:100!important; text-decoration:none!important;}a[x-apple-data-detectors] { color:inherit!important; text-decoration:none!important; font-size:inherit!important; font-family:inherit!important; font-weight:inherit!important; line-height:inherit!important;}.es-desk-hidden { display:none; float:left; overflow:hidden; width:0; max-height:0; line-height:0; mso-hide:all;}@media only screen and (max-width:600px) {p, ul li, ol li, a { line-height:150%!important } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120%!important } h1 { font-size:30px!important; text-align:center } h2 { font-size:26px!important; text-align:center } h3 { font-size:20px!important; text-align:center } .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size:30px!important } .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size:26px!important } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:20px!important } .es-menu td a { font-size:16px!important } .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size:16px!important } .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size:16px!important } .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:16px!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size:12px!important } *[class="gmail-fix"] { display:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align:center!important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right!important } .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left!important } .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display:inline!important } .es-button-border { display:inline-block!important } a.es-button, button.es-button { font-size:20px!important; display:inline-block!important; padding:15px 25px 15px 25px!important } .es-btn-fw { border-width:10px 0px!important; text-align:center!important } .es-adaptive table, .es-btn-fw, .es-btn-fw-brdr, .es-left, .es-right { width:100%!important } .es-content table, .es-header table, .es-footer table, .es-content, .es-footer, .es-header { width:100%!important; max-width:600px!important } .es-adapt-td { display:block!important; width:100%!important } .adapt-img { width:100%!important; height:auto!important } .es-m-p0 { padding:0!important } .es-m-p0r { padding-right:0!important } .es-m-p0l { padding-left:0!important } .es-m-p0t { padding-top:0!important } .es-m-p0b { padding-bottom:0!important } .es-m-p20b { padding-bottom:20px!important } .es-mobile-hidden, .es-hidden { display:none!important } tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { width:auto!important; overflow:visible!important; float:none!important; max-height:inherit!important; line-height:inherit!important } tr.es-desk-hidden { display:table-row!important } table.es-desk-hidden { display:table!important } td.es-desk-menu-hidden { display:table-cell!important } .es-menu td { width:1%!important } table.es-table-not-adapt, .esd-block-html table { width:auto!important } table.es-social { display:inline-block!important } table.es-social td { display:inline-block!important } .es-desk-hidden { display:table-row!important; width:auto!important; overflow:visible!important; max-height:inherit!important } .es-m-p5 { padding:5px!important } .es-m-p5t { padding-top:5px!important } .es-m-p5b { padding-bottom:5px!important } .es-m-p5r { padding-right:5px!important } .es-m-p5l { padding-left:5px!important } .es-m-p10 { padding:10px!important } .es-m-p10t { padding-top:10px!important } .es-m-p10b { padding-bottom:10px!important } .es-m-p10r { padding-right:10px!important } .es-m-p10l { padding-left:10px!important } .es-m-p15 { padding:15px!important } .es-m-p15t { padding-top:15px!important } .es-m-p15b { padding-bottom:15px!important } .es-m-p15r { padding-right:15px!important } .es-m-p15l { padding-left:15px!important } .es-m-p20 { padding:20px!important } .es-m-p20t { padding-top:20px!important } .es-m-p20r { padding-right:20px!important } .es-m-p20l { padding-left:20px!important } .es-m-p25 { padding:25px!important } .es-m-p25t { padding-top:25px!important } .es-m-p25b { padding-bottom:25px!important } .es-m-p25r { padding-right:25px!important } .es-m-p25l { padding-left:25px!important } .es-m-p30 { padding:30px!important } .es-m-p30t { padding-top:30px!important } .es-m-p30b { padding-bottom:30px!important } .es-m-p30r { padding-right:30px!important } .es-m-p30l { padding-left:30px!important } .es-m-p35 { padding:35px!important } .es-m-p35t { padding-top:35px!important } .es-m-p35b { padding-bottom:35px!important } .es-m-p35r { padding-right:35px!important } .es-m-p35l { padding-left:35px!important } .es-m-p40 { padding:40px!important } .es-m-p40t { padding-top:40px!important } .es-m-p40b { padding-bottom:40px!important } .es-m-p40r { padding-right:40px!important } .es-m-p40l { padding-left:40px!important } }</style></head>
+<body style="width:100%;font-family:open sans, helvetica neue, helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+</td></tr></table></td></tr></table><!--[if mso]></td><td style="width:20px"></td>
+
+</td></tr></table></td></tr></table><!--[if mso]></td></tr></table><![endif]--></td></tr></table></td>
+</tr></table><table class="es-header" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top"><tr style="border-collapse:collapse"><td style="padding:0;Margin:0;background-size:cover;background-color:#232020" bgcolor="#232020" align="center"><table class="es-header-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:640px" cellspacing="0" cellpadding="0" align="center"><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;padding-top:10px;padding-left:20px;padding-right:20px"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;width:600px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td align="center" style="padding:0;Margin:0;padding-top:40px;padding-bottom:40px;font-size:0px"><a href="https://viewstripo.email" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#B7BDC9;font-size:20px"><img src="https://smmdou.stripocdn.email/content/guids/09d78059-f505-4070-87fb-253cf9844bca/images/logo1.png" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" alt="Logo" title="Logo" width="160" height="81"></a></td>
+</tr><tr style="border-collapse:collapse"><td align="center" style="padding:0;Margin:0;padding-top:10px;font-size:0px"><a target="_blank" href="https://viewstripo.email" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#B7BDC9;font-size:20px"><img class="adapt-img" src="https://smmdou.stripocdn.email/content/guids/videoImgGuid/images/pexelsmisaelgarcia1707823_TKY.jpeg" alt="Newsletter article #1" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-radius:3px 3px 0px 0px" title="Newsletter article #1" width="600" height="234"></a></td></tr></table></td></tr></table></td></tr></table></td>
+</tr></table><table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr style="border-collapse:collapse"><td align="center" bgcolor="#232020" style="padding:0;Margin:0;background-color:#232020"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:640px" cellspacing="0" cellpadding="0" align="center"><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;width:600px"><table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:3px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff" role="presentation"><tr style="border-collapse:collapse"><td align="center" style="Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:25px"><h2 style="Margin:0;line-height:34px;mso-line-height-rule:exactly;font-family:open sans, helvetica neue, helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:bold;color:#00bf63">Recuperación de contraseña</h2>
+</td></tr><tr style="border-collapse:collapse"><td align="center" style="Margin:0;padding-top:10px;padding-bottom:15px;padding-left:20px;padding-right:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:open sans, helvetica neue, helvetica, arial, sans-serif;line-height:24px;color:#000000;font-size:16px"><span class="product-description">Ingresa esta contraseña temporal en tus credenciales y luego establezca una nueva contraseña.</span></p></td></tr></table></td></tr></table></td>
+</tr><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;width:600px"><table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:3px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff" role="presentation"><tr style="border-collapse:collapse"><td align="center" style="Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:25px"><h2 style="Margin:0;line-height:34px;mso-line-height-rule:exactly;font-family:open sans, helvetica neue, helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:bold;color:#00bf63">' . $newPass . '</h2>
+</td></tr><tr style="border-collapse:collapse"><td align="center" style="Margin:0;padding-top:10px;padding-bottom:15px;padding-left:20px;padding-right:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:open sans, helvetica neue, helvetica, arial, sans-serif;line-height:24px;color:#000000;font-size:16px"><span class="product-description">¡Gracias por utilizar nuestros servicios!</span></p></td></tr></table></td></tr></table></td></tr></table></td>
+</tr></table><table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr style="border-collapse:collapse"><td align="center" bgcolor="#232020" style="padding:0;Margin:0;background-color:#232020"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#18d26e;width:640px" cellspacing="0" cellpadding="0" bgcolor="#18d26e" align="center"><tr style="border-collapse:collapse"><td align="left" bgcolor="#232020" style="padding:0;Margin:0;padding-top:10px;padding-left:20px;padding-right:20px;background-color:#232020"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;width:600px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;font-size:0"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td style="padding:0;Margin:0;border-bottom:1px solid #f6f6f6;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px"></td>
+</tr></table></td></tr></table></td></tr></table></td></tr></table></td>
+</tr></table><table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr style="border-collapse:collapse"><td style="padding:0;Margin:0;background-color:#232020" bgcolor="#232020" align="center"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:640px" cellspacing="0" cellpadding="0" align="center"><tr style="border-collapse:collapse"><td style="Margin:0;padding-top:15px;padding-bottom:15px;padding-left:20px;padding-right:20px;background-color:#232020" bgcolor="#232020" align="left"><!--[if mso]><table style="width:600px" cellpadding="0" cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]--><table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr style="border-collapse:collapse"><td class="es-m-p0r es-m-p20b" valign="top" align="center" style="padding:0;Margin:0;width:200px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td class="es-m-txt-c" align="left" style="padding:0;Margin:0;font-size:0px"><img src="https://smmdou.stripocdn.email/content/guids/CABINET_05a26d3d3395942bb12e63ccbe54486657ffd94652ce62cdf2ad7b4c5fae2b29/images/logo1_GET.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="80" height="40"></td>
+</tr></table></td></tr></table><!--[if mso]></td><td style="width:20px"></td>
+<td style="width:380px" valign="top"><![endif]--><table cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;width:380px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td class="es-m-txt-c" align="right" style="padding:0;Margin:0;padding-top:10px;font-size:0px"><table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Facebook" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/facebook-circle-black.png" alt="Fb" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Twitter" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/twitter-circle-black.png" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td><td valign="top" align="center" style="padding:0;Margin:0"><img title="Instagram" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/instagram-circle-black.png" alt="Inst" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td></tr></table></td></tr></table></td></tr></table><!--[if mso]></td></tr></table><![endif]--></td></tr></table></td></tr></table></td></tr></table></div></body></html>
 
                 ';
 
@@ -155,17 +129,16 @@
 
 
 
-                
 
-                
-            }
-            else{
-                echo '<script>alert("Los datos de Usuario no se Encuentran en el Sistema")</script>';
-                echo "<script>location.href='../Views/client-site/page-reset-password.html'</script>";
-            }
 
+
+        } else {
+            echo '<script>alert("Los datos de Usuario no se Encuentran en el Sistema")</script>';
+            echo "<script>location.href='../Views/client-site/page-reset-password.html'</script>";
         }
+
     }
+}
 
 
 
