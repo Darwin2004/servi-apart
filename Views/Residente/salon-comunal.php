@@ -46,7 +46,7 @@ require_once("../../Models/consultas.php");
 <body>
 
     <?php
-    include 'menu-include-usuario.php';
+    include 'menu-include-residente.php';
     ?>
 
     <!-- /# sidebar -->
