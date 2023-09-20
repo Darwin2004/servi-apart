@@ -16,7 +16,7 @@ $result = $objConsulta->verPerfil($id);
             <div class="nano-content">
                 <div class="logo">
                     <a href="home.php">
-                        <img src="../client-site/assets/img/logo1.png" width="100" height="100" alt="" />
+                        <img src="../client-site/assets/img/logo1.png" width="200px" height="100px" alt="" />
                         <!-- <span>Focus</span> -->
                     </a>
                 </div>
@@ -55,9 +55,6 @@ $result = $objConsulta->verPerfil($id);
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
-                            <li>
-                                <a href="salon-comunal.php"> <i class="ti-pencil-alt"></i>Registrar Reserva </a>
-                            </li>
                             <li>
                                 <a href="ver-reservaSC.PHP"><i class="ti-eye"></i>Ver reservas</a>
                             </li>
