@@ -72,6 +72,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -101,7 +102,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Administrador</a>
+                                        <a  style="color: #18d26e">Administrador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver Vehiculos</li>
                                 </ol>
@@ -114,10 +115,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi" style="margin-top:0;  color:black; background-color: #00bf63     !important">
-                                <div class="card-title">
-
-                                </div>
+                            <div class="card vehiculos_ver">
                                 <div class="card-body" >
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
@@ -130,8 +128,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:20px">Identificación Residente</th>
                                                     <th style="font-size:20px">Fecha</th>
                                                     <th style="font-size:20px">Operaciones</th>
-                                                    <th style="text-align:center; font-size:20px">Fotos</th>
                                                     <th style="text-align:center; font-size:20px">Novedades</th>
+                                                    <th style="text-align:center; font-size:20px">Más detalles</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -148,8 +146,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:65px; margin-right:15px;"><a class="text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:65px"><a class="text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf" style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a class="txt-pdf" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a class="txt-excel" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 

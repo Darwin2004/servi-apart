@@ -69,6 +69,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,7 +94,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Administrador</a>
+                                        <a style="color: #18d26e">Administrador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Registrar Vehiculo</li>
                                 </ol>
@@ -122,21 +123,17 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                     <div class="col-md-6">
                         <div class="form_vehiculo_2">
-                            <div class="card-title">
-
-
-                            </div>
 
                             <section id="main-content" class="form_vehiculo">
                                 <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" class="box-cont">
                                     <div class="row">
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-4 campos_vehiculo">
                                             <label>Placa:</label>
                                             <input type="text" class="form-control" placeholder="Ej: UZI974"
                                                 name="placa">
                                         </div>
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-4 campos_vehiculo">
                                             <label>Marca:</label>
                                             <select name="marca" class="form-control" placeholder="Ej: Ford">
                                                 <option value="marca">Marca</option>
@@ -196,7 +193,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                 </optgroup>
                                             </select>
                                         </div>
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-4 campos_vehiculo">
                                             <label>Referencia:</label>
                                             <input type="text" class="form-control" placeholder="Ej: Explorer"
                                                 name="referencia">
@@ -212,29 +209,24 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                 name="identificacion">
                                         </div>
                                         <div class="form-group col-md-6 campos_vehiculo">
-                                            <label>Fecha</label>
-                                            <input type="date" class="form-control" placeholder="Ej: 08/10/2023"
-                                                name="fecha">
-                                        </div>
-                                        <div class="form-group col-md-6 campos_vehiculo">
-                                            <label>Foto 1</label>
+                                            <label>Foto 1 de Vehiculo</label>
                                             <input type="file" class="form-control" name="foto1"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
                                         <div class="form-group col-md-6 campos_vehiculo">
-                                            <label>Foto 2</label>
+                                            <label>Foto 2 de Vehiculo</label>
                                             <input type="file" class="form-control" name="foto2"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
 
                                         <div class="form-group col-md-6 campos_vehiculo">
-                                            <label>Foto 3</label>
+                                            <label>Foto 3 de Vehiculo</label>
                                             <input type="file" class="form-control" name="foto3"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
 
                                         <div class="form-group col-md-6 campos_vehiculo">
-                                            <label>Foto 4</label>
+                                            <label>Foto 4 de Vehiculo</label>
                                             <input type="file" class="form-control" name="foto4"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
@@ -264,13 +256,6 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
         </div>
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
-        </div>
         </section>
     </div>
     </div>

@@ -550,7 +550,7 @@
             return $f;
         }
         
-        public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $fecha, $foto1, $foto2, $foto3, $foto4){
+        public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4){
                 
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
@@ -572,8 +572,8 @@
             }   else{
                 
                 //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-                $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, fecha, foto1, foto2, foto3, foto4) 
-                VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :fecha, :foto1, :foto2, :foto3, :foto4)";
+                $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, foto1, foto2, foto3, foto4) 
+                VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :foto1, :foto2, :foto3, :foto4)";
 
 
                 //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -586,7 +586,6 @@
                 $result -> bindParam (":referencia", $referencia);
                 $result -> bindParam (":modelo", $modelo);
                 $result -> bindParam (":identificacion", $identificacion);
-                $result -> bindParam (":fecha", $fecha);  
                 $result -> bindParam (":foto1", $foto1);
                 $result -> bindParam (":foto2", $foto2);
                 $result -> bindParam (":foto3", $foto3);
