@@ -1163,7 +1163,7 @@ function mostrarReservas()
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombre'] . '</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] . '</p>
                                         </div>
                                     </div>
 
@@ -1183,7 +1183,7 @@ function mostrarReservas()
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['telefonos'] . '</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['telefono'] . '</p>
                                         </div>
                                     </div>
 
@@ -1193,7 +1193,7 @@ function mostrarReservas()
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Correo</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['correo'] . '</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['email'] . '</p>
                                         </div>
                                     </div>
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
