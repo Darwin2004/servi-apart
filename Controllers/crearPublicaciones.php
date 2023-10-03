@@ -10,7 +10,7 @@
   
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $id_publi = [''];
+
    
     
 
@@ -21,7 +21,7 @@
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> crearPublicacion($id_publi, $titulo, $descripcion);
+            $result = $objConsultas -> crearPublicacion($titulo, $descripcion);
         
 
         }else{

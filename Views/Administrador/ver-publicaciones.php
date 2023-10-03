@@ -70,6 +70,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -115,8 +116,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                         <div class="p-2  center justify-content-end">
 
-                        <button id="GenerarExcel" class="btn p-2 btn-danger mx-3 "><a class="text-light" href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
-                        <button id="GenerarPDF" class="btn p-2 btn-success "><a class="text-light" href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte PDF</a></button>
+                        <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light" href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
+                        <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light" href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte PDF</a></button>
 
                         </div>
 
@@ -129,11 +130,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                               
                                 <div class="card-body">
                                 <div class="table-responsive">
-                                        <table class="table table-bordered table-hover ">
+                                        <table class="table  table-hover ">
                                             <thead>
                                                 <tr class="">
-                                                    <th style="font-size: 20px"><strong>Titulo:</strong></th>
-                                                    <th  style="font-size: 20px; text-align: left"><strong >Descripcion:</strong></th>
+                                                    <th style="font-size: 20px"><strong>Titulo</strong></th>
+                                                    <th  style="font-size: 20px; text-align: left"><strong >Descripcion</strong></th>
+                                                    <th style="font-size: 20px;  text-align: center"><strong>Operaciones</strong></th>
                                                    
                                                 </tr>
                                             </thead>

@@ -294,28 +294,13 @@
         
 
 
-        public function crearPublicacion($id_publi, $titulo, $descripcion){
+        public function crearPublicacion( $titulo, $descripcion){
             
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM publicaciones WHERE id_publi=:id_publi';
-            $result = $conexion->prepare($consultar);
-      
-
-            $result -> bindParam (":id_publi", $id_publi);
-
-            $result -> execute();
-
-            $f = $result->fetch();
-
-            if($f){
-                echo '<script>alert("Publicacion ya esta publicada")</script>';
-                echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
-            }else{
-                
+          
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO publicaciones(titulo, descripcion) 
             VALUES(:titulo, :descripcion)";
@@ -336,8 +321,8 @@
             $result -> execute();
              
             echo '<script>alert("Publicacion creada correctamente")</script>';
-            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
-            }
+            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
+            
 
         }
 

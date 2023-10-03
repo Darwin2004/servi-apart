@@ -71,6 +71,11 @@
     
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    
+  
+    
+
 </head>
 
 <body>
@@ -119,7 +124,7 @@
                 <!-- /# row -->
              <section id="main-content">
                 <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="card-publi">
                                 <div class="card-title">
                                     
@@ -157,13 +162,7 @@
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    
         </section>
             </div>
         </div>
