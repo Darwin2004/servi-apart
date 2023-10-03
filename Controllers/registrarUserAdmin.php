@@ -29,7 +29,7 @@
         && strlen($clave) >0                && strlen($rol)>0                 
         && strlen($estado)>0               ){
 
-
+            $claveMd = md5($clave);
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
             $foto = "../Uploads/Usuarios/".$_FILES['foto']['name'];
             //MOVEMOS EL ARCHIVO A LA CARPETA UPLOADS Y LA CARPETA USUARIOS
@@ -40,7 +40,7 @@
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto);
+            $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento, $foto);
         
             echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
         }else{

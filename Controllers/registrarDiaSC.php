@@ -16,7 +16,7 @@ require_once("../Models/consultas.php");
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-        *;
+       
 
         html,
         body {

@@ -1,4 +1,6 @@
 <?php
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
 
 // ESTE ARCHIVO RECIBE TODAS LAS CONSULTAS DEL MODELO PARA MOSTRAR INFORMACION AL ADMINISTRADOR 
 

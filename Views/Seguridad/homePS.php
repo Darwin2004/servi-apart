@@ -38,12 +38,13 @@
    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
    <link href="../dashboard/css/style.css" rel="stylesheet">
+   
 </head>
 
 <body>
 
 <?php
-    include 'menu-include-PS.php';
+    include 'includePS.php';
 ?>
     <!-- /# sidebar -->
 
