@@ -100,44 +100,8 @@ require_once("../../Models/consultas.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Johan" required>
-                                            <label for="nombre">Nombre</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Castañeda" required>
-                                            <label for="apellidos">Apellido</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="telefonos" name="telefonos" placeholder="3204031794" required>
-                                            <label for="telefonos">Teléfono</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="correo" name="correo" placeholder="name@example.com" required>
-                                            <label for="correo">Correo Electrónico</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
                                             <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
                                             <label for="dia_reserva">Día de Reserva</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="torre" name="torre" placeholder="3" required>
-                                            <label for="torre">Torre</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="apartamento" name="apartamento" placeholder="601" required>
-                                            <label for="apartamento">Apartamento</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

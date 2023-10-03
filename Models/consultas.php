@@ -27,7 +27,7 @@
 
             if($f){
                 echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-                echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
             }else{
                 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
@@ -56,7 +56,7 @@
             $result -> execute();
              
             echo '<script>alert("Te has registrado exitosamente, debes esperar a que un administrador te autorize")</script>';
-            echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
             }
 
         }
@@ -77,12 +77,12 @@
             $result->execute();
 
             echo '<script>
-                    alert("Infomación de usuario actualizada ;)")
-                </script>';
+                alert("Infomación de usuario actualizada ;)")
+            </script>';
 
             echo "<script>
-                    location.href='../Views/Administrador/perfil.php?id=$id'
-                </script>";
+                location.href = '../Views/Administrador/perfil.php?id=$id'
+            </script>";
         }
 
         public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto){
@@ -105,7 +105,7 @@
 
             if($f){
                 echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-                echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
+                echo "<script>location.href = '../Views/Administrador/registrar-usuario.php'</script>";
             }else{
                 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
@@ -135,7 +135,7 @@
             $result -> execute();
              
             echo '<script>alert("Usuario registrado con exito")</script>';
-            // echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
+            // echo "<script>location.href = '../Views/Administrador/registrar-usuario.php'</script>";
             }
 
         }
@@ -266,7 +266,7 @@
             $result->execute();
 
             echo '<script>alert("Información de usuario actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
         }
 
         public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento){
@@ -289,7 +289,7 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
         }
         
 
@@ -300,7 +300,10 @@
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-          
+
+
+
+         
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO publicaciones(titulo, descripcion) 
             VALUES(:titulo, :descripcion)";
@@ -321,10 +324,11 @@
             $result -> execute();
              
             echo '<script>alert("Publicacion creada correctamente")</script>';
+
             echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
             
-
         }
+            
 
         public function eliminarPubli($id_publi){
             $objConexion = new Conexion();
@@ -337,7 +341,7 @@
 
             $result->execute();
             echo '<script>alert("Publicacion Eliminada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
         }
 
 
@@ -374,7 +378,7 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            //echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";//
+            //echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";//
         }
 
         public function mostrarPubliEditar($id_publi){
@@ -433,7 +437,7 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-vehiculo.php'</script>";
         }
 
         public function mostrarVehiculoEditarAdmin($placa){
@@ -469,7 +473,7 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            echo '<script>location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
+            echo '<script>location.href = "../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
         }
 
         public function eliminarVehiculosAdmin($placa){
@@ -483,7 +487,7 @@
 
             $result->execute();
             echo '<script>alert("Vehiculo Eliminado")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-vehiculo.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-vehiculo.php'</script>";
         }
 
         public function eliminarNovedadesAdmin($id_nov, $placa){
@@ -498,7 +502,7 @@
 
             $result->execute();
             echo '<script>alert("Novedad Eliminada")</script>';
-            echo '<script>location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
+            echo '<script>location.href = "../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
         }
 
 
@@ -513,7 +517,7 @@
 
             $result->execute();
             echo '<script>alert("Usuario Eliminado")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-usuario.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
         }
 
         public function verPerfil($id) {
@@ -553,7 +557,7 @@
 
             if($f){
                 echo '<script>alert("Los datos del vehiculo ya se encuentran registrados")</script>';
-                echo "<script>location.href='../Views/Administrador/registrar-vehiculo.php'</script>";
+                echo "<script>location.href = '../Views/Administrador/registrar-vehiculo.php'</script>";
             }   else{
                 
                 //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
@@ -580,11 +584,11 @@
                 $result -> execute();
                 
                 echo '<script>alert("Vehiculo registrado exitosamente")</script>';
-                echo "<script>location.href='../Views/Administrador/registrar-vehiculo.php'</script>";
+                echo "<script>location.href = '../Views/Administrador/registrar-vehiculo.php'</script>";
             }
         }
 
-        public function registrarDia($identificacion, $nombre, $apellidos, $telefonos, $correo, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion, $mesas, $sillas){
+        public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas){
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
         
@@ -600,21 +604,27 @@
             if ($f) {
                 return false; // Indicar que ya existe una reserva para el mismo día.
             } else {
-                $insertar ="INSERT INTO reserva_salon (identificacion, nombre, apellidos, telefonos, correo, dia_reserva, torre, apartamento, hora_inicio, hora_finalizacion, mesas, sillas)
-                            VALUES (:identificacion, :nombre, :apellidos, :telefonos, :correo, :dia_reserva, :torre, :apartamento, :hora_inicio, :hora_finalizacion, :mesas, :sillas)";
+
+                $query = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+                $statement = $conexion->prepare($query);
+
+                $statement->bindParam(":identificacion", $identificacion);
+
+                $statement->execute();
+
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                if(isset($result['identificacion'])){
+                    
+                    $insertar ="INSERT INTO reserva_salon (identificacion, dia_reserva, hora_inicio, hora_finalizacion, mesas, sillas)
+                            VALUES (:identificacion, :dia_reserva, :hora_inicio, :hora_finalizacion, :mesas, :sillas)";
         
                 $result = $conexion->prepare($insertar);
         
                 // Vincular los parámetros
         
                 $result->bindParam(":identificacion", $identificacion);
-                $result->bindParam(":nombre", $nombre);
-                $result->bindParam(":apellidos", $apellidos);
-                $result->bindParam(":telefonos", $telefonos);
-                $result->bindParam(":correo", $correo);
                 $result->bindParam(":dia_reserva", $dia_reserva);
-                $result->bindParam(":torre", $torre);
-                $result->bindParam(":apartamento", $apartamento);
                 $result->bindParam(":hora_inicio", $hora_inicio);
                 $result->bindParam(":hora_finalizacion", $hora_finalizacion);
                 $result->bindParam(":mesas", $mesas);
@@ -625,6 +635,11 @@
                 } else {
                     return false; // Indicar error en la inserción. PRUEBA DE UN COMMIT
                 }
+                }else{
+                    return false;
+                }
+                
+                
             }
         }
         
@@ -639,7 +654,7 @@
         
             if ($result->execute()) {
                 echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
-                 echo "<script>location.href='../Views/Administrador/ver-ReservaSC.php'</script>";
+                 echo "<script>location.href = '../Views/Administrador/ver-ReservaSC.php'</script>";
             } else {
                 echo '<script>alert("Error al eliminar la reserva")</script>';
             }
@@ -690,17 +705,9 @@
             $result->execute();
 
             echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/ver-reservaSC.php'</script>";
+            echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
             
         }
-
-
-
-
-
-
-
-
 
 
         public function actualizarClaveAdmin($identificacion, $claveMd){  
@@ -718,7 +725,7 @@
             $result->execute();
         
             echo '<script>alert("Clave Actualizada")</script>';
-            echo "<script>location.href='../Views/Administrador/perfil.php?id=$identificacion'</script>";
+            echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
         }
 
 
@@ -768,7 +775,19 @@
                 $objConexion = new Conexion();
                 $conexion = $objConexion->get_conexion();
         
-                $query = "SELECT * FROM reserva_salon";
+                $query = "SELECT S.id_reserva , 
+                S.identificacion, 
+                S.dia_reserva , 
+                S.hora_inicio , 
+                S.hora_finalizacion , 
+                S.mesas , 
+                S.sillas,
+                U.nombres,
+                U.apellidos,
+                U.email,
+                U.telefono,
+                U.torre,
+                U.apartamento  FROM reserva_salon S INNER JOIN usuarios U ON S.identificacion=U.identificacion";
                 $statement = $conexion->prepare($query);
         
         
@@ -831,17 +850,17 @@
                             switch ($f['rol']) {
                                 case 'Administrador':
                                     echo '<script>alert("Bienvenido señor administrador")</script>';
-                                    echo "<script>location.href='../Views/Administrador/home.php'</script>";
+                                    echo "<script>location.href = '../Views/Administrador/home.php'</script>";
                                     break;
 
                                 case 'Residente':
                                         echo '<script>alert("Bienvenido señor residente")</script>';
-                                        echo "<script>location.href='../Views/Residente/homeResidente.php'</script>";
+                                        echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
                                         break;
                                 
                                 case 'Seguridad':
                                             echo '<script>alert("Bienvenido señor personal de seguridad")</script>';
-                                            echo "<script>location.href='../Views/Seguridad/homePS.php'</script>";
+                                            echo "<script>location.href = '../Views/Seguridad/homePS.php'</script>";
                                             break;
                             }
 
@@ -850,17 +869,17 @@
                     }
                     else {
                         echo '<script>alert("La cuenta no está activa, contactese con el administrador")</script>';
-                        echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                        echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
                     }
                 }
                 else {
                     echo '<script>alert("Clave incorrecta")</script>';
-                    echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                    echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
                 }
             }
             else {
                 echo '<script>alert("El usuario no existe")</script>';
-                echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+                echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
             }
         }
 
@@ -872,7 +891,7 @@
             session_start();
             session_destroy();
 
-            echo "<script>location.href='../Views/client-site/page-login.html' </script>";
+            echo "<script>location.href = '../Views/client-site/page-login.html' </script>";
         }
 
 
