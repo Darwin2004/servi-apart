@@ -85,7 +85,7 @@
                 </script>";
         }
 
-        public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $clave, $rol, $estado, $torre, $apartamento, $foto){
+        public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento, $foto){
             
             //CREAMOS EL OBJETO DE CONEXION
             $objConexion = new Conexion();
@@ -110,7 +110,7 @@
                 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO usuarios(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, torre, apartamento, foto) 
-            VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :clave,  :rol, :estado, :torre, :apartamento, :foto)";
+            VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :claveMd,  :rol, :estado, :torre, :apartamento, :foto)";
 
 
             //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -124,7 +124,7 @@
             $result -> bindParam (":apellidos", $apellidos);
             $result -> bindParam (":email", $email);
             $result -> bindParam (":telefono", $telefono);  
-            $result -> bindParam (":clave", $clave);
+            $result -> bindParam (":claveMd", $claveMd);
             $result -> bindParam (":rol", $rol);
             $result -> bindParam (":estado", $estado);
             $result -> bindParam (":torre", $torre);
@@ -135,7 +135,7 @@
             $result -> execute();
              
             echo '<script>alert("Usuario registrado con exito")</script>';
-            // echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
+            echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
             }
 
         }

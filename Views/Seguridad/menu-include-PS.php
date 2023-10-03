@@ -1,3 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
+</head>
+<body>
+    
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano">
             <div class="nano-content">
