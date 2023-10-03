@@ -101,7 +101,7 @@
                                 </div>
                                 <h1 style="font-size: 2.5rem;" class="hola">Registro de publicaciones</h1>
                             </div>
-                                <h1 style="margin-top: 30px; ">Crear Publicación</h1>
+                                <h1 style="margin-top: 30px; font-size: 30px ">Crear Publicación</h1>
                                 <p style="font-size: 20px">Por favor rellena los campos</p>
                             </div>
                         </div>
@@ -121,15 +121,26 @@
                     </div>
                     <!-- /# column -->
                 </div>
+          
                 <!-- /# row -->
-             <section id="main-content">
+
                 <div class="row">
+                            <div class="col-md-6">
+                                <img src="../../assets/img/publi.png" class="img_publi" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                <section id="main-content" style="margin-top: -430px">
+                   <div class="row">
                         <div class="col-lg-6">
                             <div class="card-publi">
                                 <div class="card-title">
                                     
-                                    
                                 </div>
+
+                                
+                        
                                 <form action="../../Controllers/crearPublicaciones.php" method="POST">
                                 <div class="row">
 

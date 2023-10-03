@@ -45,9 +45,16 @@
   }
   
   
-  .img_vehiculo {
-    height: 400px;
-    margin-left: 70px;
+  .img_publi {
+    height: 410px;
+    width: 450px;
+    margin-left: 700px;
+    margin-top: 10px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    
+  
+    
   }
   
   .btn_registrar {
