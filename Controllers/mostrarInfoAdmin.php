@@ -1322,34 +1322,7 @@ function mostrarReservas()
                         
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="nombre" style="font-weight: bold; color: #333;">Nombre</label>
-                        <input type="text" class="form-control" value="'.$f['nombre'] .'" id="nombre" name="nombre" placeholder="Johan" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="apellidos" style="font-weight: bold; color: #333;">Apellido</label>
-                        <input type="text" class="form-control" value="'.$f['apellidos'] .'" id="apellidos" name="apellidos" placeholder="Castañeda" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="telefonos" style="font-weight: bold; color: #333;">Teléfono</label>
-                        <input type="text" class="form-control" value="'.$f['telefonos'] .'" id="telefonos" name="telefonos" placeholder="3204031794" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="form-floating">
-                    <label for="correo" style="font-weight: bold; color: #333;">Correo Electrónico</label>
-                        <input type="email" class="form-control" value="'.$f['correo'] .'" id="correo" name="correo" placeholder="name@example.com" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
+                
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
@@ -1357,20 +1330,7 @@ function mostrarReservas()
                         
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="torre" style="font-weight: bold; color: #333;">Torre</label>
-                        <input type="number" class="form-control"  value="'.$f['torre'] .'" id="torre" name="torre" placeholder="3" required  readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="apartamento" style="font-weight: bold; color: #333;">Apartamento</label>
-                        <input type="number" class="form-control" value="'.$f['apartamento'] .'" id="apartamento" name="apartamento" placeholder="601" required readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                        
-                    </div>
-                </div>
+            
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>

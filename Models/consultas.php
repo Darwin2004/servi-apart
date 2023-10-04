@@ -680,23 +680,18 @@
         }
 
 
-        public function modificarReservaAdmin($identificacion, $nombre, $apellidos, $telefonos, $correo, $dia_reserva, $torre, $apartamento, $hora_inicio, $hora_finalizacion,$mesas, $sillas){
+        public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion,$mesas, $sillas){
             
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion, nombre=:nombre, apellidos=:apellidos, telefonos=:telefonos, correo=:correo, dia_reserva=:dia_reserva,torre=:torre, apartamento=:apartamento, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
+            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
             $result = $conexion->prepare($actualizar);
 
             
             $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":nombre", $nombre);
-            $result->bindParam(":apellidos", $apellidos);
-            $result->bindParam(":telefonos", $telefonos);
-            $result->bindParam(":correo", $correo);
+    
             $result->bindParam(":dia_reserva", $dia_reserva);
-            $result->bindParam(":torre", $torre);
-            $result->bindParam(":apartamento", $apartamento);
             $result->bindParam(":hora_inicio", $hora_inicio);
             $result->bindParam(":hora_finalizacion", $hora_finalizacion);
             $result->bindParam(":mesas", $mesas);
