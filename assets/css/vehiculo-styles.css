@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Fugaz+One&family=Josefin+Slab:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Open+Sans:wght@500&family=Poppins:wght@100;200;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&family=Rokkitt:wght@100;200;300;400;500&family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-* {
-    font-family: 'Roboto', sans-serif; 
-  }
   body {
     font-family: 'Roboto', sans-serif !important; 
     color: #444444;
@@ -15,7 +13,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Teko', sans-serif !important;
+    font-family: 'Varela Round', sans-serif !important;
   }
 
 
@@ -25,7 +23,7 @@
   }
   
   #tl_vehiculo {
-    font-size: 64px !important;
+    font-size: 48px !important;
   }
   
   .p_vehiculo {
@@ -40,7 +38,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     width: 100% !important; padding: 20px; 
     border-radius: 20px;
-    margin-top: 50px;
+    margin-top: 80px;
   }
   
   
@@ -166,4 +164,17 @@
 .btn-excel:hover {
     transform: scale(1.1);
     transition: 0.3s;
+}
+
+/* titulos de datos en modulo de detalles de vehiculo */
+.tl_datos_fotos {
+  margin-left: -1px;
+}
+
+.datos_vehiculo_propietario {
+  margin-left: 50px;
+}
+
+.carrusel {
+  transition: transform 0.1s ease-in-out;
 }

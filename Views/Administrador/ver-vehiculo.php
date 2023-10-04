@@ -18,7 +18,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi-Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -70,9 +70,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="../client-site/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
 <body>

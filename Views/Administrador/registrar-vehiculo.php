@@ -11,6 +11,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,9 +69,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
+
 
 <body>
 
@@ -107,7 +108,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <div class="row">
                     <div class="page-header col-md-6">
                         <div class="page-title txt_vehiculos">
-                            <h1 id="tl_vehiculo">Registrar Vehiculos</h1>
+                            <h1 id="tl_vehiculo">REGISTRAR VEHICULOS</h1>
                             <p class="p_vehiculo">Este módulo te ofrece la posibilidad de registrar de manera rápida y
                                 sencilla <br>los detalles de los vehículos que ingresen a la propiedad, lo que
                                 <br>asegura un
@@ -260,6 +261,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     </div>
     </div>
     </div>
+
 
 
 
@@ -449,6 +451,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
+
 
 </body>
 

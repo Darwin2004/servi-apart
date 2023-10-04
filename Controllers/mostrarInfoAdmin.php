@@ -229,25 +229,25 @@ function cargarFotosVehiculo(){
 
       <div class="row" style="display:flex; align-items:center; margin-left:30px">
       <div class="col-lg-5">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" style="border: 2px solid black">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" >
   <div class="carousel-indicators" >
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="...">
+  <div class="carousel-inner carrusel" style="">
+    <div class="carousel-item active">
+        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px;">
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
-        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="...">
+    <div class="carousel-item" >
+        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px">
     </div>
-    <div class="carousel-item">
-        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="...">
+    <div class="carousel-item" >
+        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px">
     </div>
-    <div class="carousel-item">
-        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="...">
+    <div class="carousel-item" >
+        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -261,13 +261,13 @@ function cargarFotosVehiculo(){
  </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 datos_vehiculo_propietario">
         <div class="row">
                     <div class="card modificar-user">
                         <div class=" modificar-user">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
+                                <button class="nav-link active tl_datos_fotos" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
                             </li>
                         </ul>
                             <div class="tab-content" id="myTabContent">
@@ -310,7 +310,7 @@ function cargarFotosVehiculo(){
         <div class=" modificar-user">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" >Datos de propietario</button>
+                <button class="nav-link active tl_datos_fotos" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" >Datos de propietario</button>
             </li>
         </ul>
             <div class="tab-content" id="myTabContent">
