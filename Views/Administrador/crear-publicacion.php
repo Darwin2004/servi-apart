@@ -96,13 +96,13 @@
                         <div class="page-header">
                             <div class="page-title">
                             <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important; " >
-                                    <img src="../../assets/icons/megafono.png" alt="" style="width: 50px; height: 50px">
+                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important; margin-left: 40px " >
+                                    <img src="../../assets/icons/megafono.png" alt="" style="width: 50px; height: 50px;">
                                 </div>
                                 <h1 style="font-size: 2.5rem;" class="hola">Registro de publicaciones</h1>
                             </div>
-                                <h1 style="margin-top: 30px; font-size: 30px ">Crear Publicación</h1>
-                                <p style="font-size: 20px">Por favor rellena los campos</p>
+                                <h1 style="margin-top: 30px; font-size: 30px; margin-left: 55px ">Crear Publicación</h1>
+                                <p style="font-size: 20px; margin-left: 55px">Por favor rellena los campos</p>
                             </div>
                         </div>
                     </div>
@@ -128,12 +128,13 @@
                             <div class="col-md-6">
                                 <img src="../../assets/img/publi.png" class="img_publi" alt="">
                             </div>
-                        </div>
-                    </div>
+
+                            
+                </div>
                     
                 <section id="main-content" style="margin-top: -430px">
                    <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-7">
                             <div class="card-publi">
                                 <div class="card-title">
                                     

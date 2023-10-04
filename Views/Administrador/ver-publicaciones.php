@@ -72,6 +72,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -124,7 +126,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi">
+                            <div class="card-publi ver-publi">
                                 <div class="card-title">
                                 
                               
