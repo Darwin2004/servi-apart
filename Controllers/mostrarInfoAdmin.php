@@ -204,7 +204,7 @@ function cargarFotosVehiculo(){
             <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
                 <div class="page-title">
-                <h1 style="font-size:50px;">Vehiculo con placa ' . $f['placa'] . '
+                <h1 style="font-size:50px">Vehiculo con placa <span style="font-size:50px; font-weight: 800; color:#FF914D">' . $f['placa'] . '</span>
                 </h1>
                 </div>
             </div>
@@ -217,7 +217,7 @@ function cargarFotosVehiculo(){
                 <li class="breadcrumb-item">
                   <a href="#" style="color: #18d26e">Administrador</a>
                 </li>
-                <li class="breadcrumb-item active">Ver fotos de vehiculo</li>
+                <li class="breadcrumb-item active">Ver datos de vehiculo</li>
               </ol>
             </div>
           </div>
@@ -225,6 +225,8 @@ function cargarFotosVehiculo(){
         <!-- /# column -->
       </div>
       <!-- /# row -->
+
+
 
 
       <div class="row" style="display:flex; align-items:center; margin-left:30px">
@@ -252,22 +254,23 @@ function cargarFotosVehiculo(){
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
   </button>
  </div>
     </div>
 
+
+
+
     <div class="col-lg-6 datos_vehiculo_propietario">
         <div class="row">
-                    <div class="card modificar-user">
+                    <div class="card modificar-user card-datos">
                         <div class=" modificar-user">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none; margin-left:1px">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active tl_datos_fotos" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
+                                <button class="nav-link active tl_datos_fotos" style="border:none; font-size: 18px; margin-top:7px" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
                             </li>
                         </ul>
                             <div class="tab-content" id="myTabContent">
@@ -306,12 +309,12 @@ function cargarFotosVehiculo(){
                     </div>
                 </div>
                 <div class="row">
-    <div class="card modificar-user" style="margin-top:30px;">
+    <div class="card modificar-user" style="margin-top:30px;border:none">
         <div class=" modificar-user">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none; margin-left:1px">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active tl_datos_fotos" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" >Datos de propietario</button>
-            </li>
+                <button class="nav-link active tl_datos_fotos" id="home-tab" style="border:none; font-size: 18px; margin-top:7px" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" >Datos de propietario</button>
+
         </ul>
             <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

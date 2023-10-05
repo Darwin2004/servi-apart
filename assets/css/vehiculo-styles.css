@@ -24,6 +24,7 @@
   
   #tl_vehiculo {
     font-size: 48px !important;
+    font-weight: 800;
   }
   
   .p_vehiculo {
@@ -166,10 +167,6 @@
     transition: 0.3s;
 }
 
-/* titulos de datos en modulo de detalles de vehiculo */
-.tl_datos_fotos {
-  margin-left: -1px;
-}
 
 .datos_vehiculo_propietario {
   margin-left: 50px;
@@ -177,4 +174,26 @@
 
 .carrusel {
   transition: transform 0.1s ease-in-out;
+}
+
+.carousel-indicators {
+  height: 15px;
+}
+
+.carousel-indicators button {
+  margin: 5px 8px;
+  width: 30px;
+  height: 4px;
+}
+
+.card-datos {
+  border: none;
+}
+
+.tl-datos-fotos {
+  font-size: 18px;
+}
+
+#myTabContent {
+  padding: 10px;
 }
