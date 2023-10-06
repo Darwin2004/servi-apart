@@ -7,7 +7,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Focus Admin Dashboard</title>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../../assets/css/style.css" rel="stylesheet"> -->
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -30,24 +30,33 @@
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
    <!-- Styles -->
-   <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+ <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
    <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
-   <link href="../dashboard/css/style.css" rel="stylesheet">
+   <link href="../dashboard/css/style.css" rel="stylesheet"> 
+
+   <!-- Custom styles -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css2/menu.css">
+    <!-- Transition.style website -->
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
    
 </head>
 
 <body>
 
 <?php
-    include 'includePSD.php';
+    include 'menu.php';
 ?>
     <!-- /# sidebar -->
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <header class="p-4 border w-100 d-flex">
+        <img id="menu-btn" role="button" src="icons/Menu.png" alt="">
+    </header>
+    <main id="dash-container" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
 
     <div class="content-wrap">
@@ -311,6 +320,36 @@
     <script src="../Dashboard/js/lib/toastr/toastr.min.js"></script>
     <script src="../Dashboard/js/lib/toastr/toastr.init.js"></script>
 
+    <script>
+        //menu icon on Navbar
+        $('#menu-btn').click(()=>{
+            $('#dash-container').css({
+                zIndex: '-1'
+            });
+            $('header').css({
+                zIndex: '-1'
+            });
+            $('#menu-modal').attr('transition-style', 'in:wipe:down')
+            $('#menu-modal').css({
+                display: 'block'
+            })
+        })
 
+        //close icon on modal
+        $('#close').click(()=>{
+            
+            $('#menu-modal').attr('transition-style', 'out:wipe:down')
 
+            
+        }).queue(()=>{
+            $('#dash-container').css({
+                zIndex: '1'
+            });
+            $('header').css({
+                zIndex: '1'
+            });
+        })
+    </script>
+</body>
 
+</html>
