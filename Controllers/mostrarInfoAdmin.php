@@ -1,4 +1,5 @@
 <?php
+
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 
@@ -240,16 +241,16 @@ function cargarFotosVehiculo(){
   </div>
   <div class="carousel-inner carrusel" style="">
     <div class="carousel-item active">
-        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px;">
+        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px">
+        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px">
+        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px">
+        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -266,7 +267,7 @@ function cargarFotosVehiculo(){
 
     <div class="col-lg-6 datos_vehiculo_propietario">
         <div class="row">
-                    <div class="card modificar-user card-datos">
+                    <div class="card modificar-user card-datos vehiculos_ver">
                         <div class=" modificar-user">
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none; margin-left:1px">
                             <li class="nav-item" role="presentation">
@@ -309,7 +310,7 @@ function cargarFotosVehiculo(){
                     </div>
                 </div>
                 <div class="row">
-    <div class="card modificar-user" style="margin-top:30px;border:none">
+    <div class="card modificar-user vehiculos_ver" style="margin-top:30px;border:none">
         <div class=" modificar-user">
         <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none; margin-left:1px">
             <li class="nav-item" role="presentation">
@@ -391,7 +392,7 @@ function cargarNovedades()
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-primary" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
 
             </tr>   
             
@@ -423,9 +424,9 @@ function cargarNovedadesEditar()
         <section id="main-content">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Información de Novedad</button>
+                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border:none; font-size: 18px">Información de Novedad</button>
                     </li>
                 </ul>
                     <div class="tab-content" id="myTabContent">
@@ -450,7 +451,7 @@ function cargarNovedadesEditar()
 
                         
                     </div>
-                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar datos del Vehiculo</button>
+                    <button type="submit" class="btn btn-primary btn-editar" style="margin-left:7px">Modificar datos de la Novedad</button>
                     <div class="register-link m-t-15 text-center">
                         
                     </div>
@@ -471,13 +472,6 @@ function cargarNovedadesEditar()
 
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
-        </div>
     </section>
 
 
@@ -561,13 +555,14 @@ function cargarVehiculoEditar(){
         echo '
         
             
+ 
 
         <section id="main-content">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del vehiculo</button>
+                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border: none; font-size:20px">Datos del vehiculo</button>
                     </li>
                 </ul>
                     <div class="tab-content" id="myTabContent">
@@ -586,7 +581,7 @@ function cargarVehiculoEditar(){
                             <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
                         </div>
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-12">
                             <label>Marca:</label>
                             <select name="marca" id="" class="form-control">
                                 <option value="' . $f['marca'] . '">' . $f['marca'] . '</option>
@@ -648,18 +643,18 @@ function cargarVehiculoEditar(){
                         </div>
                         
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label>Referencia:</label>
                             <input type="text" class="form-control" value="' . $f['referencia'] . '" placeholder="Ej: Miguel Angel" name="referencia">
 
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label>Modelo:</label>
                             <input type="number" class="form-control" value="' . $f['modelo'] . '"  laceholder="Ej: Gallejo Restrepo" name="modelo">
                         </div>
                         
                     </div>
-                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Modificar datos del Vehiculo</button>
+                    <button type="submit" class="btn btn-primary btn-editar" style="margin-left:7px">Modificar datos del Vehiculo</button>
                     <div class="register-link m-t-15 text-center">
                         
                     </div>
@@ -672,22 +667,25 @@ function cargarVehiculoEditar(){
 
                         
                         </div>
+                        
                     </div>
+                    
+                    
                 </div>
+                
+                
             </div>
-        </div>
             
 
 
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
         </div>
+        
+            
+        
+
     </section>
+
+    
 
 
         ';

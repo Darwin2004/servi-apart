@@ -124,7 +124,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:20px">Referencia</th>
                                                     <th style="font-size:20px">Modelo</th>
                                                     <th style="font-size:20px">Identificación Residente</th>
-                                                    <th style="font-size:20px">Fecha</th>
+                                                    <th style="font-size:20px">Fecha de Registro</th>
                                                     <th style="font-size:20px">Operaciones</th>
                                                     <th style="text-align:center; font-size:20px">Novedades</th>
                                                     <th style="text-align:center; font-size:20px">Más detalles</th>

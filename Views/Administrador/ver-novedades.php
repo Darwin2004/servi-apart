@@ -18,7 +18,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi - Apart</title>
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
@@ -112,13 +112,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
+                            <div class="card vehiculos_ver">
                                 <div class="card-title">
 
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered table-hover ">
+                                        <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
                                                     <th>ID Novedad</th>
@@ -152,19 +152,11 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <?php
     $placa = $_GET['placa'];
 
-    echo '<button id="GenerarPDF" class="btn p-2 btn-danger " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
-    echo '<button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en Excel</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en Excel</a></button>';
                     ?>
 
 
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
         </div>
