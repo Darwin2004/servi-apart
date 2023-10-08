@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.ball {
+    width: 20px;
+    height: 20px;
+}
+
+.progress-bar,
+.progress {
+    border-radius: 0 !important;
+}
+
+.return-arrow {
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.return-arrow:hover{
+    background-color: #00bf63;
+}
+
+#form-container {
+    background: rgba(255, 255, 255, 0.25);
+    color: black;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    margin: 0 auto;
+    min-width: 470px;
+}
+
+#return-home{
+    background: rgba(255, 255, 255, 0.25);
+    color: black;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+#return-home:hover{
+    background-color: #00bf63;
+}
