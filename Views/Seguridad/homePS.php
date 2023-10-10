@@ -74,7 +74,7 @@
             <div class="row px-3">
                 <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
                     <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/vehiculos.png" alt="">
+                        <img class="w-100  rounded-top h-100" src="./images/estacionamiento.jpg" alt="">
                     </div>
                     <div class="border text-center fs-3  rounded-bottom py-3">
                         <p class="fw-light">Vehiculos</p>
@@ -82,7 +82,7 @@
                 </article>
                 <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
                     <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/paqueteria.png" alt="">
+                        <img class="w-100  rounded-top h-100" src="./images/paqueteria.jpg" alt="">
                     </div>
                     <div class="border  text-center fs-3 rounded-bottom  py-3">
                         <p class="fw-light">Paqueteria</p>
@@ -93,7 +93,7 @@
             <div class="row px-3">
                 <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
                     <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/salon-comunal.png" alt="">
+                        <img class="w-100  rounded-top h-100" src="./images/saloncomunal.jpg" alt="">
                     </div>
                     <div class="border text-center fs-3  rounded-bottom py-3">
                         <p class="fw-light">Salon comunal</p>
@@ -101,7 +101,7 @@
                 </article>
                 <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
                     <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/publicaciones.png" alt="">
+                        <img class="w-100  rounded-top h-100" src="./images/publicaciones.jpg" alt="">
                     </div>
                     <div class="border  text-center fs-3 rounded-bottom  py-3">
                         <p class="fw-light">Publicaciones</p>
