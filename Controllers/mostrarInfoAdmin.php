@@ -1288,8 +1288,8 @@ function mostrarReservas()
                                         </div>
                                         
                                 </section>
-                            </div>
-            </article>
+                         </div>
+              </article>
             ';
         }
     }

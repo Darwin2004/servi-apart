@@ -23,7 +23,7 @@ function cargarPublicacionesRes(){
                                 <section class="col p-2 border-end border-primary">
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/tarjeta.png"  alt="building" class="imgSC" style="width: 30px; height: 30px;" >
+                                            <img  src="../../assets/icons/titulo.png"  alt="building" class="imgSC" style="width: 30px; height: 30px;" >
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Titulo</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -33,9 +33,7 @@ function cargarPublicacionesRes(){
 
                                     <div style="display: flex" class="border justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
-                                        <i class="ti-comment-alt" style="width: 30px; height: 30px;"
-                                        ></i>
-                                         
+                                            <img  src="../../assets/icons/descripcion.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Descripcion</p>
                                         </div>
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
@@ -43,13 +41,10 @@ function cargarPublicacionesRes(){
                                         </div>
                                     </div>
 
-                                   
-                                        
                                 </section>
-                            </div>
+                        </div>
             </article>
-            ';
-            
+          ';
         }
     }
 }
