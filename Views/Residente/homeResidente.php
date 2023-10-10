@@ -66,6 +66,8 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
@@ -122,9 +124,9 @@
                               
                                 <div class="card-body">
                                 <div class="table-responsive">
-                                        <table class="table  table-hover ">
+                                        <table class="table  table-hover border border-primary">
                                             <thead>
-                                               
+                                               Hello
                                             </thead>
                                             <tbody>
                                                 <?php

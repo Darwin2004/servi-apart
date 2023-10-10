@@ -9,10 +9,10 @@
 }
 
 .portada{
-    background-image: url("../images/abstract-image.png");
+    background-image: url("../images/zyro-image.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    background-position-y: -7rem;
     height: 250px;
 }
 
@@ -23,13 +23,30 @@
 }
 
 
+.view-more{
+    background-color: aqua ;
+    max-height: 38px;
+    padding: 10px !important;
+    transition: all 12s ease-in !important;
+}
+.text-view-more{
+    display: none;
+}
+
+
+.view-more:hover .text-view-more{
+    display: block;
+    transition: all 12s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
 @media (min-width: 375px){
     .seguridad-titulo{
         font-size: 1.6rem;
         font-weight: 600;
     }
 }
-
 
 
 @media (min-width: 620px){
@@ -59,3 +76,5 @@
 
     }
 }
+
+

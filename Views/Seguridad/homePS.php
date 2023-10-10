@@ -70,44 +70,59 @@
                 <h3 class="seguridad-titulo text-center w-100">SEGURIDAD</h3>
             </div>
         </section>
-        <section class="mt-5">
+        <section class="mt-5 pt-5">
             <div class="row px-3">
-                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
+                <article class="col-md-3 module   d-flex flex-column justify-content-center ">
                     <div class="">
                         <img class="w-100  rounded-top h-100" src="./images/vehiculos.png" alt="">
                     </div>
-                    <div class="border text-center fs-3  rounded-bottom py-3">
-                        <p class="fw-light">Vehiculos</p>
+                    <div class="border text-start  align-items-center fs-3 d-flex  rounded-bottom py-3">
+                        <p class="fw-light  p-0 border ms-3 mb-0">Vehiculos</p>
+                        <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
+                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
+                            <img width="16" height="16" src="./icons/next.png" alt="">
+                        </div>
                     </div>
                 </article>
-                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
+                <article class="col-md-3 module  d-flex flex-column ">
                     <div class="">
                         <img class="w-100  rounded-top h-100" src="./images/paqueteria.png" alt="">
                     </div>
-                    <div class="border  text-center fs-3 rounded-bottom  py-3">
-                        <p class="fw-light">Paqueteria</p>
+                    <div class="border  text-start align-items-center  fs-3 d-flex rounded-bottom  py-3">
+                        <p class="fw-light  p-0 border ms-3 mb-0">Paqueteria</p>
+                        <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
+                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
+                            <img width="16" height="16" src="./icons/next.png" alt="">
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-3 module  d-flex flex-column justify-content-center ">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/salon-comunal.png" alt="">
+                    </div>
+                    <div class="border text-start  align-items-center fs-3 d-flex  rounded-bottom py-3">
+                        <p class="fw-light  p-0 border ms-3 mb-0">Salon comunal</p>
+                        <div   class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
+                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
+                            <img width="16" height="16" src="./icons/next.png" alt="">
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-3 module  d-flex flex-column ">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/publicaciones.png" alt="">
+                    </div>
+                    <div class="border  text-start align-items-center  fs-3 d-flex rounded-bottom  py-3">
+                        <p class="fw-light  p-0 border ms-3 mb-0">Publicaciones</p>
+                        <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
+                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
+                            <img width="16" height="16" src="./icons/next.png" alt="">
+                        </div>
                     </div>
                 </article>
             </div>
 
-            <div class="row px-3">
-                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
-                    <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/salon-comunal.png" alt="">
-                    </div>
-                    <div class="border text-center fs-3  rounded-bottom py-3">
-                        <p class="fw-light">Salon comunal</p>
-                    </div>
-                </article>
-                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
-                    <div class="">
-                        <img class="w-100  rounded-top h-100" src="./images/publicaciones.png" alt="">
-                    </div>
-                    <div class="border  text-center fs-3 rounded-bottom  py-3">
-                        <p class="fw-light">Publicaciones</p>
-                    </div>
-                </article>
-            </div>
+           
         </section>
     </main>
 
