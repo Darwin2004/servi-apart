@@ -71,10 +71,11 @@
     <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
     
 </head>
 
-<body>
+<body >
 
 <?php
     include 'menu-include-residente.php';
@@ -115,39 +116,12 @@
                 </div>
 
                      
-                <section id="main-content">
-                <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card-publi ver-publi">
-                                <div class="card-title">
-                                
-                              
-                                <div class="card-body">
-                                <div class="table-responsive">
-                                        <table class="table  table-hover border border-primary">
-                                            <thead>
-                                               Hello
-                                            </thead>
-                                            <tbody>
-                                                <?php
-
-                                                   cargarPublicacionesRes();
-
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <!-- /# column -->
-                      
-                        <!-- /# column -->
-                    </div>
-
+                <section class="container ml-auto">
+                    <?php
+                        cargarPublicacionesRes();
+                    ?>
                     
-
+                </section>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -156,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                
             </div>
         </div>
     </div>

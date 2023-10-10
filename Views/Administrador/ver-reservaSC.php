@@ -93,7 +93,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e; padding:25px; !important;">
+                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e; padding:25px; ">
                                     <img src="../../assets/icons/hogar.png" alt="" style="width: 40px; height: 40px">
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Visualizacion de Reservas</h1>
