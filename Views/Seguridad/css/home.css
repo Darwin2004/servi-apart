@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.perfil-btn{
+    background-color: orange !important;
+}
+
+.portada{
+    background-image: url("../images/abstract-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.seguridad-titulo{
+    font-size: 1.3rem;
+    letter-spacing: 1rem;
+    font-weight: 600;
+}
+
+
+@media (min-width: 375px){
+    .seguridad-titulo{
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+
+
+@media (min-width: 620px){
+    .seguridad-titulo{
+        font-weight: 300;
+        font-size: 3rem;
+    letter-spacing: 2rem;
+
+    }
+}
+
+
+@media (min-width: 768px){
+    .seguridad-titulo{
+        font-weight: 300;
+        font-size: 6rem;
+    letter-spacing: 2rem;
+
+    }
+}
+
+@media (min-width: 1160px) {
+    .seguridad-titulo{
+        font-size: 7rem;
+        font-weight: 100;
+    letter-spacing: 2rem;
+
+    }
+}

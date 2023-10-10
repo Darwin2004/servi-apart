@@ -2,8 +2,12 @@
     padding: 0%;
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
+
+html{
+    overflow-y: hidden;
+}
+
 
 #menu-modal{
     background-color: #0F1210;
@@ -26,12 +30,12 @@ footer{
     background-color: #0F1210;
 
 }
-ul{
-    width: 40%;
-    margin-left: 150px;
+.list{
+    width: 100%;
+    padding: 0 20px;
 }
-ul > li {
-    font-size: 4rem;
+.list > .item-list {
+    font-size: 2rem;
 }
 
 #title{
@@ -55,16 +59,22 @@ ul > li {
 
 .first-arrow{
     z-index: 20;
+    width: 48px;
+    height: 48px;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .second-arrow{
     z-index: 20;
+    width: 48px;
+    height: 48px;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .third-arrow{
     z-index: 20;
+    width: 48px;
+    height: 48px;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -115,3 +125,47 @@ Hover animations
 #third-li:hover{
     color: #FDAA09 !important;
 }
+
+
+/****************************************************************************** 
+
+RESPONSIVE SCREEN
+
+******************************************************************************/
+
+@media (min-width: 768px){
+    .list{
+        width: 40%;
+        margin-left: 70px;
+    }
+}
+
+@media (min-width: 902px){
+    .list > .item-list{
+        font-size: 4rem;
+    }
+
+    .first-arrow{
+        width: 72px;
+        height: 72px;
+    }
+
+    .second-arrow{
+        width: 72px;
+        height: 72px;
+    }
+
+    .third-arrow{
+        width: 72px;
+        height: 72px;
+    }
+}
+
+
+@media (min-width: 992px){
+    .list{
+        width: 40%;
+        margin-left: 150px;
+    }
+}
+

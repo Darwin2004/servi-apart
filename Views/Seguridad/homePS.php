@@ -7,7 +7,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -29,139 +29,86 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
-   <!-- Styles -->
- <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
-   <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
-   <link href="../dashboard/css/style.css" rel="stylesheet"> 
+    <!-- Styles -->
+    <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
 
-   <!-- Custom styles -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css2/menu.css">
+    <!-- Custom styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../Seguridad/css/menu.css"> -->
+    <link rel="stylesheet" href="../Seguridad/css/home.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
-   
+
 </head>
 
 <body>
 
-<?php
+    <?php
     include 'menu.php';
 ?>
     <!-- /# sidebar -->
-    <header class="p-4 border w-100 d-flex">
-        <img id="menu-btn" role="button" src="icons/Menu.png" alt="">
-    </header>
-    <main id="dash-container" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-
-    <div class="content-wrap">
-        <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1>Hola,
-                                    <span>Bienvenido</span>
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
-                    <!-- <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- /# column -->
-                </div>
-                <!-- /# row -->
-                <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Vehiculos</div>
-                                        <div class="stat-digit">326</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° Usuarios</div>
-                                        <div class="stat-digit">34</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Reservas de salon activas</div>
-                                        <div class="stat-digit">12</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Peticiones</div>
-                                        <div class="stat-digit">18</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Promedio de usuarios nuevos</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="ct-bar-chart m-t-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                       
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <header class="py-4 px-3 px-md-5  w-100 d-flex align-items-center justify-content-between">
+        <div >
+            <img id="menu-btn" width="24" height="24" role="button" src="icons/Menu.png" alt="">
         </div>
-    </div>
+        <div class="d-flex ">
+            <img width="42" height="42" class="rounded-5 ml-3" src="images/ghost.png" alt="">
+            <button class="px-4 py-2 rounded-2 text-black perfil-btn ml-3">Perfil</button>
+        </div>
+    </header>
+    <main id="dash-container" class="container-fluid position-relative">
+        <section class="mt-5">
+            <div class="portada text-center d-flex align-items-center justify-content-center">
+                <h3 class="seguridad-titulo text-center w-100">SEGURIDAD</h3>
+            </div>
+        </section>
+        <section class="mt-5">
+            <div class="row px-3">
+                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/vehiculos.png" alt="">
+                    </div>
+                    <div class="border text-center fs-3  rounded-bottom py-3">
+                        <p class="fw-light">Vehiculos</p>
+                    </div>
+                </article>
+                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/paqueteria.png" alt="">
+                    </div>
+                    <div class="border  text-center fs-3 rounded-bottom  py-3">
+                        <p class="fw-light">Paqueteria</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="row px-3">
+                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column justify-content-center  p-3">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/salon-comunal.png" alt="">
+                    </div>
+                    <div class="border text-center fs-3  rounded-bottom py-3">
+                        <p class="fw-light">Salon comunal</p>
+                    </div>
+                </article>
+                <article class="col-md-6 module p-2 p-sm-5 d-flex flex-column  p-3">
+                    <div class="">
+                        <img class="w-100  rounded-top h-100" src="./images/publicaciones.png" alt="">
+                    </div>
+                    <div class="border  text-center fs-3 rounded-bottom  py-3">
+                        <p class="fw-light">Publicaciones</p>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
 
@@ -322,9 +269,9 @@
 
     <script>
         //menu icon on Navbar
-        $('#menu-btn').click(()=>{
+        $('#menu-btn').click(() => {
             $('#dash-container').css({
-                zIndex: '-1'
+                zIndex: '-10'
             });
             $('header').css({
                 zIndex: '-1'
@@ -333,21 +280,27 @@
             $('#menu-modal').css({
                 display: 'block'
             })
+            $('body').css({
+                overflowY: "hidden"
+            })
         })
 
         //close icon on modal
-        $('#close').click(()=>{
-            
-            $('#menu-modal').attr('transition-style', 'out:wipe:down')
+        $('#close').click(() => {
 
-            
-        }).queue(()=>{
+            $('#menu-modal').attr('transition-style', 'out:wipe:down')
+            $('body').css({
+                overflowY: "scroll"
+            })
+
+        }).queue(() => {
             $('#dash-container').css({
                 zIndex: '1'
             });
             $('header').css({
                 zIndex: '1'
             });
+            
         })
     </script>
 </body>
