@@ -118,7 +118,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </div>
 
                         <div class="col-lg-5">
-                            <div class="card" style="border:none">
+                            <div class="card vehiculos_ver" style="border:none">
                                 <div class="card-title">
 
 

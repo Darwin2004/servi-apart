@@ -86,7 +86,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 style="font-size:40px">Modificar Información de Vehiculos</h1>
-                                <p style="font-size:15px; padding-right: 500px; margin-top: 10px">En este módulo, tienes el control total para editar y
+                                <p style="font-size:15px; padding-right: 300px; margin-top: 10px">En este módulo, tienes el control total para editar y
                                     mantener actualizados los datos de vehículos de nuestros residentes. Puedes
                                     modificar detalles como marca, referencia y modelo, asegurando así un registro
                                     preciso y un ambiente residencial seguro.</p>
@@ -118,7 +118,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </div>
 
                         <div class="col-lg-5">
-                            <div class="card" style="border:none">
+                            <div class="card vehiculos_ver" style="border:none">
                                 <div class="card-title">
 
 

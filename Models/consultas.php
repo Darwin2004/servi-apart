@@ -480,7 +480,8 @@
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $eliminar = "DELETE FROM vehiculo Where placa=:placa"; 
+            $eliminar = "   DELETE FROM novedad_vehiculo WHERE placa=:placa;
+                            DELETE FROM vehiculo WHERE placa=:placa;"; 
             $result = $conexion->prepare($eliminar);
 
             $result->bindParam(":placa", $placa);
