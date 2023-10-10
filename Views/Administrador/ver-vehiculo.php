@@ -167,7 +167,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-
+    
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
