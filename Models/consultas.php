@@ -436,8 +436,19 @@
     
             $result->execute();
 
-            echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-vehiculo.php'</script>";
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Administrador/ver-vehiculo.php";
+            })
+        </script>';
+
         }
 
         public function mostrarVehiculoEditarAdmin($placa){
@@ -472,8 +483,18 @@
     
             $result->execute();
 
-            echo '<script>alert("Información actualizada")</script>';
-            echo '<script>location.href = "../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '";
+            })
+        </script>';
         }
 
         public function eliminarVehiculosAdmin($placa){
@@ -487,8 +508,18 @@
             $result->bindParam(":placa", $placa);
 
             $result->execute();
-            echo '<script>alert("Vehiculo Eliminado")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-vehiculo.php'</script>";
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Vehiculo Eliminado",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Administrador/ver-vehiculo.php";
+            })
+        </script>';
         }
 
         public function eliminarNovedadesAdmin($id_nov, $placa){
@@ -502,8 +533,19 @@
             
 
             $result->execute();
-            echo '<script>alert("Novedad Eliminada")</script>';
-            echo '<script>location.href = "../Views/Administrador/ver-novedades.php?placa=' . $placa. '"</script>';
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Novedad Eliminada Exitosamente",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '";
+            })
+        </script>';
+
         }
 
 
@@ -584,8 +626,18 @@
                 //EJECUTAMOS EL INSERT
                 $result -> execute();
                 
-                echo '<script>alert("Vehiculo registrado exitosamente")</script>';
-                echo "<script>location.href = '../Views/Administrador/registrar-vehiculo.php'</script>";
+                echo '
+                <script>
+                
+                Swal.fire({
+                    icon: "success",
+                    title:"Vehiculo registrado exitosamente",
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then((result)=>{
+                    location.href="../Views/Administrador/registrar-vehiculo.php";
+                })
+            </script>';
             }
         }
 

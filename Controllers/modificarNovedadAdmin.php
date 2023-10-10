@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    *, html, body{
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
+<body>
 <?php
 
     // Enlazamos las dependencias necesario
@@ -27,9 +43,23 @@
         
 
         }else{
-            echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo '<script>location.href="../Views/Administrador/modificar-novedad.php?id_nov=' . $id_nov . '"</script>';
+            echo '<script>
+                
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Error al editar la novedad. Verifica que todos los campos estan completos",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/Administrador/ver-vehiculo.php"; 
+                }
+                
+            })
+        </script>';
         }
 
 
 ?>
+</body>
+</html>

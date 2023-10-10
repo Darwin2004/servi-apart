@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    *, html, body{
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
+<body>
 <?php
 
     // Enlazamos las dependencias necesario
@@ -42,12 +58,30 @@
 
             $objConsultas = new Consultas();
             $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4);
-        
 
+            //echo "<script>location.href='../Views/Administrador/registrar-paquete.php'</script>";
         }else{
-            echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo "<script>location.href='../Views/Administrador/registrar-vehiculo.php'</script>";
+            ?>
+            <script>
+                
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error al registrar el vehiculo. Verifica que todos los campos estan completos',
+                    confirmButtonText: 'Ok'
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                       location.href='../Views/Administrador/registrar-vehiculo.php'; 
+                    }
+                    
+                })
+            </script>
+            <?php 
         }
-
-
-?>
+        
+        ?>
+        
+        
+        </body>
+        </html>
+        
