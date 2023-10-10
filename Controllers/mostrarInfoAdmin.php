@@ -1,6 +1,7 @@
 <?php
-require_once("../../Models/conexion.php");
-require_once("../../Models/consultas.php");
+//require_once("../../Models/conexion.php");
+//require_once("../../Models/conexion.php");
+//require("../../Models/consultas.php");
 
 // ESTE ARCHIVO RECIBE TODAS LAS CONSULTAS DEL MODELO PARA MOSTRAR INFORMACION AL ADMINISTRADOR 
 
@@ -1388,10 +1389,10 @@ function mostrarReservas()
             <tr>
                 <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_reserva'].'</th>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombre'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefonos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['correo'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefono'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['email'].'</td>
                 <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['dia_reserva'].'</th>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
