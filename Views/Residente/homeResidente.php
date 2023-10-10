@@ -2,7 +2,7 @@
     require_once ("../../Models/conexion.php");
     require_once ("../../Models/consultas.php");
     require_once ("../../Models/seguridadResidente.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+    require_once ("../../Controllers/mostrarInfoResidente.php");
 ?>
 
 
@@ -15,9 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Servi-Apart</title>
-    <link href="../../assets/css/style.css" rel="stylesheet">
 
-     <!-- ================= Favicon ================== -->
+    <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
@@ -67,6 +66,10 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
+    <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -74,7 +77,7 @@
 <?php
     include 'menu-include-residente.php';
 ?>
-    <!-- /# sidebar -->
+
 
 
 
@@ -85,89 +88,63 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hola,
-                                    <span>Bienvenido</span>
-                                </h1>
+                                <h1 style="font-size: 40px">Publicaciones Creadas</h1>
+                                <p style="font-size: 20px">Puedes observar todas las publicaciones que sucederan en nuestra residencia </p>
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
-                    <!-- <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
-                                
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Residente</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Publicaciones Creadas</li>
+                                </ol>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
+
+                </div>
+
+                     
                 <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Vehiculos</div>
-                                        <div class="stat-digit">326</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° Usuarios</div>
-                                        <div class="stat-digit">34</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Reservas de salon activas</div>
-                                        <div class="stat-digit">12</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Peticiones</div>
-                                        <div class="stat-digit">18</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
+                <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
+                            <div class="card-publi ver-publi">
                                 <div class="card-title">
-                                    <h4>Promedio de usuarios nuevos</h4>
-
-                                </div>
+                                
+                              
                                 <div class="card-body">
-                                    <div class="ct-bar-chart m-t-30"></div>
+                                <div class="table-responsive">
+                                        <table class="table  table-hover ">
+                                            <thead>
+                                               
+                                            </thead>
+                                            <tbody>
+                                                <?php
+
+                                                   cargarPublicacionesRes();
+
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+                                
                             </div>
                         </div>
-
-                       
+                        <!-- /# column -->
+                      
+                        <!-- /# column -->
                     </div>
 
+                    
 
 
                     <div class="row">
@@ -337,7 +314,6 @@
     <!-- Toastr -->
     <script src="../Dashboard/js/lib/toastr/toastr.min.js"></script>
     <script src="../Dashboard/js/lib/toastr/toastr.init.js"></script>
-
 
 
 

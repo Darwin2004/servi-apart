@@ -1,9 +1,9 @@
 <?php
-    // Enlazamos las dependencias necesario
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");    
+// Enlazamos las dependencias necesario
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 
@@ -67,13 +67,14 @@
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
 <body>
-    
-<?php
+
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
 
 
@@ -84,9 +85,11 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Modificar Novedades de vehiculos
-                                </h1>
-                                <p>Por favor edita los campos para actualizar la información de la novedad</p>
+                                <h1 style="font-size:40px">Modificar Novedades</h1>
+                                <p style="font-size:15px; padding-right: 300px; margin-top: 10px">En este módulo,
+                                    puedes editar las novedades hechas por el personal de seguridad con los vehículos de nuestros
+                                    residentes en caso de daños o incidencias. Realiza actualizaciones o correcciones, y garantiza un ambiente
+                                    residencial seguro y bien gestionado para todos nuestros residentes."</p>
                             </div>
                         </div>
                     </div>
@@ -98,7 +101,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Editar Novedades</li>
+                                    <li class="breadcrumb-item active">Editar Vehiculos</li>
                                 </ol>
                             </div>
                         </div>
@@ -107,38 +110,39 @@
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-                    
-                    <div class="row">
-                        <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-title">
-                        
-                                        
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="basic-elements">
-                                            <?php
-                                                cargarNovedadesEditar();
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                    <div class="row" style="display: flex; justify-content: center; align-items: center; margin-top:50px">
+                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                            <img src="../../assets/img/car_edit.svg" alt="imagen de carro" style="width:100%">
                         </div>
 
-                    </div>
+                        <div class="col-lg-5">
+                            <div class="card vehiculos_ver" style="border:none">
+                                <div class="card-title">
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="footer">
-                                    <p>2023 © Admin Board. - <a href="#">Servi - Apart</a></p>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="basic-elements">
+
+
+                                        <?php
+                                        cargarNovedadesEditar();
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+
+
+
                     </div>
                 </section>
             </div>
         </div>
     </div>
-
 
 
 

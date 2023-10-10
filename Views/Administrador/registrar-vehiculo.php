@@ -123,7 +123,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     </div>
 
                     <div class="col-md-6">
-                        <div class="form_vehiculo_2">
+                        <div class="">
 
                             <section id="main-content" class="form_vehiculo">
                                 <form action="../../Controllers/registrarVehiculoAdmin.php" method="POST"
