@@ -83,20 +83,7 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a class="sidebar-sub-toggle">
-                            <i class="ti-comment-alt"></i> Publicaciones
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
-                        <ul>
-                    
-                            <li>
-                                <a href="ver-publicaciones.php"><i class="ti-eye"></i>Ver Publicaciones</a>
-                            </li>
-                        
-                           
-                        </ul>
-                    </li>
+                  
 
                     <li>
                         <a class="sidebar-sub-toggle">

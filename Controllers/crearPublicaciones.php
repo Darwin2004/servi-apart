@@ -1,33 +1,70 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    *, html, body{
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>
+<body>
+    <?php
 
-    // Enlazamos las dependencias necesario
-    require_once ("../Models/conexion.php");
-    require_once ("../Models/consultas.php");
+require_once "../Models/conexion.php";
+require_once "../Models/consultas.php";
 
-    // Aterrizamos en variables los datos ingresados por el usuario
-    // los cuales viajan a travé del metodo POST y name de los campos
 
-  
-    $titulo = $_POST['titulo'];
-    $descripcion = $_POST['descripcion'];
+$titulo = $_POST['titulo'] ?? null;
+$descripcion = $_POST['descripcion'] ?? null;
 
-   
-    
 
-        //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($titulo) > 0 && strlen($descripcion)> 0){
-    
-            //CREAMOS EL OBHETO A PARTIR DE UNA CLASE
-            //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
+if($titulo !== '' && $descripcion !== ''){
+    $objConsultas = new Consultas();
+    $response = $objConsultas->crearPublicacion($titulo, $descripcion);
+    if(!$response) return;
 
-            $objConsultas = new Consultas();
-            $result = $objConsultas -> crearPublicacion($titulo, $descripcion);
+    ?>
+    <script>
         
-
-        }else{
-            echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo "<script>location.href='../Views/Administrador/crear-publicacion.php'</script>";
-        }
-
+        Swal.fire({
+            icon: 'success',
+            title: 'Registro exitoso',
+            showConfirmButton: false,
+            timer: 2000
+        }).then((result)=>{
+            location.href='../Views/Administrador/ver-publicaciones.php';
+        })
+    </script>
+    <?php 
+    //echo "<script>location.href='../Views/Administrador/registrar-paquete.php'</script>";
+}else{
+    ?>
+    <script>
+        
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al registrar paquete. Intentelo de nuevo',
+            confirmButtonText: 'Ok'
+        }).then((result)=>{
+            if(result.isConfirmed){
+               location.href='../Views/Administrador/crear-publicacion.php'; 
+            }
+            
+        })
+    </script>
+    <?php 
+}
 
 ?>
+
+
+</body>
+</html>
+

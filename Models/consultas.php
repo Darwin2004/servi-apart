@@ -294,39 +294,25 @@
         
 
 
-        public function crearPublicacion( $titulo, $descripcion){
-            
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+         public function crearPublicacion($titulo, $descripcion){
+            try {
+                $objConexion = new conexion();
+                $conexion = $objConexion->get_conexion();
 
+                $query = "INSERT INTO publicaciones(titulo, descripcion) VALUES(:titulo, :descripcion)";
+                $statement = $conexion->prepare($query);
 
+                $statement->bindParam(':titulo', $titulo);
+                $statement->bindParam(':descripcion', $descripcion);
+     
 
+                $response = $statement->execute();
 
-         
-            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO publicaciones(titulo, descripcion) 
-            VALUES(:titulo, :descripcion)";
-
-
-            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
-            $result = $conexion->prepare($insertar);
-
-
-            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-
-           // $result -> bindParam (":id_publi", $id_publi);
-
-            $result -> bindParam (":titulo", $titulo);
-            $result -> bindParam (":descripcion", $descripcion);
-           
-            //EJECUTAMOS EL INSERT
-            $result -> execute();
-             
-            echo '<script>alert("Publicacion creada correctamente")</script>';
-
-            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
-            
+                if(!$response) return false;
+                return true;
+            } catch (\Throwable $th) {
+                echo "Ha ocurrido un problema al crear la publicacion :( " . $th; 
+            }
         }
             
 
