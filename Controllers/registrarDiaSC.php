@@ -41,7 +41,7 @@ $sillas= $_POST['sillas']?? null;
 if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' ){
     $objConsultas = new Consultas();
     $response = $objConsultas->registrarDia($identificacion, $dia_reserva ,$hora_inicio, $hora_finalizacion, $mesas, $sillas);
-    if($response)return;
+    if(!$response)return;
         ?>
     <script>
         Swal.fire({
