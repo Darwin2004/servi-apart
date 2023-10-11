@@ -184,3 +184,8 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+.servi-grid {
+  display:flex ;
+  flex-wrap: wrap;
+}
