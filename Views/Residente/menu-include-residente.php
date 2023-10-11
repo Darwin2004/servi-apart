@@ -37,10 +37,7 @@
                             <li>
                                 <a href="salon-comunal.php"> <i class="ti-pencil-alt"></i>Registrar Reserva </a>
                             </li>
-                            <li>
-                                <a href="ver-reservaSC.PHP"><i class="ti-eye"></i>Ver reservas</a>
-                            </li>
-
+                           
                         </ul>
                     </li>
 

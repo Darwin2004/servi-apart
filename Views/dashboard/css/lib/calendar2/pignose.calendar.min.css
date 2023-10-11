@@ -12,7 +12,7 @@
 
 .calendar {
     float: none;
-    !important
+    /* !important */
 }
 
 .icon-arrow-left:before {

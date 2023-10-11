@@ -159,8 +159,27 @@
             }
             return $f;
         }
+        
 
         public function mostrarUsuarioEditarAdmin($identificacion){
+            $f = null;
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+            $result = $conexion->prepare($consultar);
+
+            $result->bindParam("identificacion", $identificacion);
+
+            $result -> execute();
+
+            
+            while ($resultado = $result->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;
+        }
+        public function mostrarUsuarioRes($identificacion){
             $f = null;
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();

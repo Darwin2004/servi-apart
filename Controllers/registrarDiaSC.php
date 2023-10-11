@@ -41,7 +41,7 @@ $sillas= $_POST['sillas']?? null;
 if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' ){
     $objConsultas = new Consultas();
     $response = $objConsultas->registrarDia($identificacion, $dia_reserva ,$hora_inicio, $hora_finalizacion, $mesas, $sillas);
-    if($response){
+    if($response)return;
         ?>
     <script>
         Swal.fire({
@@ -60,7 +60,7 @@ if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $ho
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Error al registrar paquete. Intentalo de nuevo',
+            text: 'Error al realizar la reserva. Intentalo de nuevo',
             ConfirmButtom: 'Ok'
 
         }).then((result) => {
@@ -72,24 +72,9 @@ if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $ho
     <?php
     }
         
-}else{
-    ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Error al registrar paquete. Intentalo de nuevo',
-            ConfirmButtom: 'Ok'
 
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = '../Views/Residente/salon-comunal.php';
-            }
-        })
-    </script>
-    <?php
-}
-?>
+    ?>
+    
 </body>
 
 </html>

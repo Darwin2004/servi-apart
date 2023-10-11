@@ -46,5 +46,28 @@ function cargarPublicacionesRes(){
         }
     }
 }
+function cargarInfoUsuarios(){
+    $objConsultas = new Consultas();
+   
+    $identificacion = $_SESSION['id']; // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
+
+    $result = $objConsultas->mostrarUsuarioRes($identificacion);
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                
+                <td>' . $f['nombres'] . '</td>
+                <td>' . $f['apellidos'] . '</td>
+            </tr>';
+        }
+    }
+}
+
+
+
 ?>
 

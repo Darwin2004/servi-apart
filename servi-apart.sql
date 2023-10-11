@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2023 a las 02:52:04
+-- Tiempo de generación: 11-10-2023 a las 06:56:13
 -- Versión del servidor: 8.0.32
 -- Versión de PHP: 8.2.4
 
@@ -125,7 +125,7 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
-(13, 4546, '2023-10-11', '18:59:00', '03:00:00', 1, 1);
+(15, 321654987, '2023-10-17', '15:43:00', '03:00:00', 56, 54);
 
 -- --------------------------------------------------------
 
@@ -153,12 +153,14 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
-(231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, '1', '101'),
+(231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariospng-clipart-service-information-business-organization-management-administrator-miscellaneous-face.png', '1', '101'),
 (4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
 (35354, 'CE', 'Andres', 'garzon', 'garzon@gmail.com', '3194564165', '35354', 'Residente', 'Activo', '../Uploads/Usuarios/3.jfif', 'B', '609'),
 (354534, 'CC', 'angel', 'gallardo', 'gallardo@gmail.com', '318354352', '354534', 'Residente', 'Activo', '../Uploads/Usuarios/5.jfif', 'c', '701'),
+(654321, 'PASAPORTE', 'Nicki', 'Nicole', 'nicole@gmail.com', '534378343234', 'c33367701511b4f6020ec61ded352059', 'Residente', 'Activo', '../Uploads/Usuarios/ni.jpg', 'a', '502'),
 (6456456, 'CC', 'Franklin', 'GOMEZ', 'enri@gmail.com', '456456', '6456456', 'Residente', 'Activo', '../Uploads/Usuarios/', 'C', '32'),
 (123456879, 'CC', 'Johan Stiven ', 'castañeda', 'castanedapaola539@gmail.com', '31941', '97b290acab82d5937fb87a28b06181a3', 'Seguridad', 'Activo', '../Uploads/Usuarios/Plantilla-Foto-Nota.jpg', NULL, NULL),
+(321654987, 'PASAPORTE', 'Manuel', 'Turizo', 'turizo@gmailc.om', '316163', 'd1b2cc725d846f0460ff290c60925070', 'Residente', 'Activo', '../Uploads/Usuarios/ma.png', 'g', '101'),
 (537837838, 'CC', 'luis', 'eduardo', 'eduardo@gmail.com', '31615', '537837838', '', 'Activo', '../Uploads/Usuarios/2.jfif', NULL, NULL),
 (563453783, 'CC', 'miguel', 'lopez', 'lopez@gmail.com', '38464652', '563453783', 'Residente', 'Pendiente', '../Uploads/Usuarios/6.jfif', 'c', '245'),
 (2147483647, 'PASAPORTE', 'carlos', 'alberto', 'alberto@gmail.com', '3149848', '37837833453', '', 'Activo', '../Uploads/Usuarios/1.jfif', NULL, NULL);
@@ -267,7 +269,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
