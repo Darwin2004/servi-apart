@@ -532,7 +532,7 @@ function cargarVehiculos(){
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
                 <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px"><i class="ti-pencil-alt"> Editar</i></a>
-                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="top" title="Tooltip on top"  style="margin-left:15px;"> <i class="ti-trash"></i> Eliminar</a></td>
+                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="top" title="Si elimina"  style="margin-left:15px;"> <i class="ti-trash"></i> Eliminar</a></td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-novedades"><i class="ti-eye"></i> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-eye"></i></a></td>
 
