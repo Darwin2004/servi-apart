@@ -116,7 +116,7 @@
                 </div>
 
                      
-                <section class="container ml-auto">
+                <section class="servi-grid">
                     <?php
                         cargarPublicacionesRes();
                     ?>

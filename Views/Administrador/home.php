@@ -3,6 +3,8 @@
     require_once ("../../Models/consultas.php");
     require_once ("../../Models/seguridadAdministrador.php");
     require_once ("../../Controllers/mostrarInfoAdmin.php");
+
+    $objecto_consulta = new Consultas(); 
 ?>
 
 
@@ -90,15 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /# column -->
-                    <!-- <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- /# column -->
+
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
@@ -106,11 +100,16 @@
                         <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
                             <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                    <div class="stat-icon dib"><i class="ti-car color-success border-success"></i>
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">N° de Vehiculos</div>
-                                        <div class="stat-digit">326</div>
+                                        <div class="stat-digit">
+                                            <?php  
+                                                $count = $objecto_consulta->registerCounter('vehiculo', 'identificacion');
+                                                echo $count;                                            
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +121,12 @@
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">N° Usuarios</div>
-                                        <div class="stat-digit">34</div>
+                                        <div class="stat-digit">
+                                            <?php  
+                                                $count = $objecto_consulta->registerCounter('usuarios', 'identificacion');
+                                                echo $count;                                            
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -130,11 +134,16 @@
                         <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
                             <div style="border-radius: 40px;" class="card p-2">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                    <div class="stat-icon dib"><i class="ti-calendar color-pink border-pink"></i>
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Reservas de salon activas</div>
-                                        <div class="stat-digit">12</div>
+                                        <div class="stat-digit">
+                                            <?php  
+                                                $count = $objecto_consulta->registerCounter('reserva_salon', 'id_reserva');
+                                                echo $count;                                            
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

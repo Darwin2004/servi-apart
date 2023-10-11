@@ -47,7 +47,7 @@
             <div class="container-fluid p-4">
 
                 <section class=" rounded-3 d-flex row">
-                    <div class="col-md-6   p-2">
+                    <div class="col-md-7   p-2">
                         <h2 class="p-4 title  w-100">¡<span class="span-title">Registra</span>, luego,
                             comunica! </h2>
                         <p class="px-4 d-block ">Registra tu paquetería hoy mismo y comunica de manera eficiente con los
@@ -58,7 +58,7 @@
                             servicio!
                         </p>
                     </div>
-                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
+                    <div class="col-md-5  p-4 d-flex justify-content-center align-items-center">
                         <img class="w-75 xxl-w-50" src="../../assets/img/pacck.svg" alt="">
                     </div>
                 </section>

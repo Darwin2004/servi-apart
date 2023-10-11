@@ -15,26 +15,29 @@ function cargarPublicacionesRes(){
     } else {
         foreach ($result as $f) {
             echo '
-            <article class="box-cont p-4 px-4 mb-3" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; ">
+            <article class="box-cont p-3 px-1 mb-5" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; width: 500px; height: 450px; margin-left: 40px; ">
                  
-                            <section class=" p-2 border-end border-primary" style="display:flex; flex-direction:column ">
-                                <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px; color: #ffc451";><b>Anuncios</b></p>
-                                    <div style="display: flex" class=" border justify-content-between p-2 px-3">
+                            <section class=" p-2  border-primary" style=" flex-direction:column; width: 500px; height: 400px ">
+                               
+                                    <div style="display: flex; " class=" border justify-content-between p-2 px-3"; >
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
                                             <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                                <p class="fs-6" style="position:relative; top: 9px">' . $f['titulo'] . '</p>
+                                               <p> <strong> Titulo: </strong> </p>
+                                                <p class="fs-6" style="position:relative; top: -10px">' . $f['titulo'] . '</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div style="display: flex" class=" border justify-content-between p-2 px-3">
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['descripcion'] . '</p>
+                                        <p> <strong> Descripcion: </strong> </p>
+                                            <p class="fs-6" style="position:relative; top: -10px">' . $f['descripcion'] . '</p>
                                         </div>
                                     </div>
                                     <div style="display: flex" class=" border justify-content-between p-2 px-3">
                                         <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['fecha'] . '</p>
+                                        <p> <strong> Fecha: </strong> </p>
+                                            <p class="fs-6" style="position:relative; top: -10px">' . $f['fecha'] . '</p>
                                         </div>
                                     </div>
                                     

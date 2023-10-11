@@ -853,6 +853,36 @@
                 echo "error al listar los registros de las reservas: " . $th;
             }
         }
+
+
+        /**
+         * Contador de registros de tablas
+         * 
+         * @function registerCounter
+         * 
+         * @param string $table // nombre de la tabla a consultar 
+         * @param string $id_name // nombre de la primary key de la tabla
+         * @return string //resultado del conteo de registros
+         * 
+         * 
+         */
+
+        public function registerCounter(string $table, string $id_name) : string{
+            try {
+                $objConexion = new Conexion();
+                $query = "SELECT COUNT( " . $id_name . ") AS num FROM " . $table;
+                $statement = $objConexion->get_conexion()->prepare($query);
+
+                $statement->execute();
+
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                return $result[0]['num'];
+
+            } catch (\Throwable $th) {
+                echo  "it had occurs an error when it was counting the table" . $th ;
+            }
+        }
     }
 
         //FUNCIONES MODULOS PRODUCTOS

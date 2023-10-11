@@ -10,6 +10,11 @@
     background-color: #18d26e !important;
     color: black;
 }
+#btn-signup:hover{
+    background-color: black !important;
+    color: whitesmoke;
+}
+
 .hola{
     margin-left: 25px !important;
 }
@@ -17,6 +22,28 @@
 .icon-content{
 padding: 4px;
     background-color: #18d26e !important;
+}
+
+#GenerarPDF
+{
+    background-color: #ff914d;
+}
+
+#GenerarExcel
+{
+    background-color: #18d26e;
+}
+
+#GenerarPDF:hover
+{
+    background-color: black;
+    color: whitesmoke;
+}
+
+#GenerarExcel:hover
+{
+    background-color: black;
+    color: whitesmoke;
 }
 
 .packed-icon{
@@ -29,7 +56,7 @@ padding: 4px;
     -webkit-box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
-    width: 100% !important; padding: 20px; border-radius: 10px;
+    
 }
 
 .whatsapp:hover{
