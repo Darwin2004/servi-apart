@@ -62,9 +62,9 @@
                         <img class="w-75 xxl-w-50" src="../../assets/img/pacck.svg" alt="">
                     </div>
                 </section>
-                <section class="row mt-4 p-4">
+                <section class="row mt-4 p-4 ">
                     <form action="../../Controllers/registrarPaquete.php" method="post"
-                        class="d-inline-flex row box-cont">
+                        class="d-inline-flex py-5 row box-cont">
                         <div class="mb-3 col-md-6">
                             <label for="exampleInputEmail1" class="form-label">Destinatario</label>
                             <input type="text" class="form-control" name="destinatario" placeholder="EJ:Andrea Vargas"
