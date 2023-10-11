@@ -113,7 +113,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content">
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi">
+                            <div class="card-publi" style="margin-left:0">
                                 <div class="card-title">
                                 
                                 </div>
