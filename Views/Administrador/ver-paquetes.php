@@ -128,15 +128,15 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
+                <main id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="box-cont">
                                 <div class="box-head">
                                     <div class="p-2  d-flex justify-content-end">
                     
-                                        <button id="GenerarPDF" class="btn p-2 btn-danger mx-2 "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar PDF</a></button>
-                                        <button id="GenerarExcel" class="btn p-2 btn-success mx-3 "><a class="text-light" href="../../services/generateexcelpaqueteria.php" target="_blank">Generar Excel</a></button>
+                                        <button id="GenerarPDF" class="btn p-2  mx-2 "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar PDF</a></button>
+                                        <button id="GenerarExcel" class="btn p-2 mx-3 "><a class="text-light" href="../../services/generateexcelpaqueteria.php" target="_blank">Generar Excel</a></button>
 
                                     </div>
                                 </div>
@@ -208,14 +208,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
+                </main>
+                <footer class="row">
+                    <div class="col-lg-12">
+                        <div class="footer">
+                            <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
                         </div>
                     </div>
-                </section>
+                </footer>
             </div>
         </div>
     </div>
