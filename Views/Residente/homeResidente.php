@@ -72,10 +72,17 @@
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="./css/home.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+        *, body, h2, h1{
+            font-family: 'Varela Round', sans-serif !important;
+        }
+    </style>
 </head>
 
-<body >
+<body style="font-family: 'Varela Round', sans-serif !important;" >
 
 <?php
     include 'menu-include-residente.php';
@@ -290,32 +297,6 @@
     <!-- Toastr -->
     <script src="../Dashboard/js/lib/toastr/toastr.min.js"></script>
     <script src="../Dashboard/js/lib/toastr/toastr.init.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!--  Dashboard 1 -->
