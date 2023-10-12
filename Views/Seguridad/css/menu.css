@@ -29,6 +29,7 @@ footer{
 .section-modal{
     height: 80%;
     background-color: #0F1210;
+    
 
 }
 .list{
@@ -90,6 +91,12 @@ footer{
 .third-li{
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+/* CSS para quitar el color azul de los enlaces <a> con la clase "chocolate" */
+a.chocolate {
+    color: inherit;
+    text-decoration: none;
+}
+
 
 /****************************************************************************** 
 

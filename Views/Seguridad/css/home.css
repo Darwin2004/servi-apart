@@ -10,7 +10,7 @@
 
     z-index: 9999;
     background-color: rgb(255 255 255 / 0.3);
-  backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     position: fixed;
     transition: all 0.8 linear;
     border-radius: 50%;
@@ -20,6 +20,9 @@
     margin: 0;
 }
 
+.clicki{
+    font-size: 20px;
+}
 .perfil-btn {
     background-color: orange !important;
 }
@@ -41,7 +44,10 @@
 .img-module{
     position: relative;
     z-index: 1;
+    /* -webkit-filter: brightness(60%); */
+    filter: brightness(80%);
 }
+
 
 .module {
     padding: 0;
@@ -73,7 +79,30 @@
     transform: scale(1.01);
 }
 
+/* estilos de imagenes del modulo de salon comunal */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive */
 @media (min-width: 375px) {
     .seguridad-titulo {
         font-size: 1.6rem;
