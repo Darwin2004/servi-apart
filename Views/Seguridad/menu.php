@@ -10,22 +10,41 @@
         </nav>
         <section class="section-modal d-flex flex-column justify-content-center w-100">
             <nav class="list ">
-                <div  role="button" id="first-li" class="list-group-item  item-list d-flex justify-content-between text-white py-2 w-auto">
-                    Paqueteria 
+                <div  role="button" id="first-li" class="list-group-item  item-list d-flex justify-content-between text-white py-2 w-auto ">
+                    <a href="paqueteria.php" class="chocolate">Paqueteria</a>
+                     
                     <div>
                         <img class="first-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
                     </div>
                 </div>
                 
                 <div  id="second-li" role="button" class="list-group-item item-list  d-flex justify-content-between text-white py-2 w-auto">
-                    Vehiculos 
+                    <a href="vehiculo.php" class="chocolate">Vehiculos</a>
+                     
+                    <div>
+                        <img class="second-arrow" style="transform: rotate(-45deg);" src="icons/arrow.png" alt="">
+                    </div>
+                </div>
+
+                <div  id="second-li" role="button" class="list-group-item item-list  d-flex justify-content-between text-white py-2 w-auto">
+                    <a href="salonComunal.php" class="chocolate">Salon Comunal </a>
+                    
+                    <div>
+                        <img class="second-arrow" style="transform: rotate(-45deg);" src="icons/arrow.png" alt="">
+                    </div>
+                </div>
+
+                <div  id="second-li" role="button" class="list-group-item item-list  d-flex justify-content-between text-white py-2 w-auto">
+                    <a href="publicaciones.php" class="chocolate">Publicaciones</a>
+                    
                     <div>
                         <img class="second-arrow" style="transform: rotate(-45deg);" src="icons/arrow.png" alt="">
                     </div>
                 </div>
 
                 <div  role="button" id="third-li" class="list-group-item  item-list d-flex justify-content-between text-white py-2 w-auto">
-                    Home 
+                    <a href="homePS.php" class="chocolate">Home </a>
+                    
                     <div>
                         <img src="icons/arrow.png" class="third-arrow" alt="">
                     </div>
