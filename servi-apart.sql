@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 11, 2023 at 09:08 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 12-10-2023 a las 19:04:42
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `servi-apart`
+-- Base de datos: `servi-apart`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventario_salon`
+-- Estructura de tabla para la tabla `inventario_salon`
 --
 
 CREATE TABLE `inventario_salon` (
@@ -36,7 +36,7 @@ CREATE TABLE `inventario_salon` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `novedad_vehiculo`
+-- Estructura de tabla para la tabla `novedad_vehiculo`
 --
 
 CREATE TABLE `novedad_vehiculo` (
@@ -48,7 +48,7 @@ CREATE TABLE `novedad_vehiculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `novedad_vehiculo`
+-- Volcado de datos para la tabla `novedad_vehiculo`
 --
 
 INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paqueteria`
+-- Estructura de tabla para la tabla `paqueteria`
 --
 
 CREATE TABLE `paqueteria` (
@@ -73,7 +73,7 @@ CREATE TABLE `paqueteria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `paqueteria`
+-- Volcado de datos para la tabla `paqueteria`
 --
 
 INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamento`, `telefono`, `fecha`) VALUES
@@ -85,29 +85,30 @@ INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publicaciones`
+-- Estructura de tabla para la tabla `publicaciones`
 --
 
 CREATE TABLE `publicaciones` (
   `id_publi` int(11) NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+  `fecha` date NOT NULL DEFAULT current_timestamp(),
+  `hora` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `publicaciones`
+-- Volcado de datos para la tabla `publicaciones`
 --
 
-INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`) VALUES
-(3, 'agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion. ', '2023-09-14 18:15:37'),
-(9, 'REMODELACIONES EN EL EDIFICIO', 'POR POR PROBLEMAS EN LA RED ELECTRICA', '2023-09-19 14:09:12'),
-(10, 'FUGA DE GAZ', 'FUGA DE GAS EN EL APARTEMENTO 601', '2023-09-19 14:09:34');
+INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`, `hora`) VALUES
+(3, 'Agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion. ', '2023-09-14', '00:00:00'),
+(9, 'Remodelacion en el edificio', 'Se observaron problemas en la red electrica', '2023-09-19', '00:00:00'),
+(10, 'Fuga de gas', 'Fuga de gas en el apartamento 601-torre 5', '2023-09-19', '00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reserva_salon`
+-- Estructura de tabla para la tabla `reserva_salon`
 --
 
 CREATE TABLE `reserva_salon` (
@@ -121,7 +122,7 @@ CREATE TABLE `reserva_salon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `reserva_salon`
+-- Volcado de datos para la tabla `reserva_salon`
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`) VALUES
@@ -135,7 +136,7 @@ INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -154,7 +155,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
@@ -174,7 +175,7 @@ INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo`
+-- Estructura de tabla para la tabla `vehiculo`
 --
 
 CREATE TABLE `vehiculo` (
@@ -191,7 +192,7 @@ CREATE TABLE `vehiculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `vehiculo`
+-- Volcado de datos para la tabla `vehiculo`
 --
 
 INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
@@ -201,17 +202,17 @@ INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `model
 (354534, 'QRP456', 'mazda', 'CR5', 2023, '2023-09-08 00:00:00', '../Uploads/vehiculos/20.jfif', '../Uploads/vehiculos/21.jfif', '../Uploads/vehiculos/22.jfif', '../Uploads/vehiculos/23.jfif');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `inventario_salon`
+-- Indices de la tabla `inventario_salon`
 --
 ALTER TABLE `inventario_salon`
   ADD PRIMARY KEY (`id_inv`);
 
 --
--- Indexes for table `novedad_vehiculo`
+-- Indices de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD PRIMARY KEY (`id_nov`),
@@ -219,84 +220,84 @@ ALTER TABLE `novedad_vehiculo`
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- Indexes for table `paqueteria`
+-- Indices de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `publicaciones`
+-- Indices de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id_publi`);
 
 --
--- Indexes for table `reserva_salon`
+-- Indices de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   ADD PRIMARY KEY (`id_reserva`),
   ADD KEY `reserva_salon_ibfk_1` (`identificacion`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`identificacion`);
 
 --
--- Indexes for table `vehiculo`
+-- Indices de la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD PRIMARY KEY (`placa`),
   ADD KEY `identificacion` (`identificacion`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `novedad_vehiculo`
+-- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `paqueteria`
+-- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `publicaciones`
+-- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `reserva_salon`
+-- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `novedad_vehiculo`
+-- Filtros para la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
   ADD CONSTRAINT `novedad_vehiculo_ibfk_1` FOREIGN KEY (`placa`) REFERENCES `vehiculo` (`placa`) ON DELETE CASCADE,
   ADD CONSTRAINT `novedad_vehiculo_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reserva_salon`
+-- Filtros para la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
   ADD CONSTRAINT `reserva_salon_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`) ON DELETE CASCADE;
 
 --
--- Constraints for table `vehiculo`
+-- Filtros para la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
   ADD CONSTRAINT `vehiculo_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`) ON DELETE CASCADE;
