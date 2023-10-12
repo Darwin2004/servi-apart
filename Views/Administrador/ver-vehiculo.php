@@ -1,11 +1,8 @@
 <?php
-
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 require_once("../../Models/seguridadAdministrador.php");
 require_once("../../Controllers/mostrarInfoAdmin.php");
-
-
 ?>
 
 
@@ -22,6 +19,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
@@ -70,7 +69,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
@@ -91,7 +90,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
-                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
+                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las
+                                    novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a  style="color: #18d26e">Administrador</a>
+                                        <a style="color: #18d26e">Administrador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver Vehiculos</li>
                                 </ol>
@@ -115,7 +115,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card vehiculos_ver">
-                                <div class="card-body" >
+                                <div class="card-body card-ver">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
                                             <thead>
@@ -140,13 +140,18 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
-                                
+
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf" style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a class="txt-pdf" href="../../services/generatepdfvehiculos.php" target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a class="txt-excel" href="../../services/generarexcelvehiculos.php" target="_blank">Generar Reporte Excel</a></button>
+                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf"
+                                style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a
+                                    class="txt-pdf" href="../../services/generatepdfvehiculos.php"
+                                    target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a
+                                    class="txt-excel" href="../../services/generarexcelvehiculos.php"
+                                    target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 
@@ -168,7 +173,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-    
+
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
@@ -346,19 +351,20 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
 
     <script>
         $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 
 </body>

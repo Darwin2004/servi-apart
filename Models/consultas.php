@@ -3,33 +3,35 @@
 //CREAMOS UNA CLASE QUE CONTENGA TODAS LAS FUNCIONES
 //CRUD DEL SISTEMA
 
-    class Consultas {
+class Consultas
+{
 
-        //FUNCIONES MODULOS ADMINISTRADOR
+    //FUNCIONES MODULOS ADMINISTRADOR
 
-        public function insertarUserEx($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento){
-            
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function insertarUserEx($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento)
+    {
 
-            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM usuarios WHERE email=:email OR identificacion=:identificacion';
-            $result = $conexion->prepare($consultar);
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result -> bindParam (":email", $email);
+        //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+        $consultar = 'SELECT * FROM usuarios WHERE email=:email OR identificacion=:identificacion';
+        $result = $conexion->prepare($consultar);
 
-            $result -> bindParam (":identificacion", $identificacion);
+        $result->bindParam(":email", $email);
 
-            $result -> execute();
+        $result->bindParam(":identificacion", $identificacion);
 
-            $f = $result->fetch();
+        $result->execute();
 
-            if($f){
-                echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-                echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
-            }else{
-                
+        $f = $result->fetch();
+
+        if ($f) {
+            echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
+            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+        } else {
+
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO usuarios(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, torre, apartamento) 
             VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :claveMd, :rol, :estado, :torre, :apartamento)";
@@ -40,74 +42,76 @@
 
 
             //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-            $result -> bindParam (":identificacion", $identificacion);
-            $result -> bindParam (":tipo_doc", $tipo_doc);
-            $result -> bindParam (":nombres", $nombres);
-            $result -> bindParam (":apellidos", $apellidos);
-            $result -> bindParam (":email", $email);
-            $result -> bindParam (":telefono", $telefono);
-            $result -> bindParam (":claveMd", $claveMd);
-            $result -> bindParam (":rol", $rol);
-            $result -> bindParam (":estado", $estado);
-            $result -> bindParam (":torre", $torre);
-            $result -> bindParam (":apartamento", $apartamento);
+            $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":tipo_doc", $tipo_doc);
+            $result->bindParam(":nombres", $nombres);
+            $result->bindParam(":apellidos", $apellidos);
+            $result->bindParam(":email", $email);
+            $result->bindParam(":telefono", $telefono);
+            $result->bindParam(":claveMd", $claveMd);
+            $result->bindParam(":rol", $rol);
+            $result->bindParam(":estado", $estado);
+            $result->bindParam(":torre", $torre);
+            $result->bindParam(":apartamento", $apartamento);
 
             //EJECUTAMOS EL INSERT
-            $result -> execute();
-             
-            echo '<script>alert("Te has registrado exitosamente, debes esperar a que un administrador te autorize")</script>';
-            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
-            }
-
-        }
-
-        public function actualizarFotoAdmin($id, $foto){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = "UPDATE usuarios SET foto =:foto
-                WHERE identificacion=:id";
-
-            $result = $conexion->prepare($actualizar);
-
-
-            $result->bindParam("id",$id);
-            $result->bindParam("foto",$foto);
-
             $result->execute();
 
-            echo '<script>
+            echo '<script>alert("Te has registrado exitosamente, debes esperar a que un administrador te autorize")</script>';
+            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+        }
+
+    }
+
+    public function actualizarFotoAdmin($id, $foto)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = "UPDATE usuarios SET foto =:foto
+                WHERE identificacion=:id";
+
+        $result = $conexion->prepare($actualizar);
+
+
+        $result->bindParam("id", $id);
+        $result->bindParam("foto", $foto);
+
+        $result->execute();
+
+        echo '<script>
                 alert("Infomación de usuario actualizada ;)")
             </script>';
 
-            echo "<script>
+        echo "<script>
                 location.href = '../Views/Administrador/perfil.php?id=$id'
             </script>";
-        }
+    }
 
-        public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento, $foto){
-            
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento, $foto)
+    {
 
-            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM usuarios WHERE email=:email OR identificacion=:identificacion';
-            $result = $conexion->prepare($consultar);
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result -> bindParam (":email", $email);
+        //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+        $consultar = 'SELECT * FROM usuarios WHERE email=:email OR identificacion=:identificacion';
+        $result = $conexion->prepare($consultar);
 
-            $result -> bindParam (":identificacion", $identificacion);
+        $result->bindParam(":email", $email);
 
-            $result -> execute();
+        $result->bindParam(":identificacion", $identificacion);
 
-            $f = $result->fetch();
+        $result->execute();
 
-            if($f){
-                echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-                echo "<script>location.href = '../Views/Administrador/registrar-usuario.php'</script>";
-            }else{
-                
+        $f = $result->fetch();
+
+        if ($f) {
+            echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
+            echo "<script>location.href = '../Views/Administrador/registrar-usuario.php'</script>";
+        } else {
+
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO usuarios(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, torre, apartamento, foto) 
             VALUES(:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :claveMd,  :rol, :estado, :torre, :apartamento, :foto)";
@@ -118,330 +122,346 @@
 
 
             //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-            $result -> bindParam (":identificacion", $identificacion);
-            $result -> bindParam (":tipo_doc", $tipo_doc);
-            $result -> bindParam (":nombres", $nombres);
-            $result -> bindParam (":apellidos", $apellidos);
-            $result -> bindParam (":email", $email);
-            $result -> bindParam (":telefono", $telefono);  
-            $result -> bindParam (":claveMd", $claveMd);
-            $result -> bindParam (":rol", $rol);
-            $result -> bindParam (":estado", $estado);
-            $result -> bindParam (":torre", $torre);
-            $result -> bindParam (":apartamento", $apartamento);
-            $result -> bindParam (":foto", $foto);
+            $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":tipo_doc", $tipo_doc);
+            $result->bindParam(":nombres", $nombres);
+            $result->bindParam(":apellidos", $apellidos);
+            $result->bindParam(":email", $email);
+            $result->bindParam(":telefono", $telefono);
+            $result->bindParam(":claveMd", $claveMd);
+            $result->bindParam(":rol", $rol);
+            $result->bindParam(":estado", $estado);
+            $result->bindParam(":torre", $torre);
+            $result->bindParam(":apartamento", $apartamento);
+            $result->bindParam(":foto", $foto);
 
             //EJECUTAMOS EL INSERT
-            $result -> execute();
-             
+            $result->execute();
+
             echo '<script>alert("Usuario registrado con exito")</script>';
-            
-            }
 
         }
 
-    
+    }
 
-        public function mostrarUsuariosAdmin(){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM usuarios ORDER BY nombres ASC ";
 
-            $result = $conexion->prepare($consultar);
+    public function mostrarUsuariosAdmin()
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result -> execute();
+        $consultar = "SELECT * FROM usuarios ORDER BY nombres ASC ";
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+        $result = $conexion->prepare($consultar);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
-        
+        return $f;
+    }
 
-        public function mostrarUsuarioEditarAdmin($identificacion){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($consultar);
+    public function mostrarUsuarioEditarAdmin($identificacion)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result->bindParam("identificacion", $identificacion);
+        $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+        $result = $conexion->prepare($consultar);
 
-            $result -> execute();
+        $result->bindParam("identificacion", $identificacion);
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
-        public function mostrarUsuarioRes($identificacion){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+        return $f;
+    }
+    public function mostrarUsuarioRes($identificacion)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($consultar);
+        $consultar = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+        $result = $conexion->prepare($consultar);
 
-            $result->bindParam("identificacion", $identificacion);
+        $result->bindParam("identificacion", $identificacion);
 
-            $result -> execute();
+        $result->execute();
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
-      
 
-        public function mostrarFotosVehiculoAdmin($placa){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM vehiculo v INNER JOIN usuarios u ON v.identificacion = u.identificacion WHERE v.placa = :placa";
-            $result = $conexion->prepare($consultar);
+    public function mostrarFotosVehiculoAdmin($placa)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result->bindParam("placa", $placa);
- 
+        $consultar = "SELECT * FROM vehiculo v INNER JOIN usuarios u ON v.identificacion = u.identificacion WHERE v.placa = :placa";
+        $result = $conexion->prepare($consultar);
 
-            $result -> execute();
+        $result->bindParam("placa", $placa);
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
-        public function mostrarNovedades($placa){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function mostrarNovedades($placa)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT *, u.nombres, v.placa
+        $consultar = "SELECT *, u.nombres, v.placa
             FROM novedad_vehiculo n
             INNER JOIN usuarios u ON n.identificacion = u.identificacion
             INNER JOIN vehiculo v ON n.placa = v.placa
             WHERE v.placa = :placa;";
-            $result = $conexion->prepare($consultar);
+        $result = $conexion->prepare($consultar);
 
-            $result->bindParam("placa", $placa);
+        $result->bindParam("placa", $placa);
 
-            $result -> execute();
+        $result->execute();
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
-        public function mostrarNovedadEditarAdmin($id_nov){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function mostrarNovedadEditarAdmin($id_nov)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM novedad_vehiculo WHERE id_nov=:id_nov";
-            $result = $conexion->prepare($consultar);
+        $consultar = "SELECT * FROM novedad_vehiculo WHERE id_nov=:id_nov";
+        $result = $conexion->prepare($consultar);
 
-            $result->bindParam("id_nov", $id_nov);
+        $result->bindParam("id_nov", $id_nov);
 
-            $result -> execute();
+        $result->execute();
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
 
 
 
-        public function actualizarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $rol, $estado){
-            
+    public function actualizarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $rol, $estado)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, rol=:rol, estado=:estado WHERE identificacion=:identificacion ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam("identificacion", $identificacion);
+        $result->bindParam("tipo_doc", $tipo_doc);
+        $result->bindParam("nombres", $nombres);
+        $result->bindParam("apellidos", $apellidos);
+        $result->bindParam("email", $email);
+        $result->bindParam("telefono", $telefono);
+        $result->bindParam("rol", $rol);
+        $result->bindParam("estado", $estado);
+
+        $result->execute();
+
+        echo '<script>alert("Información de usuario actualizada")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+    }
+
+    public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam("identificacion", $identificacion);
+        $result->bindParam("tipo_doc", $tipo_doc);
+        $result->bindParam("nombres", $nombres);
+        $result->bindParam("apellidos", $apellidos);
+        $result->bindParam("email", $email);
+        $result->bindParam("telefono", $telefono);
+        $result->bindParam("torre", $torre);
+        $result->bindParam("apartamento", $apartamento);
+
+        $result->execute();
+
+        echo '<script>alert("Información actualizada")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+    }
+
+
+
+    public function crearPublicacion($titulo, $descripcion)
+    {
+        try {
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, rol=:rol, estado=:estado WHERE identificacion=:identificacion ";
-            $result = $conexion->prepare($actualizar);
+            $query = "INSERT INTO publicaciones(titulo, descripcion) VALUES(:titulo, :descripcion)";
+            $statement = $conexion->prepare($query);
 
-            $result->bindParam("identificacion", $identificacion);
-            $result->bindParam("tipo_doc", $tipo_doc);
-            $result->bindParam("nombres", $nombres);
-            $result->bindParam("apellidos", $apellidos);
-            $result->bindParam("email", $email);
-            $result->bindParam("telefono", $telefono);
-            $result->bindParam("rol", $rol);
-            $result->bindParam("estado", $estado);
+            $statement->bindParam(':titulo', $titulo);
+            $statement->bindParam(':descripcion', $descripcion);
 
-            $result->execute();
 
-            echo '<script>alert("Información de usuario actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+            $response = $statement->execute();
+
+            if (!$response)
+                return false;
+            return true;
+        } catch (\Throwable $th) {
+            echo "Ha ocurrido un problema al crear la publicacion :( " . $th;
         }
+    }
 
-        public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento){
-            
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
-            $result = $conexion->prepare($actualizar);
+    public function eliminarPubli($id_publi)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result->bindParam("identificacion", $identificacion);
-            $result->bindParam("tipo_doc", $tipo_doc);
-            $result->bindParam("nombres", $nombres);
-            $result->bindParam("apellidos", $apellidos);
-            $result->bindParam("email", $email);
-            $result->bindParam("telefono", $telefono);
-            $result->bindParam("torre", $torre);
-            $result->bindParam("apartamento", $apartamento);
-    
-            $result->execute();
+        $eliminar = "DELETE FROM publicaciones Where id_publi=:id_publi";
+        $result = $conexion->prepare($eliminar);
 
-            echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+        $result->bindParam(":id_publi", $id_publi);
+
+        $result->execute();
+        echo '<script>alert("Publicacion Eliminada")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+    }
+
+
+    public function mostrarPublicaciones()
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM publicaciones";
+
+        $result = $conexion->prepare($consultar);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
-        
+        return $f;
+    }
+    public function modificarPubli($id_publi, $titulo, $descripcion)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE publicaciones SET  titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam("id_publi", $id_publi);
+        $result->bindParam("titulo", $titulo);
+        $result->bindParam("descripcion", $descripcion);
 
 
-         public function crearPublicacion($titulo, $descripcion){
-            try {
-                $objConexion = new conexion();
-                $conexion = $objConexion->get_conexion();
+        $result->execute();
 
-                $query = "INSERT INTO publicaciones(titulo, descripcion) VALUES(:titulo, :descripcion)";
-                $statement = $conexion->prepare($query);
+        echo '<script>alert("Información actualizada")</script>';
+        //echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";//
+    }
 
-                $statement->bindParam(':titulo', $titulo);
-                $statement->bindParam(':descripcion', $descripcion);
-     
+    public function mostrarPubliEditar($id_publi)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-                $response = $statement->execute();
+        $consultar = "SELECT * FROM publicaciones WHERE id_publi=:id_publi";
+        $result = $conexion->prepare($consultar);
 
-                if(!$response) return false;
-                return true;
-            } catch (\Throwable $th) {
-                echo "Ha ocurrido un problema al crear la publicacion :( " . $th; 
-            }
+        $result->bindParam("id_publi", $id_publi);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
-            
+        return $f;
+    }
 
-        public function eliminarPubli($id_publi){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
 
-            $eliminar = "DELETE FROM publicaciones Where id_publi=:id_publi"; 
-            $result = $conexion->prepare($eliminar);
 
-            $result->bindParam(":id_publi", $id_publi);
 
-            $result->execute();
-            echo '<script>alert("Publicacion Eliminada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+    public function mostrarVehiculosAdmin()
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM vehiculo ORDER BY fecha DESC ";
+
+        $result = $conexion->prepare($consultar);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
+    public function modificarVehiculosAdmin($placa, $identificacion, $marca, $referencia, $modelo)
+    {
 
-        public function mostrarPublicaciones(){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM publicaciones";
+        $actualizar = " UPDATE vehiculo SET marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
+        $result = $conexion->prepare($actualizar);
 
-            $result = $conexion->prepare($consultar);
+        $result->bindParam("marca", $marca);
+        $result->bindParam("referencia", $referencia);
+        $result->bindParam("modelo", $modelo);
+        $result->bindParam("placa", $placa);
 
-            $result -> execute();
+        $result->execute();
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
-        public function modificarPubli($id_publi, $titulo, $descripcion){   
-            
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = " UPDATE publicaciones SET  titulo=:titulo, descripcion=:descripcion WHERE id_publi=:id_publi";
-            $result = $conexion->prepare($actualizar);
-
-            $result->bindParam("id_publi", $id_publi);
-            $result->bindParam("titulo", $titulo);
-            $result->bindParam("descripcion", $descripcion);
-            
-    
-            $result->execute();
-
-            echo '<script>alert("Información actualizada")</script>';
-            //echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";//
-        }
-
-        public function mostrarPubliEditar($id_publi){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $consultar = "SELECT * FROM publicaciones WHERE id_publi=:id_publi";
-            $result = $conexion->prepare($consultar);
-
-            $result->bindParam("id_publi", $id_publi);
-
-            $result -> execute();
-
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
-
-
-
-
-        public function mostrarVehiculosAdmin(){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $consultar = "SELECT * FROM vehiculo ORDER BY fecha DESC ";
-
-            $result = $conexion->prepare($consultar);
-
-            $result -> execute();
-
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
-
-        public function modificarVehiculosAdmin($placa, $identificacion, $marca, $referencia, $modelo){
-            
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = " UPDATE vehiculo SET marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
-            $result = $conexion->prepare($actualizar);
-
-            $result->bindParam("marca", $marca);
-            $result->bindParam("referencia", $referencia);
-            $result->bindParam("modelo", $modelo);
-            $result->bindParam("placa", $placa);
-    
-            $result->execute();
-
-            echo '
+        echo '
             <script>
             
             Swal.fire({
@@ -454,41 +474,43 @@
             })
         </script>';
 
+    }
+
+    public function mostrarVehiculoEditarAdmin($placa)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM vehiculo WHERE placa=:placa";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam("placa", $placa);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
-        public function mostrarVehiculoEditarAdmin($placa){
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad)
+    {
 
-            $consultar = "SELECT * FROM vehiculo WHERE placa=:placa";
-            $result = $conexion->prepare($consultar);
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $result->bindParam("placa", $placa);
+        $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
+        $result = $conexion->prepare($actualizar);
 
-            $result -> execute();
+        $result->bindParam("id_nov", $id_nov);
+        $result->bindParam("novedad", $novedad);
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
+        $result->execute();
 
-        public function modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad){
-            
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
-            $result = $conexion->prepare($actualizar);
-
-            $result->bindParam("id_nov", $id_nov);
-            $result->bindParam("novedad", $novedad);
-    
-            $result->execute();
-
-            echo '
+        echo '
             <script>
             
             Swal.fire({
@@ -497,23 +519,24 @@
                 showConfirmButton: false,
                 timer: 2000
             }).then((result)=>{
-                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '";
+                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa . '";
             })
         </script>';
-        }
+    }
 
-        public function eliminarVehiculosAdmin($placa){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function eliminarVehiculosAdmin($placa)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $eliminar = "   DELETE FROM novedad_vehiculo WHERE placa=:placa;
-                            DELETE FROM vehiculo WHERE placa=:placa;"; 
-            $result = $conexion->prepare($eliminar);
+        $eliminar = "   DELETE FROM novedad_vehiculo WHERE placa=:placa;
+                            DELETE FROM vehiculo WHERE placa=:placa;";
+        $result = $conexion->prepare($eliminar);
 
-            $result->bindParam(":placa", $placa);
+        $result->bindParam(":placa", $placa);
 
-            $result->execute();
-            echo '
+        $result->execute();
+        echo '
             <script>
             
             Swal.fire({
@@ -525,20 +548,21 @@
                 location.href="../Views/Administrador/ver-vehiculo.php";
             })
         </script>';
-        }
+    }
 
-        public function eliminarNovedadesAdmin($id_nov, $placa){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+    public function eliminarNovedadesAdmin($id_nov, $placa)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $eliminar = "DELETE FROM novedad_vehiculo Where id_nov=:id_nov"; 
-            $result = $conexion->prepare($eliminar);
+        $eliminar = "DELETE FROM novedad_vehiculo Where id_nov=:id_nov";
+        $result = $conexion->prepare($eliminar);
 
-            $result->bindParam(":id_nov", $id_nov);
-            
+        $result->bindParam(":id_nov", $id_nov);
 
-            $result->execute();
-            echo '
+
+        $result->execute();
+        echo '
             <script>
             
             Swal.fire({
@@ -547,70 +571,94 @@
                 showConfirmButton: false,
                 timer: 2000
             }).then((result)=>{
-                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa. '";
+                location.href="../Views/Administrador/ver-novedades.php?placa=' . $placa . '";
             })
         </script>';
 
+    }
+
+
+    public function eliminarUserAdmin($id)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM usuarios Where identificacion=:id";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id", $id);
+
+        $result->execute();
+        echo '<script>alert("Usuario Eliminado")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+    }
+
+    public function verPerfil($id)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $buscar = "SELECT * FROM usuarios WHERE identificacion=:id ";
+
+        $result = $conexion->prepare($buscar);
+
+        $result->bindParam(':id', $id);
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
+        return $f;
+    }
 
+    public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4)
+    {
 
-        public function eliminarUserAdmin($id){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $eliminar = "DELETE FROM usuarios Where identificacion=:id"; 
-            $result = $conexion->prepare($eliminar);
+        //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+        $consultar = 'SELECT * FROM vehiculo WHERE placa=:placa';
+        $result = $conexion->prepare($consultar);
 
-            $result->bindParam(":id", $id);
+        $result->bindParam(":placa", $placa);
 
-            $result->execute();
-            echo '<script>alert("Usuario Eliminado")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
-        }
+        $result->execute();
 
-        public function verPerfil($id) {
-            $f = null;
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+        $f = $result->fetch();
 
-            $buscar = "SELECT * FROM usuarios WHERE identificacion=:id ";
-
-            $result = $conexion->prepare($buscar);
-
-            $result -> bindParam(':id', $id);
-            $result -> execute();
-
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
-        }
-        
-        public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4){
+        if ($f) {
+            echo '
+            <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Parece que este vehiculo ya esta registrado",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/Administrador/registrar-vehiculo.php"; 
+                }
                 
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+            })
+            </script>';
+        } else {
 
-            //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
-            $consultar = 'SELECT * FROM vehiculo WHERE placa=:placa';
-            $result = $conexion->prepare($consultar);
 
-            $result -> bindParam (":placa", $placa);
+            // Verificar si la identificación existe en la base de datos
+            $consultarIdentificacion = 'SELECT * FROM usuarios WHERE identificacion=:identificacion';
+            $resultIdentificacion = $conexion->prepare($consultarIdentificacion);
+            $resultIdentificacion->bindParam(":identificacion", $identificacion);
+            $resultIdentificacion->execute();
+            $fIdentificacion = $resultIdentificacion->fetch();
 
-            $result -> execute();
-
-            $f = $result->fetch();
-
-            if($f){
-                echo '<script>alert("Los datos del vehiculo ya se encuentran registrados")</script>';
-                echo "<script>location.href = '../Views/Administrador/registrar-vehiculo.php'</script>";
-            }   else{
-                
+            if ($fIdentificacion) {
                 //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
                 $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, foto1, foto2, foto3, foto4) 
-                VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :foto1, :foto2, :foto3, :foto4)";
+            VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :foto1, :foto2, :foto3, :foto4)";
 
 
                 //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -618,217 +666,255 @@
 
 
                 //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-                $result -> bindParam (":placa", $placa);
-                $result -> bindParam (":marca", $marca);
-                $result -> bindParam (":referencia", $referencia);
-                $result -> bindParam (":modelo", $modelo);
-                $result -> bindParam (":identificacion", $identificacion);
-                $result -> bindParam (":foto1", $foto1);
-                $result -> bindParam (":foto2", $foto2);
-                $result -> bindParam (":foto3", $foto3);
-                $result -> bindParam (":foto4", $foto4);
+                $result->bindParam(":placa", $placa);
+                $result->bindParam(":marca", $marca);
+                $result->bindParam(":referencia", $referencia);
+                $result->bindParam(":modelo", $modelo);
+                $result->bindParam(":identificacion", $identificacion);
+                $result->bindParam(":foto1", $foto1);
+                $result->bindParam(":foto2", $foto2);
+                $result->bindParam(":foto3", $foto3);
+                $result->bindParam(":foto4", $foto4);
 
                 //EJECUTAMOS EL INSERT
-                $result -> execute();
-                
+                $result->execute();
+
                 echo '
-                <script>
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Vehiculo registrado exitosamente",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Administrador/registrar-vehiculo.php";
+            })
+        </script>';
+
+            } else {
+                // La identificación no existe en la base de datos, muestra un mensaje de error
+                echo '<script>
                 
                 Swal.fire({
-                    icon: "success",
-                    title:"Vehiculo registrado exitosamente",
-                    showConfirmButton: false,
-                    timer: 2000
+                    icon: "error",
+                    title: "Oops...",
+                    text: "La identificacion que ingresaste no se encuentra en el sistema. Verifica que este bien",
+                    confirmButtonText: "Ok"
                 }).then((result)=>{
-                    location.href="../Views/Administrador/registrar-vehiculo.php";
+                    if(result.isConfirmed){
+                       location.href="../Views/Administrador/registrar-vehiculo.php"; 
+                    }
+                    
                 })
             </script>';
             }
+
+
+
+
+
+
+
+
+
+
         }
+    }
 
-        public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-        
-            $consultar ='SELECT * FROM reserva_salon WHERE dia_reserva=:dia_reserva';
-            $result =$conexion->prepare($consultar);
-        
-            $result->bindParam(":dia_reserva", $dia_reserva);
-        
-            $result->execute();
-        
-            $f = $result->fetch();
-        
-            if ($f) {
-                return false; // Indicar que ya existe una reserva para el mismo día.
-            } else {
+    public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-                $query = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
-                $statement = $conexion->prepare($query);
+        $consultar = 'SELECT * FROM reserva_salon WHERE dia_reserva=:dia_reserva';
+        $result = $conexion->prepare($consultar);
 
-                $statement->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":dia_reserva", $dia_reserva);
 
-                $statement->execute();
+        $result->execute();
 
-                $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $f = $result->fetch();
 
-                if(isset($result['identificacion'])){
-                    
-                    $insertar ="INSERT INTO reserva_salon (identificacion, dia_reserva, hora_inicio, hora_finalizacion, mesas, sillas)
+        if ($f) {
+            return false; // Indicar que ya existe una reserva para el mismo día.
+        } else {
+
+            $query = "SELECT * FROM usuarios WHERE identificacion=:identificacion";
+            $statement = $conexion->prepare($query);
+
+            $statement->bindParam(":identificacion", $identificacion);
+
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+            if (isset($result['identificacion'])) {
+
+                $insertar = "INSERT INTO reserva_salon (identificacion, dia_reserva, hora_inicio, hora_finalizacion, mesas, sillas)
                             VALUES (:identificacion, :dia_reserva, :hora_inicio, :hora_finalizacion, :mesas, :sillas)";
-        
+
                 $result = $conexion->prepare($insertar);
-        
+
                 // Vincular los parámetros
-        
+
                 $result->bindParam(":identificacion", $identificacion);
                 $result->bindParam(":dia_reserva", $dia_reserva);
                 $result->bindParam(":hora_inicio", $hora_inicio);
                 $result->bindParam(":hora_finalizacion", $hora_finalizacion);
                 $result->bindParam(":mesas", $mesas);
                 $result->bindParam(":sillas", $sillas);
-        
+
                 if ($result->execute()) {
                     return true; // Indicar éxito en la inserción.
                 } else {
                     return false; // Indicar error en la inserción. PRUEBA DE UN COMMIT
                 }
-                }else{
-                    return false;
-                }
-                
-                
-            }
-        }
-        
-        public function eliminarDiaReservaSC($id_reserva){
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-        
-            $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva"; 
-            $result = $conexion->prepare($eliminar);
-        
-            $result->bindParam(":id_reserva", $id_reserva);
-        
-            if ($result->execute()) {
-                echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
-                 echo "<script>location.href = '../Views/Administrador/ver-ReservaSC.php'</script>";
             } else {
-                echo '<script>alert("Error al eliminar la reserva")</script>';
+                return false;
             }
+
+
         }
-        
-        public function mostrarReservaEditarAdmin($id_reserva){
-            $f = null;
+    }
+
+    public function eliminarDiaReservaSC($id_reserva)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+
+        if ($result->execute()) {
+            echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
+            echo "<script>location.href = '../Views/Administrador/ver-ReservaSC.php'</script>";
+        } else {
+            echo '<script>alert("Error al eliminar la reserva")</script>';
+        }
+    }
+
+    public function mostrarReservaEditarAdmin($id_reserva)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
+
+
+    public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
+        $result = $conexion->prepare($actualizar);
+
+
+        $result->bindParam(":identificacion", $identificacion);
+
+        $result->bindParam(":dia_reserva", $dia_reserva);
+        $result->bindParam(":hora_inicio", $hora_inicio);
+        $result->bindParam(":hora_finalizacion", $hora_finalizacion);
+        $result->bindParam(":mesas", $mesas);
+        $result->bindParam(":sillas", $sillas);
+
+        $result->execute();
+
+        echo '<script>alert("Información actualizada")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
+
+    }
+
+
+    public function actualizarClaveAdmin($identificacion, $claveMd)
+    {
+
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":claveMd", $claveMd);
+
+        $result->execute();
+
+        echo '<script>alert("Clave Actualizada")</script>';
+        echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
+    }
+
+
+    public function registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario)
+    {
+        try {
+            $objConexion = new conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "INSERT INTO paqueteria(destinatario, remitente, torre, apartamento, telefono, fecha) VALUES(:destinatario, :remitente, :torre, :apartamento, :telefono, NOW())";
+            $statement = $conexion->prepare($query);
+
+            $statement->bindParam(':destinatario', $destinatario);
+            $statement->bindParam(':remitente', $remitente);
+            $statement->bindParam(':torre', $torre);
+            $statement->bindParam(':apartamento', $apartamento);
+            $statement->bindParam(':telefono', $telDestinatario);
+
+            $response = $statement->execute();
+
+            if (!$response)
+                return false;
+            return true;
+        } catch (\Throwable $th) {
+            echo "Ha ocurrido un problema al registrar el paquete :( " . $th;
+        }
+    }
+
+    public function mostrarPaquetesAdmin()
+    {
+        try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
-            $result = $conexion->prepare($consultar);
+            $query = "SELECT * FROM paqueteria";
+            $statement = $conexion->prepare($query);
 
-            $result->bindParam(":id_reserva", $id_reserva);
 
-            $result -> execute();
+            $response = $statement->execute();
+            if (!$response)
+                return;
+            $result = $statement->fetchAll();
+            return $result;
 
-            
-            while ($resultado = $result->fetch()) {
-                $f[] = $resultado;
-            }
-            return $f;
+        } catch (\Throwable $th) {
+            echo "error al listar los registros de paquetes: " . $th;
         }
-
-
-        public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion,$mesas, $sillas){
-            
-            $objConexion = new conexion();
+    }
+    public function mostrarReservasAdmin()
+    {
+        try {
+            $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($actualizar);
-
-            
-            $result->bindParam(":identificacion", $identificacion);
-    
-            $result->bindParam(":dia_reserva", $dia_reserva);
-            $result->bindParam(":hora_inicio", $hora_inicio);
-            $result->bindParam(":hora_finalizacion", $hora_finalizacion);
-            $result->bindParam(":mesas", $mesas);
-            $result->bindParam(":sillas", $sillas);
-    
-            $result->execute();
-
-            echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
-            
-        }
-
-
-        public function actualizarClaveAdmin($identificacion, $claveMd){  
-
-    
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-        
-            $actualizar = " UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($actualizar);
-        
-            $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":claveMd", $claveMd);
-            
-            $result->execute();
-        
-            echo '<script>alert("Clave Actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
-        }
-
-
-        public function registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario){
-            try {
-                $objConexion = new conexion();
-                $conexion = $objConexion->get_conexion();
-
-                $query = "INSERT INTO paqueteria(destinatario, remitente, torre, apartamento, telefono, fecha) VALUES(:destinatario, :remitente, :torre, :apartamento, :telefono, NOW())";
-                $statement = $conexion->prepare($query);
-
-                $statement->bindParam(':destinatario', $destinatario);
-                $statement->bindParam(':remitente', $remitente);
-                $statement->bindParam(':torre', $torre);
-                $statement->bindParam(':apartamento', $apartamento);
-                $statement->bindParam(':telefono', $telDestinatario);
-
-                $response = $statement->execute();
-
-                if(!$response) return false;
-                return true;
-            } catch (\Throwable $th) {
-                echo "Ha ocurrido un problema al registrar el paquete :( " . $th; 
-            }
-        }
-
-        public function mostrarPaquetesAdmin(){
-            try {
-                $objConexion = new Conexion();
-                $conexion = $objConexion->get_conexion();
-        
-                $query = "SELECT * FROM paqueteria";
-                $statement = $conexion->prepare($query);
-        
-        
-                $response = $statement->execute();
-                if(!$response) return;
-                $result = $statement->fetchAll();
-                return $result;
-                
-            } catch (\Throwable $th) {
-                echo "error al listar los registros de paquetes: " . $th;
-            }
-        }
-        public function mostrarReservasAdmin(){
-            try {
-                $objConexion = new Conexion();
-                $conexion = $objConexion->get_conexion();
-        
-                $query = "SELECT S.id_reserva , 
+            $query = "SELECT S.id_reserva , 
                 S.identificacion, 
                 S.dia_reserva , 
                 S.hora_inicio , 
@@ -841,144 +927,147 @@
                 U.telefono,
                 U.torre,
                 U.apartamento  FROM reserva_salon S INNER JOIN usuarios U ON S.identificacion=U.identificacion";
-                $statement = $conexion->prepare($query);
-        
-        
-                $response = $statement->execute();
-                if(!$response) return;
-                $result = $statement->fetchAll();
-                return $result;
-                
-            } catch (\Throwable $th) {
-                echo "error al listar los registros de las reservas: " . $th;
-            }
-        }
+            $statement = $conexion->prepare($query);
 
 
-        /**
-         * Contador de registros de tablas
-         * 
-         * @function registerCounter
-         * 
-         * @param string $table // nombre de la tabla a consultar 
-         * @param string $id_name // nombre de la primary key de la tabla
-         * @return string //resultado del conteo de registros
-         * 
-         * 
-         */
+            $response = $statement->execute();
+            if (!$response)
+                return;
+            $result = $statement->fetchAll();
+            return $result;
 
-        public function registerCounter(string $table, string $id_name) : string{
-            try {
-                $objConexion = new Conexion();
-                $query = "SELECT COUNT( " . $id_name . ") AS num FROM " . $table;
-                $statement = $objConexion->get_conexion()->prepare($query);
-
-                $statement->execute();
-
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                return $result[0]['num'];
-
-            } catch (\Throwable $th) {
-                echo  "it had occurs an error when it was counting the table" . $th ;
-            }
+        } catch (\Throwable $th) {
+            echo "error al listar los registros de las reservas: " . $th;
         }
     }
 
-        //FUNCIONES MODULOS PRODUCTOS
+
+    /**
+     * Contador de registros de tablas
+     * 
+     * @function registerCounter
+     * 
+     * @param string $table // nombre de la tabla a consultar 
+     * @param string $id_name // nombre de la primary key de la tabla
+     * @return string //resultado del conteo de registros
+     * 
+     * 
+     */
+
+    public function registerCounter(string $table, string $id_name): string
+    {
+        try {
+            $objConexion = new Conexion();
+            $query = "SELECT COUNT( " . $id_name . ") AS num FROM " . $table;
+            $statement = $objConexion->get_conexion()->prepare($query);
+
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result[0]['num'];
+
+        } catch (\Throwable $th) {
+            echo "it had occurs an error when it was counting the table" . $th;
+        }
+    }
+}
+
+//FUNCIONES MODULOS PRODUCTOS
 
 
 // --------------------------------
 
 
-    class ValidarSesion {
-        public function iniciarSesion($email, $clave){
+class ValidarSesion
+{
+    public function iniciarSesion($email, $clave)
+    {
 
-            //CREAMOS EL OBJETO DE CONEXION
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
-            $consultar = 'SELECT * FROM usuarios WHERE email=:email';
+        $consultar = 'SELECT * FROM usuarios WHERE email=:email';
 
-            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
-            $result = $conexion->prepare($consultar);
+        //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+        $result = $conexion->prepare($consultar);
 
-            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-            $result -> bindParam (":email", $email);
+        //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+        $result->bindParam(":email", $email);
 
-            $result -> execute();
+        $result->execute();
 
-            //CONVERTIREMOS LA VARIABLE RESULT EN UN ARREGLO PARA SEGMENTAR LA INFORMACION
-            
-            $f = $result -> fetch();
+        //CONVERTIREMOS LA VARIABLE RESULT EN UN ARREGLO PARA SEGMENTAR LA INFORMACION
 
-            if ($f) {
+        $f = $result->fetch();
+
+        if ($f) {
             //VALIDAMOS LA CLAVE
-                if ($f['clave'] == $clave){
-                    //VALIDAMOS EL ESTADO DE LA CUENTA
-                    
-                    if($f['estado'] == "Activo"){
-                        //SE REALIZA EL INICIO DE SESION
+            if ($f['clave'] == $clave) {
+                //VALIDAMOS EL ESTADO DE LA CUENTA
 
-                        if(session_status() !== PHP_SESSION_ACTIVE) session_start();
-                        //CREAMOS VARIABLES DE SESION
+                if ($f['estado'] == "Activo") {
+                    //SE REALIZA EL INICIO DE SESION
 
-                        $_SESSION['id'] = $f['identificacion'];
-                        $_SESSION['email'] = $f['email'];
-                        $_SESSION['rol'] = $f['rol'];
-                        $_SESSION['AUTENTICADO'] = "SI";
+                    if (session_status() !== PHP_SESSION_ACTIVE)
+                        session_start();
+                    //CREAMOS VARIABLES DE SESION
 
-                        //VALIDAMOS EL ROL PARA REDIRECCIONAR A LA INTERFAZ
+                    $_SESSION['id'] = $f['identificacion'];
+                    $_SESSION['email'] = $f['email'];
+                    $_SESSION['rol'] = $f['rol'];
+                    $_SESSION['AUTENTICADO'] = "SI";
 
-                            switch ($f['rol']) {
-                                case 'Administrador':
-                                    echo '<script>alert("Bienvenido señor administrador")</script>';
-                                    echo "<script>location.href = '../Views/Administrador/home.php'</script>";
-                                    break;
+                    //VALIDAMOS EL ROL PARA REDIRECCIONAR A LA INTERFAZ
 
-                                case 'Residente':
-                                        echo '<script>alert("Bienvenido señor residente")</script>';
-                                        echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
-                                        break;
-                                
-                                case 'Seguridad':
-                                            echo '<script>alert("Bienvenido señor personal de seguridad")</script>';
-                                            echo "<script>location.href = '../Views/Seguridad/homePS.php'</script>";
-                                            break;
-                            }
+                    switch ($f['rol']) {
+                        case 'Administrador':
+                            echo '<script>alert("Bienvenido señor administrador")</script>';
+                            echo "<script>location.href = '../Views/Administrador/home.php'</script>";
+                            break;
 
+                        case 'Residente':
+                            echo '<script>alert("Bienvenido señor residente")</script>';
+                            echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
+                            break;
 
-
+                        case 'Seguridad':
+                            echo '<script>alert("Bienvenido señor personal de seguridad")</script>';
+                            echo "<script>location.href = '../Views/Seguridad/homePS.php'</script>";
+                            break;
                     }
-                    else {
-                        echo '<script>alert("La cuenta no está activa, contactese con el administrador")</script>';
-                        echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
-                    }
-                }
-                else {
-                    echo '<script>alert("Clave incorrecta")</script>';
+
+
+
+                } else {
+                    echo '<script>alert("La cuenta no está activa, contactese con el administrador")</script>';
                     echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
                 }
-            }
-            else {
-                echo '<script>alert("El usuario no existe")</script>';
+            } else {
+                echo '<script>alert("Clave incorrecta")</script>';
                 echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
             }
+        } else {
+            echo '<script>alert("El usuario no existe")</script>';
+            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
         }
-
-
-        public function cerrarSesion(){
-            $objConexion = new Conexion();
-            $objConexion = $objConexion->get_conexion();
-
-            session_start();
-            session_destroy();
-
-            echo "<script>location.href = '../Views/client-site/page-login.html' </script>";
-        }
-
-
     }
+
+
+    public function cerrarSesion()
+    {
+        $objConexion = new Conexion();
+        $objConexion = $objConexion->get_conexion();
+
+        session_start();
+        session_destroy();
+
+        echo "<script>location.href = '../Views/client-site/page-login.html' </script>";
+    }
+
+
+}
 
 
 

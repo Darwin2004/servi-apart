@@ -62,7 +62,7 @@
     font-size: 35px;
   }
   
-  .btn_novedades {
+  .btn-novedades {
     background: #00BF63;
     color: #151515;
     padding: 10px;
@@ -196,4 +196,8 @@
 
 #myTabContent {
   padding: 10px;
+}
+
+.card-ver {
+  padding: 0;
 }
