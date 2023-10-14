@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Servi-Apart</title>
     <!-- <link href="../../assets/css/style.css" rel="stylesheet"> -->
 
     <!-- ================= Favicon ================== -->
@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="../Seguridad/css/home.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
+    
 
 </head>
 
@@ -55,18 +56,13 @@
     include 'menu.php';
 ?>
     <div class="custom-mouse d-flex justify-content-center align-items-center">
-        <span class="text-black fw-bolder">CLICK</span>
+        <span class="text-black fw-bolder clicki">CLICK</span>
     </div>
     <!-- /# sidebar -->
-    <header class="py-4 px-3 px-md-5  w-100 d-flex align-items-center justify-content-between">
-        <div >
-            <img id="menu-btn" width="24" height="24" role="button" src="icons/Menu.png" alt="">
-        </div>
-        <div class="d-flex ">
-            <img width="42" height="42" class="rounded-5 ml-3" src="images/ghost.png" alt="">
-            <button class="px-4 py-2 rounded-2 text-black perfil-btn ml-3">Perfil</button>
-        </div>
-    </header>
+    <?php
+    include 'headerInclude.php';
+?>
+    
     <main id="dash-container" class="container-fluid position-relative">
         <section class="mt-5">
             <div class="portada text-center d-flex align-items-center justify-content-center">
@@ -119,7 +115,7 @@
                         <img class="w-100  rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom  py-3">
-                        <p class=" p-0 border w-100 mb-0">Publicaciones</p>
+                        <p class=" p-0  w-100 mb-0">Publicaciones</p>
                         <!-- <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
                             <span class="fs-5 mr-2  text-view-more">Ver mas</span>
                             <img width="16" height="16" src="./icons/next.png" alt="">

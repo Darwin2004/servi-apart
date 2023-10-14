@@ -15,35 +15,19 @@ function cargarPublicacionesRes(){
     } else {
         foreach ($result as $f) {
             echo '
-            <article class="box-cont p-3 px-1 mb-5" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; width: 500px; height: 450px; margin-left: 40px; ">
-                 
-                            <section class=" p-2  border-primary" style=" flex-direction:column; width: 500px; height: 400px ">
-                               
-                                    <div style="display: flex; " class=" border justify-content-between p-2 px-3"; >
-                                        <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                               <p> <strong> Titulo: </strong> </p>
-                                                <p class="fs-6" style="position:relative; top: -10px">' . $f['titulo'] . '</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="display: flex" class=" border justify-content-between p-2 px-3">
-                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                        <p> <strong> Descripcion: </strong> </p>
-                                            <p class="fs-6" style="position:relative; top: -10px">' . $f['descripcion'] . '</p>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex" class=" border justify-content-between p-2 px-3">
-                                        <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
-                                        <p> <strong> Fecha: </strong> </p>
-                                            <p class="fs-6" style="position:relative; top: -10px">' . $f['fecha'] . '</p>
-                                        </div>
-                                    </div>
-                                    
-
-                            </section>
-                       
+            <article class="box-cont p-4 mb-5 mx-3 d-flex flex-column justify-content-start h-auto" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; max-width: 500px; ">
+                 <header class=" p-2" > <h2 class="fw-bold my-auto" style="font-size: 1rem; font-weight: 600 ">'. $f['titulo'] .'</h2> </header>
+                 <main class=" p-2 d-flex flex-column justify-content-center">
+                    <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
+                 </main>
+                 <footer class=" p-2 m-0">
+                 <section class="w-100 m-0 p-0 ">
+                 <img style="width: 20px; height: 20px" src="./icons/calendario.png">
+                 <small class="text-black-50 " style="font-size: 14px; font-weight: 600"> '. $f['fecha'] .'</small>
+                 <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
+                 <small class="text-black-50 " style="font-size: 14px; font-weight: 600"> '. $f['hora'] .'</small>
+                 </section>
+                 </footer>
             </article>
           ';
         }
