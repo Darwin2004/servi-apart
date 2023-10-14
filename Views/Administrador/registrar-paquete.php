@@ -65,11 +65,11 @@
                 <section class="row mt-4 p-4 ">
                     <form action="../../Controllers/registrarPaquete.php" method="post"
                         class="d-inline-flex py-5 row box-cont">
-                        <div class="mb-3 col-md-6">
+                        <!-- <div class="mb-3 col-md-6">
                             <label for="exampleInputEmail1" class="form-label">Destinatario</label>
                             <input type="text" class="form-control" name="destinatario" placeholder="EJ:Andrea Vargas"
                                 aria-describedby="emailHelp">
-                        </div>
+                        </div> -->
                         <div class="mb-3 col-md-6">
                             <label for="exampleInputEmail1" class="form-label">Apartamento</label>
                             <input type="text" class="form-control" name="apartamento" placeholder="EJ:v-12"
@@ -80,11 +80,11 @@
                             <input type="text" class="form-control" name="torre" placeholder="EJ:4"
                                 aria-describedby="emailHelp">
                         </div>
-                        <div class="mb-3 col-md-6">
+                        <!-- <div class="mb-3 col-md-6">
                             <label for="exampleInputEmail1" class="form-label">Telefono destinatario</label>
                             <input type="text" class="form-control" name="tel-destinatario" placeholder="EJ:32198776"
                                 aria-describedby="emailHelp">
-                        </div>
+                        </div> -->
                         <div class="mb-3 col-md-6">
                             <label for="exampleInputEmail1" class="form-label">Remitente</label>
                             <input type="text" class="form-control" name="remitente" placeholder="EJ:Group S.A.S"

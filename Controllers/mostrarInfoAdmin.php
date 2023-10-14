@@ -1105,8 +1105,8 @@ function cargarPaquetes()
                 <td class="d-flex col-md-2 justify-content-center">' . $f['apartamento'] . ' </td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['fecha'] . '</td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['remitente'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['destinatario'] . ' </td> 
-                <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57' . $f['telefono'] . '"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
+                <td class="d-flex col-md-2 justify-content-center">' . $f['nombres'] . ' ' . $f['apellidos'].' </td> 
+                <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" target="_blank" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57' . $f['telefono'] . '"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
                 <a /> </td>
            </tr>     
             ';
@@ -1131,7 +1131,7 @@ function cargarPaquetesPDF()
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['remitente'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['destinatario'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres']. ' ' . $f['apellidos'] .'</td>
             </tr>     
             ';
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2023 at 09:08 PM
+-- Generation Time: Oct 14, 2023 at 12:51 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -64,23 +64,10 @@ INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, 
 
 CREATE TABLE `paqueteria` (
   `id` int(11) NOT NULL,
-  `destinatario` varchar(50) DEFAULT NULL,
+  `usuario` int(11) DEFAULT NULL,
   `remitente` varchar(50) DEFAULT NULL,
-  `torre` varchar(20) DEFAULT NULL,
-  `apartamento` varchar(20) DEFAULT NULL,
-  `telefono` varchar(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `paqueteria`
---
-
-INSERT INTO `paqueteria` (`id`, `destinatario`, `remitente`, `torre`, `apartamento`, `telefono`, `fecha`) VALUES
-(1, '0', '0', '4', '0', '3214444', '2023-09-16'),
-(2, 'johan', 'apple', '4272', '2327', '3196419848', '2023-09-18'),
-(3, 'ANDRES', 'BIOBOLSA', 'B', '609', '3194564165', '2023-09-19'),
-(4, 'MIGUEL ', 'APPLE', 'C', '245', '38464652', '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -222,7 +209,8 @@ ALTER TABLE `novedad_vehiculo`
 -- Indexes for table `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `paqueteria_ibfk_1` (`usuario`);
 
 --
 -- Indexes for table `publicaciones`
@@ -264,7 +252,7 @@ ALTER TABLE `novedad_vehiculo`
 -- AUTO_INCREMENT for table `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `publicaciones`
@@ -288,6 +276,12 @@ ALTER TABLE `reserva_salon`
 ALTER TABLE `novedad_vehiculo`
   ADD CONSTRAINT `novedad_vehiculo_ibfk_1` FOREIGN KEY (`placa`) REFERENCES `vehiculo` (`placa`),
   ADD CONSTRAINT `novedad_vehiculo_ibfk_2` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
+
+--
+-- Constraints for table `paqueteria`
+--
+ALTER TABLE `paqueteria`
+  ADD CONSTRAINT `paqueteria_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`identificacion`);
 
 --
 -- Constraints for table `reserva_salon`

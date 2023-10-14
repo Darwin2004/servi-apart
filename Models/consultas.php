@@ -3,6 +3,8 @@
 //CREAMOS UNA CLASE QUE CONTENGA TODAS LAS FUNCIONES
 //CRUD DEL SISTEMA
 
+use function PHPSTORM_META\type;
+
     class Consultas {
 
         //FUNCIONES MODULOS ADMINISTRADOR
@@ -781,20 +783,40 @@
             echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
         }
 
+        public function getUserByApartament(string $apartamento, string $torre) : int{
+            try {
+                $objConexion = new conexion();
+                
+                $query = "SELECT * from usuarios WHERE apartamento=:apartamento AND torre=:torre";
+                $statement = $objConexion->get_conexion()->prepare($query);
 
-        public function registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario){
+                $statement->bindParam(":apartamento", $apartamento, PDO::PARAM_INT);
+                $statement->bindParam(":torre", $torre, PDO::PARAM_STR);
+
+                $statement->execute();
+
+                $arr = $statement->fetch(PDO::FETCH_ASSOC);
+                if(!$arr) return -1;
+
+                $userId = intval($arr['identificacion']);
+                return $userId;
+            } catch (\Throwable $th) {
+               return -1;
+            }
+        }
+
+        public function registrarPaquete(int $usuario, string $remitente) : bool{
             try {
                 $objConexion = new conexion();
                 $conexion = $objConexion->get_conexion();
 
-                $query = "INSERT INTO paqueteria(destinatario, remitente, torre, apartamento, telefono, fecha) VALUES(:destinatario, :remitente, :torre, :apartamento, :telefono, NOW())";
+
+
+                $query = "INSERT INTO paqueteria(usuario, remitente, fecha) VALUES(:usuario, :remitente, NOW())";
                 $statement = $conexion->prepare($query);
 
-                $statement->bindParam(':destinatario', $destinatario);
+                $statement->bindParam(':usuario', $usuario);
                 $statement->bindParam(':remitente', $remitente);
-                $statement->bindParam(':torre', $torre);
-                $statement->bindParam(':apartamento', $apartamento);
-                $statement->bindParam(':telefono', $telDestinatario);
 
                 $response = $statement->execute();
 
@@ -805,17 +827,27 @@
             }
         }
 
-        public function mostrarPaquetesAdmin(){
+        public function mostrarPaquetesAdmin() : array {
             try {
                 $objConexion = new Conexion();
                 $conexion = $objConexion->get_conexion();
         
-                $query = "SELECT * FROM paqueteria";
+                $query = "SELECT 
+                            P.id,
+                            U.nombres,
+                            U.apellidos,
+                            U.torre,
+                            U.apartamento,
+                            U.telefono,
+                            P.remitente,
+                            P.fecha
+                            FROM usuarios U INNER JOIN paqueteria P ON U.identificacion=P.usuario;
+                ";
                 $statement = $conexion->prepare($query);
         
         
                 $response = $statement->execute();
-                if(!$response) return;
+                if(!$response) return [];
                 $result = $statement->fetchAll();
                 return $result;
                 

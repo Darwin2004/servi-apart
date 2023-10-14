@@ -20,17 +20,40 @@ require_once "../Models/conexion.php";
 require_once "../Models/consultas.php";
 
 
-$destinatario = $_POST['destinatario'] ?? null;
+/* $destinatario = $_POST['destinatario'] ?? null; */
 $apartamento = $_POST['apartamento'] ?? null;
 $torre = $_POST['torre'] ?? null;
-$telDestinatario = $_POST['tel-destinatario'] ?? null;
+/* $telDestinatario = $_POST['tel-destinatario'] ?? null; */
 $remitente = $_POST['remitente'] ?? null;
 
 
-if($destinatario !== '' && $apartamento !== '' && $torre !== '' && $telDestinatario !== '' && $remitente !== ''){
+if($apartamento !== ''  && $remitente !== '' && $torre !== ''){
     $objConsultas = new Consultas();
-    $response = $objConsultas->registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario);
-    if(!$response) return;
+    $userId = $objConsultas->getUserByApartament($apartamento, $torre);
+    if($userId == -1){
+        ?>
+        <script>
+            
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error al registrar paquete. Intentelo de nuevo',
+                confirmButtonText: 'Ok'
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href='../Views/Administrador/registrar-paquete.php'; 
+                }
+                
+            })
+        </script>
+        <?php 
+        return;
+    }
+
+
+    $response = $objConsultas->registrarPaquete($userId, $remitente);
+
+    if(!$response) echo "dont work";
 
     ?>
     <script>
@@ -45,7 +68,7 @@ if($destinatario !== '' && $apartamento !== '' && $torre !== '' && $telDestinata
         })
     </script>
     <?php 
-    //echo "<script>location.href='../Views/Administrador/registrar-paquete.php'</script>";
+echo "end";
 }else{
     ?>
     <script>

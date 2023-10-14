@@ -14,6 +14,7 @@
     ServiApart
   </header>
     <h1">Reporte paqueteria</h1>
+    <p>Este reporte organiza todos los registros de paquetes en el sistema</p>
     <table style="width: 100%; border-collapse: collapse; border-spacing: 0;">
   <thead>
     <tr>
