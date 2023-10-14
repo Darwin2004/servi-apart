@@ -242,16 +242,16 @@ function cargarFotosVehiculo(){
   </div>
   <div class="carousel-inner carrusel" style="">
     <div class="carousel-item active">
-        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
+        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
+        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
+        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
     <div class="carousel-item" >
-        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 700px">
+        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -533,7 +533,7 @@ function cargarVehiculos(){
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
                 <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px"><i class="ti-pencil-alt"> Editar</i></a>
                 <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px;"> <i class="ti-trash"></i>Eliminar</a></td>
-                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-novedades"><i class="ti-eye"></i> Ver Historial</a></td>
+                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><i class="ti-eye"></i> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-eye"></i></a></td>
 
             </tr>     

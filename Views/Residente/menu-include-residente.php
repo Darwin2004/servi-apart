@@ -39,6 +39,12 @@
                             </li>
                            
                         </ul>
+                        <ul>
+                            <li>
+                                <a href="#"> <i class="ti-pencil-alt"></i>Ver mis Reservas</a>
+                            </li>
+                           
+                        </ul>
                     </li>
 
                     <li>
@@ -56,16 +62,18 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-car"></i> Seguridad
+                            <i class="ti-car"></i>Vehiculos
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
-
                             <li>
-                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Vehiculos</a>
+                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Mis Vehiculos</a>
                             </li>
-
-
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Novedades Hechas</a>
+                            </li>
                         </ul>
 
                     <li>
@@ -75,7 +83,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Ver Peticiones</a>
+                                <a href="#"><i class="ti-eye"></i>Crear Peticiones</a>
                             </li>
                         </ul>
                     </li>

@@ -121,13 +121,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                    <th>ID Novedad</th>
-                                                    <th>Placa</th>
-                                                    <th>Novedad</th>
-                                                    <th>Fecha Revision</th>
-                                                    <th>Identificación guarda</th>
-                                                    <th>Nombre de guarda encargado</th>
-                                                    <th  style="text-align:center">Operaciones</th>
+                                                    <th style="font-size:18px">ID Novedad</th>
+                                                    <th style="font-size:18px">Placa</th>
+                                                    <th style="font-size:18px">Novedad</th>
+                                                    <th style="font-size:18px">Fecha Revision</th>
+                                                    <th style="font-size:18px">Identificación guarda</th>
+                                                    <th style="font-size:18px">Nombre de guarda encargado</th>
+                                                    <th  style="text-align:center; font-size:18px">Operaciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

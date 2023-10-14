@@ -120,15 +120,15 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                    <th style="font-size:20px">Placa</th>
-                                                    <th style="font-size:20px">Marca</th>
-                                                    <th style="font-size:20px">Referencia</th>
-                                                    <th style="font-size:20px">Modelo</th>
-                                                    <th style="font-size:20px">Identificación Residente</th>
-                                                    <th style="font-size:20px">Fecha de Registro</th>
-                                                    <th style="font-size:20px">Operaciones</th>
-                                                    <th style="text-align:center; font-size:20px">Novedades</th>
-                                                    <th style="text-align:center; font-size:20px">Más detalles</th>
+                                                    <th style="font-size:18px">Placa</th>
+                                                    <th style="font-size:18px">Marca</th>
+                                                    <th style="font-size:18px">Referencia</th>
+                                                    <th style="font-size:18px">Modelo</th>
+                                                    <th style="font-size:18px">Identificación Propietario</th>
+                                                    <th style="font-size:18px">Fecha de Registro</th>
+                                                    <th style="font-size:18px">Operaciones</th>
+                                                    <th style="text-align:center; font-size:18px">Novedades</th>
+                                                    <th style="text-align:center; font-size:18px">Más detalles</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
