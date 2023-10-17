@@ -743,7 +743,7 @@ function cargarPublicaciones(){
                 <td style="color: black">' . $f['titulo'] . ' </td>
                 <td style="color: black">' . $f['descripcion'] . '</td>
              
-                <td class="d-flex gap-3" style="margin-left: 170px ">
+                <td class="d-flex gap-3" style="margin-left: ">
                 <a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> 
                  <a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger" style="margin-left: 50px"> <i class="ti-trash"></i>Eliminar</a>
                  </td>

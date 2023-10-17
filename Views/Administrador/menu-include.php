@@ -93,20 +93,8 @@ $result = $objConsulta->verPerfil($id);
 
 
                         </ul>
-
-                    <li>
-                        <a class="sidebar-sub-toggle">
-                            <i class="ti-info-alt"></i> Peticiones
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="ti-eye"></i>Ver Peticiones</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
+                        
+   <li>
                         <a class="sidebar-sub-toggle">
                             <i class="ti-comment-alt"></i> Publicaciones
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
@@ -126,6 +114,20 @@ $result = $objConsulta->verPerfil($id);
                            
                         </ul>
                     </li>
+
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-info-alt"></i> Peticiones
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="ti-eye"></i>Ver Peticiones</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                 
 
                     <li>
                         <a class="sidebar-sub-toggle">

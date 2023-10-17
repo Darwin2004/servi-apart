@@ -92,7 +92,7 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="publi-title">Publicaciones Creadas</h1>
-                                <p id="text-title">Aquí podrán acceder fácilmente a las tres publicaciones más recientes, manteniéndose siempre al tanto de la información más relevante y reciente de nuestra comunidad. </p>
+                                <p id="text-title">Puedes observar todas las publicaciones que sucederan en nuestra residencia </p>
                             </div>
                         </div>
                     </div>
@@ -119,12 +119,11 @@
                      
                 <section class="publi-grid row ps-2">
                     <?php
-                        cargarPublicacionesRes();
+                        cargarPublicacionRes();
                     ?>
                     
                 </section>
-                <a href="ver-publicaciones.php">  <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" style="margin-left: 700px;">Ver todas las publicaciones </button></a>
-               
+           
                 
              
                                 

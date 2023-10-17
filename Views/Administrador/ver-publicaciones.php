@@ -137,7 +137,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                 <tr class="">
                                                     <th style="font-size: 20px"><strong>Titulo</strong></th>
                                                     <th  style="font-size: 20px; text-align: left"><strong >Descripcion</strong></th>
-                                                    <th style="font-size: 20px;  text-align: center"><strong>Operaciones</strong></th>
+                                                    <th style="font-size: 20px;  text-align: left"><strong>Operaciones</strong></th>
                                                    
                                                 </tr>
                                             </thead>
