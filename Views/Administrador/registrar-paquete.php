@@ -25,7 +25,7 @@
     <title>Paqueteria</title>
 </head>
 
-<body class="position-relative">
+<body>
     <?php
     include 'menu-include.php';
     ?>
@@ -44,57 +44,35 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid p-4">
-
-                <section class=" rounded-3 d-flex row">
-                    <div class="col-md-7   p-2">
-                        <h2 class="p-4 title  w-100">¡<span class="span-title">Registra</span>, luego,
-                            comunica! </h2>
-                        <p class="px-4 d-block ">Registra tu paquetería hoy mismo y comunica de manera eficiente con los
-                            destinatarios
-                            en nuestro exclusivo conjunto de propiedades horizontales! No esperes más para simplificar
-                            tus
-                            entregas y mantener a todos informados. ¡Actúa ahora y experimenta la comodidad de nuestro
-                            servicio!
-                        </p>
-                    </div>
-                    <div class="col-md-5  p-4 d-flex justify-content-center align-items-center">
-                        <img class="w-75 xxl-w-50" src="../../assets/img/pacck.svg" alt="">
-                    </div>
-                </section>
-                <section class="row mt-4 p-4 ">
-                    <form action="../../Controllers/registrarPaquete.php" method="post"
-                        class="d-inline-flex py-5 row box-cont">
-                        <!-- <div class="mb-3 col-md-6">
-                            <label for="exampleInputEmail1" class="form-label">Destinatario</label>
-                            <input type="text" class="form-control" name="destinatario" placeholder="EJ:Andrea Vargas"
-                                aria-describedby="emailHelp">
-                        </div> -->
-                        <div class="mb-3 col-md-6">
-                            <label for="exampleInputEmail1" class="form-label">Apartamento</label>
-                            <input type="text" class="form-control" name="apartamento" placeholder="EJ:v-12"
-                                aria-describedby="emailHelp">
+            <div class="  px-0 mt-5">
+                <main class="  main-content h-auto">
+                    <section class="wrapper-form   h-auto ">
+                        <form class="  m-0 p-3 d-flex flex-column justify-content-center form-pack " action="../../Controllers/registrarPaquete.php" method="post">
+                            <div class="mb-5 d-flex text-start">
+                                <h2 class="title">Paqueteria</h2>
+                            </div>
+                            <div class="mb-5 d-flex flex-column">
+            
+                                <input type="text" placeholder="~ Torre" class="py-3 border-none input ps-3" name="torre">
+                            </div>
+                            <div class="mb-5 d-flex flex-column">
+            
+                                <input type="text" placeholder="~ Apartamento" class="py-3 border-none ps-3 input" name="apartamento">
+                            </div>
+                            <div class="mb-5 d-flex flex-column">
+            
+                                <input type="text" placeholder="~ Remitente" class="py-3 border-none ps-3 input" name="remitente">
+                            </div>
+                            <div class="mb-5 d-flex flex-column">
+                                <button id="btn-signup" type="submit" class="w-25 py-3">Registrar</button>
+                            </div>
+                        </form>
+                        <div class="content-img ">
+                            <img class="w-100 h-100" src="../Administrador/images/pack-images.png" alt="">
                         </div>
-                        <div class="mb-3 col-md-6">
-                            <label for="exampleInputEmail1" class="form-label">Torre</label>
-                            <input type="text" class="form-control" name="torre" placeholder="EJ:4"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <!-- <div class="mb-3 col-md-6">
-                            <label for="exampleInputEmail1" class="form-label">Telefono destinatario</label>
-                            <input type="text" class="form-control" name="tel-destinatario" placeholder="EJ:32198776"
-                                aria-describedby="emailHelp">
-                        </div> -->
-                        <div class="mb-3 col-md-6">
-                            <label for="exampleInputEmail1" class="form-label">Remitente</label>
-                            <input type="text" class="form-control" name="remitente" placeholder="EJ:Group S.A.S"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3 col-md-6 d-flex align-items-end">
-                            <button id="btn-signup" type="submit" class="w-100 p-2 rounded">Registrar</button>
-                        </div>
-                    </form>
-                </section>
+                    </section>
+                </main>
+            
             </div>
         </div>
     </div>

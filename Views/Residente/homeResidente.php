@@ -72,14 +72,7 @@
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/home.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-        *, body, h2, h1{
-            font-family: 'Varela Round', sans-serif !important;
-        }
-    </style>
+    <link rel="stylesheet" href="../Residente/css/home.css">
 </head>
 
 <body style="font-family: 'Varela Round', sans-serif !important;" >
@@ -98,8 +91,8 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 style="font-size: 40px">Publicaciones Creadas</h1>
-                                <p style="font-size: 20px">Puedes observar todas las publicaciones que sucederan en nuestra residencia </p>
+                                <h1 id="publi-title">Publicaciones Creadas</h1>
+                                <p id="text-title">Puedes observar todas las publicaciones que sucederan en nuestra residencia </p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +116,7 @@
                 </div>
 
                      
-                <section class="servi-grid">
+                <section class="publi-grid row ps-2">
                     <?php
                         cargarPublicacionesRes();
                     ?>

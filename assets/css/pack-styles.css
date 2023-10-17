@@ -1,66 +1,167 @@
-.title{
-    font-size: 64px;
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+
 }
 
-.span-title{
+html{
+    overflow: hidden;
+
+}
+
+*{
+    font-family: 'Varela Round', sans-serif;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 4em;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 300;
+}
+
+.span-title {
     color: #18d26e;
 }
 
-#btn-signup{
-    background-color: #18d26e !important;
-    color: black;
+#btn-signup {
+    background-color: #2b2929 !important;
+    color: whitesmoke;
+    font-size: 1.2em;
 }
-#btn-signup:hover{
+
+#btn-signup:hover {
     background-color: black !important;
     color: whitesmoke;
 }
 
-.hola{
+.hola {
     margin-left: 25px !important;
 }
 
-.icon-content{
-padding: 4px;
+.icon-content {
+    padding: 4px;
     background-color: #18d26e !important;
 }
 
-#GenerarPDF
-{
+#GenerarPDF {
     background-color: #ff914d;
 }
 
-#GenerarExcel
-{
+#GenerarExcel {
     background-color: #18d26e;
 }
 
-#GenerarPDF:hover
-{
+#GenerarPDF:hover {
     background-color: black;
     color: whitesmoke;
 }
 
-#GenerarExcel:hover
-{
+#GenerarExcel:hover {
     background-color: black;
     color: whitesmoke;
 }
 
-.packed-icon{
+.packed-icon {
     width: 20px;
     height: 20px;
 }
 
 
-.box-cont{
-    -webkit-box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 19px -8px rgba(0,0,0,0.75);
+.box-cont {
+    -webkit-box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
+
+}
+
+.whatsapp:hover {
+    transform: scale(2);
+
+}
+
+/* register packages */
+
+
+.title{
+    font-size: 4em;
+    letter-spacing: 0.625rem;
+}
+.wrapper-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 2rem;
     
 }
 
-.whatsapp:hover{
-    transform: scale(2);
-    
+
+
+
+.content-img{
+    position: relative;
+    left: 9em;
+    font-size: 1em;
+    display: flex;
 }
-/* salon comunal */
+
+.input{
+    border-bottom: 1px solid black;
+    background-color: #eeeefd5d;
+    font-size: 1.5em;
+}
+
+
+
+
+@media (max-width: 630px){
+
+    .wrapper-form{
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+        margin-left: 0;
+    }
+}
+
+
+
+
+@media (max-width: 768px){
+    .wrapper-form{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        padding: 0 3.125rem 0 0.9375rem;
+    }
+   
+
+}
+
+@media (max-width: 992px){
+
+    .content-img{
+        display: none;
+    }
+
+    .wrapper-form{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        padding: 0 3.125rem 0 0.9375rem;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1200px){
+    body{
+        font-size: 10px;
+    }
+    .content-img{
+        left: 0;
+    }
+
+    .wrapper-form{
+        margin-left: 0;
+    }
+}

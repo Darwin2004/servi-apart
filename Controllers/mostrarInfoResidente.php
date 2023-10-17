@@ -13,23 +13,35 @@ function cargarPublicacionesRes(){
         echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
 
     } else {
+        $count = 0;
         foreach ($result as $f) {
+            if($count <= 2){
             echo '
-            <article class="box-cont p-4 mb-5 mx-3 d-flex flex-column justify-content-start h-auto" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; max-width: 500px; ">
-                 <header class=" p-2" > <h2 class="fw-bold my-auto" style="font-size: 1rem; font-weight: 600 ">'. $f['titulo'] .'</h2> </header>
-                 <main class=" p-2 d-flex flex-column justify-content-center">
-                    <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
-                 </main>
-                 <footer class=" p-2 m-0">
-                 <section class="w-100 m-0 p-0 ">
-                 <img style="width: 20px; height: 20px" src="./icons/calendario.png">
-                 <small class="text-black-50 " style="font-size: 14px; font-weight: 600"> '. $f['fecha'] .'</small>
-                 <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
-                 <small class="text-black-50 " style="font-size: 14px; font-weight: 600"> '. $f['hora'] .'</small>
-                 </section>
-                 </footer>
-            </article>
-          ';
+                        <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border">
+                            <header class=" p-2 d-flex " > 
+                            <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
+                            '. $f['titulo'] .'
+                            </h2>
+                            <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
+                                <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
+                            </div> 
+                            </header>
+                            <main class=" p-2 d-flex flex-column justify-content-center">
+                                <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
+                            </main>
+                            <footer class=" p-2 m-0">
+                            <section class="w-100 m-0 p-0 d-flex align-items-center ">
+                                    <img style="width: 20px; height: 20px" src="./icons/calendario.png">
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['fecha'] .'</small>
+                                    <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['hora'] .'</small>
+                            </section>
+                            </footer>
+                        </article>
+                    ';
+                $count++;
+            }
+            
         }
     }
 }
